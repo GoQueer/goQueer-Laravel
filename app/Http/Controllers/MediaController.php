@@ -33,7 +33,10 @@ class MediaController extends Controller
      */
     public function create()
     {
-        return view('media.create');
+//        $media = Media::find($id);
+//        return view('media.show',compact('media'));
+        $roles = Role::orderBy('id','DESC');
+        return view('media.create',compact('roles'));
     }
 
     /**

@@ -38,23 +38,25 @@
             </div>
         </div>
 
-        <div class="col-xs-4 col-sm-4 col-md-4">
+        <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-                <strong>X:</strong>
-                {!! Form::text('x', null, array('placeholder' => 'X','class' => 'form-control','id'=>'xCoordinate')) !!}
+                <strong>File:</strong>
+{{--                {!! Form::text('x', null, array('placeholder' => 'X','class' => 'form-control','id'=>'xCoordinate')) !!}--}}
+                {!! Form::file('file', $attributes = array()) !!}
             </div>
         </div>
 
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="form-group">
-                <strong>Y:</strong>
-                {!! Form::text('y', null, array('placeholder' => 'Y','class' => 'form-control','id' => 'yCoordinate')) !!}
+                <strong>Type:</strong>
+                {{--{!! Form::text('y', null, array('placeholder' => 'Y','class' => 'form-control','id' => 'yCoordinate')) !!}--}}
+                {!! Form::select('size', array('1' => 'Video', '2' => 'Sound','3' => 'Picture' , '4' => 'PDF')) !!}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a class="btn btn-primary" href="{{ route('location.index') }}">Back</a>
+            <a class="btn btn-primary" href="{{ route('media.index') }}">Back</a>
         </div>
 
     </div>
