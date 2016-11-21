@@ -5,28 +5,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="text-center">
-                <h2>Create New Location</h2>
+                <h2>Add New Media</h2>
             </div>
         </div>
     </div>
 
-    <div class="row">
-            <div class="col-lg-12 margin-tb">
-                <div class="form-group">
-                    <strong>Select the Coordinate:</strong>
-                    <div id="mapid1" style="width: 100%; height: 250px;"></div>
-                </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="form-group">
-                <strong>Select the Coordinate:</strong>
-                <div id="map" style="width: 100%; height: 400px;"></div>
-            </div>
-        </div>
-    </div>
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -38,20 +21,20 @@
         </div>
     @endif
 
-    {!! Form::open(array('action' => 'LocationController@store','method'=>'POST')) !!}
+    {!! Form::open(array('action' => 'MediaController@store','method'=>'POST')) !!}
     <div class="row">
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Title:</strong>
-                {!! Form::text('name', null, array('placeholder' => 'Title','class' => 'form-control')) !!}
+                <strong>Where it came from:</strong>
+                {!! Form::text('source', null, array('placeholder' => 'Source','class' => 'form-control')) !!}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
-                {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
+                <strong>Address:</strong>
+                {!! Form::textarea('address', null, array('placeholder' => 'Address','class' => 'form-control','style'=>'height:100px')) !!}
             </div>
         </div>
 

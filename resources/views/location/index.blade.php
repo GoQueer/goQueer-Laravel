@@ -1,6 +1,6 @@
-@extends('layouts.default')
+@extends('dashboard')
 
-@section('content')
+@section('section')
 
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -44,7 +44,7 @@
     </table>
 
     {!! $locations->render() !!}
-    <div class="pull-right">
+    <div class="text-center">
         <a class="btn btn-success" href="{{ route('location.create') }}"> Create New Location</a>
     </div>
 @endsection

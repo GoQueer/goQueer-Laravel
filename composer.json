@@ -7,7 +7,11 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "laravelcollective/html": "~5.0"
+        "laravelcollective/html": "~5.0",
+        "willvincent/feeds": "dev-master",
+        "barryvdh/laravel-debugbar": "^2.0",
+        "illuminate/html": "~5.0",
+        "intervention/image": "^2.2"
 
     },
     "require-dev": {
