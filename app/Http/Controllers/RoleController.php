@@ -8,12 +8,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Location;
-use App\Models\Media;
-use App\Models\MediaType;
+
+use App\Models\Role;
 use Illuminate\Http\Request;
 
-class MediaController extends Controller
+class RoleController extends Controller
 {
 
     /**
@@ -23,8 +22,8 @@ class MediaController extends Controller
      */
     public function index(Request $request)
     {
-        $medias = Media::orderBy('id','DESC')->paginate(5);
-        return view('media.index',compact('medias'))
+        $roles = Role::orderBy('id','DESC')->paginate(5);
+        return view('role.index',compact('roles'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -35,9 +34,10 @@ class MediaController extends Controller
      */
     public function create()
     {
-        $types = MediaType::lists('name','id');
-        $locations = Location::lists('name','id');
-        return view('media.create',compact('types','locations'));
+//        $media = Media::find($id);
+//        return view('media.show',compact('media'));
+        $roles = Role::orderBy('id','DESC');
+        return view('role.create',compact('roles'));
     }
 
     /**
@@ -55,8 +55,8 @@ class MediaController extends Controller
             'user_id' => 'required',
         ]);
 
-        Media::create($request->all());
-        return redirect()->route('media.index')
+        Role::create($request->all());
+        return redirect()->route('role.index')
             ->with('success','Media added successfully');
     }
 
@@ -68,8 +68,8 @@ class MediaController extends Controller
      */
     public function show($id)
     {
-        $media = Media::find($id);
-        return view('media.show',compact('media'));
+        $role = Role::find($id);
+        return view('role.show',compact('role'));
     }
 
     /**
@@ -80,8 +80,8 @@ class MediaController extends Controller
      */
     public function edit($id)
     {
-        $media = Media::find($id);
-        return view('media.edit',compact('media'));
+        $role = Role::find($id);
+        return view('role.edit',compact('role'));
     }
 
     /**
@@ -113,8 +113,8 @@ class MediaController extends Controller
      */
     public function destroy($id)
     {
-        Media::find($id)->delete();
-        return redirect()->route('media.index')
+        Role::find($id)->delete();
+        return redirect()->route('role.index')
             ->with('success','Media deleted successfully');
     }
 }

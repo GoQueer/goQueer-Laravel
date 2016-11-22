@@ -13,9 +13,6 @@ class CreateMediaTable extends Migration
     public function up()
     {
 
-
-
-
         Schema::create('media', function(Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
@@ -23,6 +20,7 @@ class CreateMediaTable extends Migration
             $table->text('source');
             $table->text('address');
             $table->integer('type_id')->unsigned();
+            $table->integer('location_id')->unsigned();
             $table->integer('user_id')->unsigned();
         });
 
@@ -31,6 +29,9 @@ class CreateMediaTable extends Migration
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
             $table->foreign('type_id')->references('id')->on('media_type')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('location_id')->references('id')->on('location')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -48,6 +49,7 @@ class CreateMediaTable extends Migration
         Schema::table('media', function (Blueprint $table) {
             $table->dropForeign('media_user_id_foreign');
             $table->dropForeign('media_type_id_foreign');
+            $table->dropForeign('media_location_id_foreign');
         });
 
         Schema::drop('media');
