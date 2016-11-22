@@ -27,8 +27,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Which Location it is associated with:</strong>
-{{--                {{ Form::select('location_id', $locations) }}--}}
-                {{ Form::select('location_id', null, $locations->lists('name', 'id')) }}
+                {{ Form::select('location_id', $locations) }}
+{{--                {{ Form::select('location_id', null, $locations->lists('name', 'id')) }}--}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -60,7 +60,9 @@
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div  class="container-fluid">
                 <strong>Type:</strong>
-                {{ Form::select('category', $types) }}
+{{--                {{ Form::select('category', $types) }}--}}
+{{--                {{ Form::select('type_id', $types->lists('name', 'id'), null, array('class' => 'form-control', 'id' => 'id')) }}--}}
+                {{ Form::select('type_id', null, $types->lists('name', 'id')) }}
             </div>
         </div>
 

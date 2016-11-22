@@ -37,7 +37,12 @@ class MediaController extends Controller
     {
         $types = MediaType::lists('name','id');
         $locations = Location::lists('name','id');
-        return view('media.create',compact('types','locations'));
+
+        return view('media.create')
+            ->with('locations', Location::orderBy('id', 'asc')->lists('name','id'))
+            ->with('types', MediaType::orderBy('id', 'asc')->lists('name','id'));
+
+//        return view('media.create',compact('types','locations'));
     }
 
     /**

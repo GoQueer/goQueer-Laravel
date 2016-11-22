@@ -11,5 +11,5 @@ class Media extends Model
      * @var string
      */
     protected $table = 'media';
-    public $fillable = ['source','address','type_id','user_id','displayName'];
+    public $fillable = ['source','address','type_id','user_id','displayName','locaton_id'];
 }
