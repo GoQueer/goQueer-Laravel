@@ -26,17 +26,22 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Where it came from:</strong>
-                {{ Form::select('location_id', $locations) }}
+                <strong>Which Location it is associated with:</strong>
+{{--                {{ Form::select('location_id', $locations) }}--}}
+                {{ Form::select('location_id', null, $locations->lists('name', 'id')) }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Which Location it is associated with:</strong>
+                <strong>Where it came from:</strong>
                 {!! Form::text('source', null, array('placeholder' => 'Source','class' => 'form-control')) !!}
             </div>
         </div>
-
+        <div class="col-xs-12 col-sm-12 col-md-12" style="visibility: hidden">
+            <div class="form-group">
+                {{ Form::hidden('user_id', '1', array('id' => 'user_id')) }}
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Address:</strong>

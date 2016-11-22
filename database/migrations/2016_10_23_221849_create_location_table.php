@@ -16,6 +16,7 @@ class CreateLocationTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->double('x');
+            $table->double('diameter');
             $table->double('y');
             $table->text('name');
             $table->text('description');
@@ -42,7 +43,6 @@ class CreateLocationTable extends Migration
         Schema::table('location', function (Blueprint $table) {
             $table->dropForeign('location_user_id_foreign');
         });
-
         Schema::drop('location');
     }
 }

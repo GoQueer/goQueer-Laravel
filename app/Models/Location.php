@@ -11,5 +11,5 @@ class Location extends Model
      * @var string
      */
     protected $table = 'location';
-    public $fillable = ['x','y','name','description'];
+    public $fillable = ['x','y','name','description','diameter','user_id'];
 }

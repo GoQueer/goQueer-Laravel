@@ -39,12 +39,21 @@
     @endif
 
     {!! Form::open(array('action' => 'LocationController@store','method'=>'POST')) !!}
+
+
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12" style="visibility: hidden">
             <div class="form-group">
                 {{ Form::hidden('user_id', '1', array('id' => 'user_id')) }}
             </div>
         </div>
+        <div class="col-xs-2 col-sm-2 col-md-2">
+            <div class="form-group">
+                <strong>Diameter:</strong>
+                {!! Form::text('diameter', null, array('placeholder' => 'Diameter','class' => 'form-control')) !!}
+            </div>
+        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Title:</strong>
@@ -62,14 +71,14 @@
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="form-group">
                 <strong>X:</strong>
-                {!! Form::text('x', null, array('placeholder' => 'X','class' => 'form-control','id'=>'xCoordinate')) !!}
+                {!! Form::text('x', null, array('placeholder' => 'X','class' => 'form-control','id'=>'xCoordinate','readonly    php ')) !!}
             </div>
         </div>
 
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="form-group">
                 <strong>Y:</strong>
-                {!! Form::text('y', null, array('placeholder' => 'Y','class' => 'form-control','id' => 'yCoordinate')) !!}
+                {!! Form::text('y', null, array('placeholder' => 'Y','class' => 'form-control','id' => 'yCoordinate','readonly')) !!}
             </div>
         </div>
 
@@ -96,11 +105,7 @@
         L.marker([51.5, -0.09]).addTo(mymap)
                 .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 
-        L.circle([51.508, -0.11], 500, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5
-        }).addTo(mymap).bindPopup("I am a circle.");
+
 
         L.polygon([
             [51.509, -0.08],
@@ -119,6 +124,11 @@
             var newMarker = new L.marker(e.latlng).addTo(mymap);
             document.getElementById("xCoordinate").value = e.latlng.lat;
             document.getElementById("yCoordinate").value = e.latlng.lng;
+            L.circle([e.latlng.lat, e.latlng.lng], 500, {
+                color: 'blue',
+                fillColor: '#f03',
+                fillOpacity: 0.5
+            }).addTo(mymap).bindPopup("I am a circle.");
         }
 
         mymap.on('click', onMapClick);

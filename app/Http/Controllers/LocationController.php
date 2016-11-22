@@ -47,6 +47,7 @@ class LocationController extends Controller
         $this->validate($request, [
             'x' => 'required|numeric',
             'y' => 'required|numeric',
+            'diameter' => 'required|numeric',
             'name' => 'required',
         ]);
 
