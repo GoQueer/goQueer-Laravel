@@ -42,7 +42,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12" style="visibility: hidden">
             <div class="form-group">
-                {{ Form::select('user_id', '1') }}
+                {{ Form::hidden('user_id', '1', array('id' => 'user_id')) }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
