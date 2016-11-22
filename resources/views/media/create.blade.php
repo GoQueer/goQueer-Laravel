@@ -21,14 +21,18 @@
         </div>
     @endif
 
-    {!! Form::open(array('action' => 'MediaController@store','method'=>'POST')) !!}
+    {!! Form::open(array('action' => 'MediaController@store','method'=>'POST','files'=>true)) !!}
     <div class="row" >
-
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div  class="form-group">
+                {!! Form::Label('type', 'Type:') !!}
+                {!! Form::select('type_id', $types, null, ['class' => 'form-control']) !!}
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Which Location it is associated with:</strong>
-                {{ Form::select('location_id', $locations) }}
-{{--                {{ Form::select('location_id', null, $locations->lists('name', 'id')) }}--}}
+                <strong>Location Name:</strong>
+                {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -53,18 +57,11 @@
             <div class="form-group">
                 <strong>File:</strong>
 {{--                {!! Form::text('x', null, array('placeholder' => 'X','class' => 'form-control','id'=>'xCoordinate')) !!}--}}
-                {!! Form::file('file', $attributes = array()) !!}
+                {!! Form::file('file_name', $attributes = array()) !!}
             </div>
         </div>
 
-        <div class="col-xs-4 col-sm-4 col-md-4">
-            <div  class="container-fluid">
-                <strong>Type:</strong>
-{{--                {{ Form::select('category', $types) }}--}}
-{{--                {{ Form::select('type_id', $types->lists('name', 'id'), null, array('class' => 'form-control', 'id' => 'id')) }}--}}
-                {{ Form::select('type_id', null, $types->lists('name', 'id')) }}
-            </div>
-        </div>
+
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>

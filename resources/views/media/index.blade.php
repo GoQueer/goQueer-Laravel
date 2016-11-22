@@ -18,22 +18,24 @@
 
     <table class="table table-bordered">
         <tr>
+            <th>ID</th>
+            <th>Name</th>
             <th>Source</th>
             <th>Address</th>
-            <th>Type</th>
             <th>File Name</th>
-            <th width="280px">Action</th>
+            <th width="200px">Action</th>
         </tr>
         @foreach ($medias as $key => $media)
             <tr>
                 <td>{{ ++$i }}</td>
-                <td>{{ $media->srouce }}</td>
+                <td>{{ $media->name }}</td>
+                <td>{{ $media->source }}</td>
                 <td>{{ $media->address }}</td>
-                <td>{{ $media->type_id }}</td>
+                <td>{{ $media->filePath }}</td>
 
                 <td>
                     <a class="btn btn-info" href="{{ route('media.show',$media->id) }}">Show</a>
-                    <a class="btn btn-primary" href="{{ route('media.edit',$media->id) }}">Edit</a>
+
                     {!! Form::open(['method' => 'DELETE','route' => ['media.destroy', $media->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}

@@ -7193,7 +7193,7 @@ jQuery.fn.extend({
 						}
 					}
 
-					// only assign if different to avoid unneeded rendering.
+					// only location_media if different to avoid unneeded rendering.
 					finalValue = jQuery.trim( cur );
 					if ( elem.className !== finalValue ) {
 						elem.className = finalValue;
@@ -7236,7 +7236,7 @@ jQuery.fn.extend({
 						}
 					}
 
-					// Only assign if different to avoid unneeded rendering.
+					// Only location_media if different to avoid unneeded rendering.
 					finalValue = value ? jQuery.trim( cur ) : "";
 					if ( elem.className !== finalValue ) {
 						elem.className = finalValue;

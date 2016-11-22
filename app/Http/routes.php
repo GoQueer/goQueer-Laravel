@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 Route::resource('location','LocationController');
 Route::resource('media','MediaController');
+Route::resource('location_media','LocationMediaController');

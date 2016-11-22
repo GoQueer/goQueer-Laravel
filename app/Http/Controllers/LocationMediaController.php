@@ -9,11 +9,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Location;
+use App\Models\LocationMedia;
 use App\Models\Media;
 use App\Models\MediaType;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-class MediaController extends Controller
+
+class LocationMediaController extends Controller
 {
 
     /**
@@ -23,7 +24,7 @@ class MediaController extends Controller
      */
     public function index(Request $request)
     {
-        $medias = Media::orderBy('id','DESC')->paginate(5);
+        $medias = LocationMedia::orderBy('id','DESC')->paginate(5);
         return view('media.index',compact('medias'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -36,9 +37,9 @@ class MediaController extends Controller
     public function create()
     {
 //        $types = MediaType::lists('name','id');
-        $locations = Location::lists('name','id');
+        $medias = Media::lists('name','id');
         $types = MediaType::lists('name', 'id');
-        return view('media.create', compact('id', 'types'));
+        return view('location_media.create', compact('id', 'medias','location_id'));
 //        $models = $->models();
 //        return Response::eloquent($models->get(['id','name']));
 //        return View::make('media.create')->with('locations', $locations)->with('types',$types);
@@ -57,32 +58,19 @@ class MediaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'source' => 'required',
-            'address' => 'required',
-            'type_id' => 'required',
-            'user_id' => 'required',
+            'location_id' => 'required',
+            'media_id' => 'required',
         ]);
 
-        $file = $request->file('file_name');
-        $fileName = $file->getClientOriginalName();
-        $filePath = $file->getRealPath();
-        $destinationPath = 'uploads';
-        $file->move($destinationPath,$file->getClientOriginalName());
 
-        DB::table('media')->insert(
-            ['source' => $request->source,
-            'address' => $request->address,
-            'filePath' => $filePath,
-            'created_at' => new \DateTime(),
-            'updated_at' => new \DateTime(),
-            'name' => $request->name,
-            'type_id' => $request->type_id,
-            'user_id' => $request->user_id,]
+        \DB::table('location_media')->insert(
+            ['location_id' => $request->location_id,
+                'media_id' => $request->media_id,
+
+                ]
         );
-
-//        Media::create($request->all());
-        return redirect()->route('media.index')
-            ->with('success','Media added successfully');
+        return redirect()->route('location_media.create')
+            ->with('success','Media Assigned successfully');
     }
 
     /**
@@ -93,8 +81,8 @@ class MediaController extends Controller
      */
     public function show($id)
     {
-        $media = Media::find($id);
-        return view('media.show',compact('media'));
+        $media = LocationMedia::find($id);
+        return view('location_media.show',compact('media'));
     }
 
     /**
