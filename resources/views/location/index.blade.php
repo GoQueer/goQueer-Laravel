@@ -27,7 +27,7 @@
         </tr>
         @foreach ($locations as $key => $location)
             <tr>
-                <td>{{ ++$i }}</td>
+                <td>{{ $location->id }}</td>
                 <td>{{ $location->name }}</td>
                 <td>{{ $location->description }}</td>
                 <td>{{ $location->x }}</td>
@@ -35,7 +35,7 @@
                 <td>
                     <a class="btn btn-info" href="{{ route('location.show',$location->id) }}">Show</a>
                     {{--<a class="btn btn-primary" href="{{ route('location.edit',$location->id) }}">Edit</a>--}}
-                    <a class="btn btn-success" href="{{ route('location_media.create',$location->id) }}">Assign</a>
+                    <a class="btn btn-success" href="{{ route('location_media.show',$location->id) }}">Assign</a>
                     {!! Form::open(['method' => 'DELETE','route' => ['location.destroy', $location->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
