@@ -5,7 +5,9 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="text-center">
-                <h2>Assign Media to Location</h2>
+                <h2>Assign Media to @foreach ($locationNames as $key => $locationName)
+                        {{ $locationName->name }}
+                    @endforeach </h2>
             </div>
         </div>
     </div>
@@ -27,6 +29,7 @@
     @endif
 
 
+
     <table class="table table-bordered">
         <tr>
             <th>ID</th>
@@ -38,7 +41,7 @@
         @foreach ($locationMedias as $key => $locationMedia)
             <tr>
                 <td>{{ $locationMedia->id }}</td>
-                <td>{{ $locationMedia->media_id }}</td>
+                <td>{{ $locationMedia->media_id  }}</td>
 
                 <td>
 

@@ -82,11 +82,13 @@ class LocationMediaController extends Controller
     public function show($id)
     {
         $medias = Media::lists('name','id');
-
-            $locationMedias = \DB::table('location_media')
-                ->where('location_id', '=', $id)
-                ->get();
-        return view('location_media.create', compact('id', 'medias','locationMedias'));
+        $locationNames = \DB::table('location')
+            ->where('id', '=', $id)
+            ->get();
+        $locationMedias = \DB::table('location_media')
+            ->where('location_id', '=', $id)
+            ->get();
+        return view('location_media.create', compact('id', 'medias','locationMedias','locationNames'));
     }
 
     /**
@@ -131,6 +133,7 @@ class LocationMediaController extends Controller
     public function destroy($id)
     {
         LocationMedia::find($id)->delete();
+
         return redirect()->route('location.index')
             ->with('success','Media deleted successfully');
     }
