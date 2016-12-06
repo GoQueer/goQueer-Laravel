@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Location;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LocationController extends Controller
 {
@@ -21,9 +22,13 @@ class LocationController extends Controller
      */
     public function index(Request $request)
     {
+        if (Auth::check()) {
+
         $locations = Location::orderBy('id','DESC')->paginate(5);
         return view('location.index',compact('locations'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
+        } else
+            return view('errors.permission');
     }
 
     /**
@@ -33,7 +38,10 @@ class LocationController extends Controller
      */
     public function create()
     {
-        return view('location.create');
+        if (Auth::check()) {
+            return view('location.create');
+        } else
+            return view('errors.permission');
     }
 
     /**
@@ -44,16 +52,19 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'x' => 'required|numeric',
-            'y' => 'required|numeric',
-            'diameter' => 'required|numeric',
-            'name' => 'required',
-        ]);
+        if (Auth::check()) {
+            $this->validate($request, [
+                'x' => 'required|numeric',
+                'y' => 'required|numeric',
+                'diameter' => 'required|numeric',
+                'name' => 'required',
+            ]);
 
-        Location::create($request->all());
-        return redirect()->route('location.index')
-            ->with('success','Location added successfully');
+            Location::create($request->all());
+            return redirect()->route('location.index')
+                ->with('success', 'Location added successfully');
+        }else
+            return view('errors.permission');
     }
 
     /**
@@ -64,8 +75,12 @@ class LocationController extends Controller
      */
     public function show($id)
     {
-        $location = Location::find($id);
-        return view('location.show',compact('location'));
+        if (Auth::check()) {
+            $location = Location::find($id);
+            return view('location.show', compact('location'));
+        }
+        else
+            return view('errors.permission');
     }
 
     /**
@@ -76,8 +91,11 @@ class LocationController extends Controller
      */
     public function edit($id)
     {
-        $location = Location::find($id);
-        return view('location.edit',compact('location'));
+        if (Auth::check()) {
+            $location = Location::find($id);
+            return view('location.edit', compact('location'));
+        }else
+            return view('errors.permission');
     }
 
     /**
@@ -89,16 +107,19 @@ class LocationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'description' => 'required',
-            'x' => 'required',
-            'y' => 'required',
-        ]);
+        if (Auth::check()) {
+            $this->validate($request, [
+                'name' => 'required',
+                'description' => 'required',
+                'x' => 'required',
+                'y' => 'required',
+            ]);
 
-        Location::find($id)->update($request->all());
-        return redirect()->route('location.index')
-            ->with('success','location updated successfully');
+            Location::find($id)->update($request->all());
+            return redirect()->route('location.index')
+                ->with('success', 'location updated successfully');
+        } else
+            return view('errors.permission');
     }
 
     /**
@@ -109,8 +130,11 @@ class LocationController extends Controller
      */
     public function destroy($id)
     {
-        Location::find($id)->delete();
-        return redirect()->route('location.index')
-            ->with('success','Location deleted successfully');
+        if (Auth::check()) {
+            Location::find($id)->delete();
+            return redirect()->route('location.index')
+                ->with('success', 'Location deleted successfully');
+        } else
+            return view('errors.permission');
     }
 }

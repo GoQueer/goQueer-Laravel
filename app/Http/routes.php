@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/login', array('uses' => 'HomeController@showLogin'));
+Route::post('/login', array('uses' => 'HomeController@doLogin'));
 Route::get('/', function () {
     return view('dashboard');
 });
@@ -26,12 +28,9 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 // route to show the login form
-//Route::get('/aa', array('uses' => 'HomeController@showLogin'));
 
 // route to process the form
-//Route::post('/login', array('uses' => 'HomeController@doLogin'));
-
-//Route::get('/logout', array('uses' => 'HomeController@doLogout'));
+Route::get('/logout', array('uses' => 'HomeController@doLogout'));
 
 Route::controllers([
     'auth' => 'Auth\AuthController',

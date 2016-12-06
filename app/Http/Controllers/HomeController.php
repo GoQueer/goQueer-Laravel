@@ -36,6 +36,7 @@ class HomeController extends Controller
 
     public function doLogin()
     {
+
         $rules = array(
             'email'    => 'required|email', // make sure the email is an actual email
             'password' => 'required|alphaNum|min:3' // password can only be alphanumeric and has to be greater than 3 characters
