@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('dashboard')
 
-@section('content')
+@section('section')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -65,6 +65,8 @@
                                 @endif
                             </div>
                         </div>
+
+
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

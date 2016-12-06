@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
 {
@@ -30,7 +31,7 @@ class HomeController extends Controller
     public function showLogin()
     {
         // show the form
-        return View::make('login');
+        return view('dashboard');
     }
 
     public function doLogin()
@@ -55,7 +56,7 @@ class HomeController extends Controller
                 'email' => Input::get('email'),
                 'password' => Input::get('password')
             );
-
+            echo 'Not Yet!';
             // attempt to do the login
             if (Auth::attempt($userdata)) {
                 // validation successful!
@@ -65,7 +66,7 @@ class HomeController extends Controller
                 echo 'SUCCESS!';
             } else {
                 // validation not successful, send back to form
-                return Redirect::to('dashboard');
+                return Redirect::to('/documentation');
             }
         }
     }

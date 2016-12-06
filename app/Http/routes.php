@@ -26,9 +26,14 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 // route to show the login form
-Route::get('/signin', array('uses' => 'HomeController@showLogin'));
+//Route::get('/aa', array('uses' => 'HomeController@showLogin'));
 
 // route to process the form
-Route::post('/login', array('uses' => 'HomeController@doLogin'));
+//Route::post('/login', array('uses' => 'HomeController@doLogin'));
 
-Route::get('/logout', array('uses' => 'HomeController@doLogout'));
+//Route::get('/logout', array('uses' => 'HomeController@doLogout'));
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
