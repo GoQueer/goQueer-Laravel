@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration {
 			$table->boolean('seen')->default(false);
 			$table->boolean('valid')->default(false);
 			$table->boolean('confirmed')->default(false);
+			// required for Laravel 4.1.26
 			$table->string('confirmation_code')->nullable();
 			$table->timestamps();
 			$table->rememberToken();			

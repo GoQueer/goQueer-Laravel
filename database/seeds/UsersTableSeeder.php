@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
             'id'=> '1',
             'username' => 'bamdad',
             'email' => 'bamdad.ag@gmail.com',
-            'password' => '1234',
+            'password' => Hash::make('1234'),
             'role_id' => '1',
         ]);
     }

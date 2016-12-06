@@ -21,3 +21,14 @@ Route::get('/documentation', function () {
 Route::resource('location','LocationController');
 Route::resource('media','MediaController');
 Route::resource('location_media','LocationMediaController');
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+// route to show the login form
+Route::get('/signin', array('uses' => 'HomeController@showLogin'));
+
+// route to process the form
+Route::post('/login', array('uses' => 'HomeController@doLogin'));
+
+Route::get('/logout', array('uses' => 'HomeController@doLogout'));
