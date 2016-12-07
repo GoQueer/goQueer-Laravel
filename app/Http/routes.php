@@ -25,7 +25,7 @@ Route::get('/charts', function () {
     return view('errors.underConstruction')->with('email',Auth::user()->email);
 });
 Route::get('/forms', function () {
-    return view('errors.underConstruction');
+    return view('auth.register');
 });
 Route::resource('location','LocationController');
 Route::resource('media','MediaController');

@@ -41,11 +41,11 @@
                 {!! Form::text('source', null, array('placeholder' => 'Source','class' => 'form-control')) !!}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12" style="visibility: hidden">
-            <div class="form-group">
-                {{ Form::hidden('user_id', '1', array('id' => 'user_id')) }}
-            </div>
-        </div>
+        {{--<div class="col-xs-12 col-sm-12 col-md-12" style="visibility: hidden">--}}
+            {{--<div class="form-group">--}}
+                {{--{{ Form::hidden('user_id', '1', array('id' => 'user_id')) }}--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Address:</strong>

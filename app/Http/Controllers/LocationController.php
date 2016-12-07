@@ -24,7 +24,7 @@ class LocationController extends Controller
     {
         if (Auth::check()) {
 
-        $locations = Location::orderBy('id','DESC')->paginate(5);
+        $locations = Location::orderBy('id','DESC')->where('user_id',Auth::id())->paginate(5);
         return view('location.index',compact('locations'))
             ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
         } else
@@ -60,7 +60,17 @@ class LocationController extends Controller
                 'name' => 'required',
             ]);
 
-            Location::create($request->all());
+            \DB::table('location')->insert(
+                [
+                    'x' => $request->x,
+                    'y' => $request->y,
+                    'diameter' => $request->diameter,
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'user_id' => Auth::id(),
+                    'created_at' => 1
+                ]
+            );
             return redirect()->route('location.index')
                 ->with('success', 'Location added successfully')->with('email',Auth::user()->email);
         }else

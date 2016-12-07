@@ -25,7 +25,7 @@ class MediaController extends Controller
     public function index(Request $request)
     {
         if (Auth::check()) {
-            $medias = Media::orderBy('id', 'DESC')->paginate(5);
+            $medias = Media::orderBy('id', 'DESC')->where('user_id',Auth::id())->paginate(5);
             return view('media.index', compact('medias'))
                 ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
         } else
@@ -68,7 +68,7 @@ class MediaController extends Controller
                 'source' => 'required',
                 'address' => 'required',
                 'type_id' => 'required',
-                'user_id' => 'required',
+
             ]);
 
             $file = $request->file('file_name');
@@ -85,7 +85,7 @@ class MediaController extends Controller
                     'updated_at' => new \DateTime(),
                     'name' => $request->name,
                     'type_id' => $request->type_id,
-                    'user_id' => $request->user_id,]
+                    'user_id' => Auth::id()]
             );
 
 //        Media::create($request->all());

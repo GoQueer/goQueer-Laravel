@@ -42,11 +42,11 @@
 
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12" style="visibility: hidden">
-            <div class="form-group">
-                {{ Form::hidden('user_id', '1', array('id' => 'user_id')) }}
-            </div>
-        </div>
+            {{--<div class="col-xs-12 col-sm-12 col-md-12" style="visibility: hidden">--}}
+                {{--<div class="form-group">--}}
+                    {{--{{ Form::hidden('user_id', '1', array('id' => 'user_id')) }}--}}
+                {{--</div>--}}
+            {{--</div>--}}
         <div class="col-xs-2 col-sm-2 col-md-2">
             <div class="form-group">
                 <strong>Diameter:</strong>
