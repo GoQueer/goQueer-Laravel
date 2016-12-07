@@ -38,7 +38,7 @@
 
         <div class="container">
             <div class="content">
-                <div class="title">Be right back.</div>
+                <div class="title">Under Construction ;)</div>
             </div>
         </div>
 @endsection

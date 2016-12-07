@@ -18,11 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/documentation', function () {
-    return view('document.index');
+    return view('document.index')->with('email',Auth::user()->email);
 });
 
 Route::get('/charts', function () {
-    return view('errors.underConstruction');
+    return view('errors.underConstruction')->with('email',Auth::user()->email);
 });
 Route::get('/forms', function () {
     return view('errors.underConstruction');
