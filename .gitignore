@@ -4,6 +4,8 @@
 Homestead.yaml
 Homestead.json
 .env
+/.idea/
 /.idea/blade.xml
 /.idea/workspace.xml
 /.idea
+/public
