@@ -110,7 +110,7 @@
 
 
         var popup = L.popup();
-
+        var allcoordinates = new Array();
         function onMapClick(e) {
             popup
                     .setLatLng(e.latlng)
@@ -119,16 +119,20 @@
             var newMarker = new L.marker(e.latlng).addTo(mymap);
             document.getElementById("xCoordinate").value = e.latlng.lat;
             document.getElementById("yCoordinate").value = e.latlng.lng;
-            L.circle([e.latlng.lat, e.latlng.lng], 500, {
+            L.circle([e.latlng.lat, e.latlng.lng], 50, {
                 color: 'blue',
                 fillColor: '#f03',
                 fillOpacity: 0.5
             }).addTo(mymap).bindPopup("I am a circle.");
-            L.polygon([
-                [e.latlng.lat, e.latlng.lng],
-                [51.503, -0.06],
-                [51.51, -0.047]
-            ]).addTo(mymap).bindPopup("I am a polygon.");
+            var coordinates = new Array(e.latlng.lat, e.latlng.lng);
+            allcoordinates.push(coordinates);
+            L.polygon(allcoordinates)
+//            L.polygon([
+//                [e.latlng.lat, e.latlng.lng],
+//                [51.503, -0.06],
+//                [51.51, -0.047]
+//            ])
+            .addTo(mymap).bindPopup("I am a polygon.");
         }
 
         mymap.on('click', onMapClick);
