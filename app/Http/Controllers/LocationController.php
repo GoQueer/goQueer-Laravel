@@ -26,7 +26,7 @@ class LocationController extends Controller
 
         $locations = Location::orderBy('id','DESC')->paginate(5);
         return view('location.index',compact('locations'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+            ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -39,7 +39,7 @@ class LocationController extends Controller
     public function create()
     {
         if (Auth::check()) {
-            return view('location.create');
+            return view('location.create')->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -62,7 +62,7 @@ class LocationController extends Controller
 
             Location::create($request->all());
             return redirect()->route('location.index')
-                ->with('success', 'Location added successfully');
+                ->with('success', 'Location added successfully')->with('email',Auth::user()->email);
         }else
             return view('errors.permission');
     }
@@ -77,7 +77,7 @@ class LocationController extends Controller
     {
         if (Auth::check()) {
             $location = Location::find($id);
-            return view('location.show', compact('location'));
+            return view('location.show', compact('location'))->with('email',Auth::user()->email);
         }
         else
             return view('errors.permission');
@@ -93,7 +93,7 @@ class LocationController extends Controller
     {
         if (Auth::check()) {
             $location = Location::find($id);
-            return view('location.edit', compact('location'));
+            return view('location.edit', compact('location'))->with('email',Auth::user()->email);
         }else
             return view('errors.permission');
     }
@@ -117,7 +117,7 @@ class LocationController extends Controller
 
             Location::find($id)->update($request->all());
             return redirect()->route('location.index')
-                ->with('success', 'location updated successfully');
+                ->with('success', 'location updated successfully')->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -133,7 +133,7 @@ class LocationController extends Controller
         if (Auth::check()) {
             Location::find($id)->delete();
             return redirect()->route('location.index')
-                ->with('success', 'Location deleted successfully');
+                ->with('success', 'Location deleted successfully')->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }

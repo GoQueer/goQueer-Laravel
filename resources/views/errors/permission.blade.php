@@ -38,7 +38,7 @@
 
         <div class="container">
             <div class="content">
-                <div class="title">Please <a href="{{ url ('/login') }}"> Log in</a></div>
+                <div class="title">Please <a href="{{ url ('/login') }}"> Log In</a> First</div>
                 <div class="description">or you can register <a href="{{ url ('/register') }}"> here</a></div>
             </div>
         </div>

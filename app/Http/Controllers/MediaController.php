@@ -27,7 +27,7 @@ class MediaController extends Controller
         if (Auth::check()) {
             $medias = Media::orderBy('id', 'DESC')->paginate(5);
             return view('media.index', compact('medias'))
-                ->with('i', ($request->input('page', 1) - 1) * 5);
+                ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -43,7 +43,7 @@ class MediaController extends Controller
 //        $types = MediaType::lists('name','id');
             $locations = Location::lists('name', 'id');
             $types = MediaType::lists('name', 'id');
-            return view('media.create', compact('id', 'types'));
+            return view('media.create', compact('id', 'types'))->with('email',Auth::user()->email);
 //        $models = $->models();
 //        return Response::eloquent($models->get(['id','name']));
 //        return View::make('media.create')->with('locations', $locations)->with('types',$types);
@@ -90,7 +90,7 @@ class MediaController extends Controller
 
 //        Media::create($request->all());
             return redirect()->route('media.index')
-                ->with('success', 'Media added successfully');
+                ->with('success', 'Media added successfully')->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -105,7 +105,7 @@ class MediaController extends Controller
     {
         if (Auth::check()) {
             $media = Media::find($id);
-            return view('media.show', compact('media'));
+            return view('media.show', compact('media'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -120,7 +120,7 @@ class MediaController extends Controller
     {
         if (Auth::check()) {
             $media = Media::find($id);
-            return view('media.edit', compact('media'));
+            return view('media.edit', compact('media'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -144,7 +144,7 @@ class MediaController extends Controller
 
             Media::find($id)->update($request->all());
             return redirect()->route('media.index')
-                ->with('success', 'Media updated successfully');
+                ->with('success', 'Media updated successfully')->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -160,7 +160,7 @@ class MediaController extends Controller
         if (Auth::check()) {
             Media::find($id)->delete();
             return redirect()->route('media.index')
-                ->with('success', 'Media deleted successfully');
+                ->with('success', 'Media deleted successfully')->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }

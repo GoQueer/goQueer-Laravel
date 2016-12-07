@@ -14,11 +14,18 @@
 Route::get('/login', array('uses' => 'HomeController@showLogin'));
 Route::post('/login', array('uses' => 'HomeController@doLogin'));
 Route::get('/', function () {
-    return view('dashboard');
+    return view('dashboard',['email' => 'James']);
 });
 
 Route::get('/documentation', function () {
     return view('document.index');
+});
+
+Route::get('/charts', function () {
+    return view('errors.underConstruction');
+});
+Route::get('/forms', function () {
+    return view('errors.underConstruction');
 });
 Route::resource('location','LocationController');
 Route::resource('media','MediaController');
