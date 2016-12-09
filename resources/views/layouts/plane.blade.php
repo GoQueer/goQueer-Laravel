@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset("assets/stylesheets/styles.css") }}" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.7/leaflet.draw-src.js"></script>
 
 </head>
 <body>

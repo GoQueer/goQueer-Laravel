@@ -111,33 +111,48 @@
 
         var popup = L.popup();
         var allcoordinates = new Array();
+        var lastPolygon ;
+        var markers = new L.FeatureGroup();
         function onMapClick(e) {
+//            console.log(e);
+            mymap.removeLayer(markers);
             popup
                     .setLatLng(e.latlng)
                     .setContent("You clicked the map at " + e.latlng.toString())
                     .openOn(mymap);
-            var newMarker = new L.marker(e.latlng).addTo(mymap);
+            var newMarker = new L.marker(e.latlng);
+            markers.addLayer(newMarker);
             document.getElementById("xCoordinate").value = e.latlng.lat;
             document.getElementById("yCoordinate").value = e.latlng.lng;
-            L.circle([e.latlng.lat, e.latlng.lng], 50, {
-                color: 'blue',
-                fillColor: '#f03',
-                fillOpacity: 0.5
-            }).addTo(mymap).bindPopup("I am a circle.");
             var coordinates = new Array(e.latlng.lat, e.latlng.lng);
             allcoordinates.push(coordinates);
-            L.polygon(allcoordinates)
-//            L.polygon([
-//                [e.latlng.lat, e.latlng.lng],
-//                [51.503, -0.06],
-//                [51.51, -0.047]
-//            ])
-            .addTo(mymap).bindPopup("I am a polygon.");
+            lastPolygon = L.polygon(allcoordinates);
+            markers.addLayer(lastPolygon)
+            //lastPolygon.addTo(mymap);
+            mymap.addLayer(markers);
         }
 
         mymap.on('click', onMapClick);
 
+        // create a map in the "map" div, set the view to a given place and zoom
+        var map = L.map('map').setView([175.30867, -37.77914], 13);
 
+        // add an OpenStreetMap tile layer
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Initialize the FeatureGroup to store editable layers
+        var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        // Initialize the draw control and pass it the FeatureGroup of editable layers
+        var drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems
+            }
+        });
+        map.addControl(drawControl);
 /*
         var greenIcon = L.icon({
             iconUrl: 'leaf-green.png',
