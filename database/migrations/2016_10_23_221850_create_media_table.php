@@ -20,7 +20,7 @@ class CreateMediaTable extends Migration
             $table->text('name');
             $table->text('description');
             $table->text('filePath');
-            $table->integer('copyRightStatus_id')->unsigned();
+            $table->integer('copyright_status_id')->unsigned();
             $table->integer('type_id')->unsigned();
             $table->integer('user_id')->unsigned();
         });
@@ -30,6 +30,9 @@ class CreateMediaTable extends Migration
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
             $table->foreign('type_id')->references('id')->on('media_type')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('copyright_status_id')->references('id')->on('copyright_status')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -47,6 +50,7 @@ class CreateMediaTable extends Migration
         Schema::table('media', function (Blueprint $table) {
             $table->dropForeign('media_user_id_foreign');
             $table->dropForeign('media_type_id_foreign');
+            $table->dropForeign('media_copyright_status_id_foreign');
         });
 
         Schema::drop('media');

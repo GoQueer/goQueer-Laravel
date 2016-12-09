@@ -14,20 +14,26 @@
     <div class="row">
         <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
-                <strong>Source</strong>
+                <strong>Source:</strong>
                 {{ $media->source }}
             </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
-                <strong>Address:</strong>
-                {{ $media->address }}
+                <strong>Description:</strong>
+                {{ $media->description }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
                 {{ $media->name }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>File Path:</strong>
+                {{ $media->filePath }}
             </div>
         </div>
     </div>

@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CopyrightStatus;
 use App\Models\Location;
 use App\Models\Message;
 use App\Models\Media;
@@ -44,7 +45,8 @@ class MediaController extends Controller
 //        $types = MediaType::lists('name','id');
             $locations = Location::lists('name', 'id');
             $types = MediaType::lists('name', 'id');
-            return view('media.create', compact('id', 'types'))->with('email',Auth::user()->email);
+            $statuses = CopyrightStatus::lists('status', 'id');
+            return view('media.create', compact('id', 'types','statuses'))->with('email',Auth::user()->email);
 //        $models = $->models();
 //        return Response::eloquent($models->get(['id','name']));
 //        return View::make('media.create')->with('locations', $locations)->with('types',$types);

@@ -29,6 +29,13 @@
                 {!! Form::select('type_id', $types, null, ['class' => 'form-control']) !!}
             </div>
         </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div  class="form-group">
+                {!! Form::Label('status', 'Copyright Status:') !!}
+                {!! Form::select('status_id', $statuses, null, ['class' => 'form-control']) !!}
+            </div>
+        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Title:</strong>
@@ -48,8 +55,8 @@
         {{--</div>--}}
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Address:</strong>
-                {!! Form::textarea('address', null, array('placeholder' => 'Address','class' => 'form-control','style'=>'height:100px')) !!}
+                <strong>Description:</strong>
+                {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
             </div>
         </div>
 

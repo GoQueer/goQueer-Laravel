@@ -16,7 +16,8 @@ class MediaTableSeeder extends Seeder
             'source' => 'Library',
             'description' => 'what was said a long time ago',
             'name' => 'Transcript',
-            'filePath' => 'c:\xamp\a.txt',
+            'filePath' => 'c:\xampp\a.txt',
+            'copyright_status_id' => 1,
             'type_id' => 1,
             'user_id' => 1,
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCopyrightTable extends Migration
+class CreateCopyrightStatusTable extends Migration
 {
     /**
      * Run the migrations.
