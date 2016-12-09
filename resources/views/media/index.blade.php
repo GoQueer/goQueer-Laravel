@@ -21,7 +21,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Source</th>
-            <th>Address</th>
+            <th>Description</th>
             <th>File Name</th>
             <th width="200px">Action</th>
         </tr>
@@ -30,7 +30,7 @@
                 <td>{{ ++$i }}</td>
                 <td>{{ $media->name }}</td>
                 <td>{{ $media->source }}</td>
-                <td>{{ $media->address }}</td>
+                <td>{{ $media->description }}</td>
                 <td>{{ $media->filePath }}</td>
 
                 <td>

@@ -98,9 +98,9 @@
     @endif
     <div class="row">
             <div class="col-lg-12 margin-tb">
-                <div class="form-group">
-                    <strong>Select the Coordinate:</strong>
-                    <div id="mapid1" style="width: 100%; height: 600px;"></div>
+                <div class="form-group" >
+                    <strong>Select the Area:</strong>
+                    <div id="mapid1" style="width: 100%; height: 600px;border: 2px solid black"></div>
                 </div>
         </div>
     </div>
@@ -119,45 +119,37 @@
 
 
     <div class="row">
-            {{--<div class="col-xs-12 col-sm-12 col-md-12" style="visibility: hidden">--}}
-                {{--<div class="form-group">--}}
-                    {{--{{ Form::hidden('user_id', '1', array('id' => 'user_id')) }}--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        <div class="col-xs-2 col-sm-2 col-md-2">
+
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-                <strong>Diameter:</strong>
-                {!! Form::text('diameter', null, array('placeholder' => 'Diameter','class' => 'form-control')) !!}
+                <strong>Title:</strong>
+                {!! Form::text('name', null, array('placeholder' => 'Enter the name of the place','class' => 'form-control')) !!}
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-                <strong>Title:</strong>
-                {!! Form::text('name', null, array('placeholder' => 'Title','class' => 'form-control')) !!}
+                <strong>Address:</strong>
+                {!! Form::text('address', null, array('placeholder' => 'Enter the full address here','class' => 'form-control')) !!}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Description:</strong>
-                {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
+                {!! Form::textarea('description', null, array('placeholder' => 'Enter additional information','class' => 'form-control','style'=>'height:100px')) !!}
             </div>
         </div>
 
-        <div class="col-xs-4 col-sm-4 col-md-4">
+        <div class="col-xs-8 col-sm-8 col-md-8">
             <div class="form-group">
-                <strong>X:</strong>
-                {!! Form::text('x', null, array('placeholder' => 'X','class' => 'form-control','id'=>'xCoordinate','readonly    php ')) !!}
+                <strong>Coordinates:</strong>
+                {!! Form::text('coordinates', null, array('placeholder' => 'Selected Coordinates','class' => 'form-control','id'=>'coordinates','readonly    php ')) !!}
             </div>
         </div>
 
-        <div class="col-xs-4 col-sm-4 col-md-4">
-            <div class="form-group">
-                <strong>Y:</strong>
-                {!! Form::text('y', null, array('placeholder' => 'Y','class' => 'form-control','id' => 'yCoordinate','readonly')) !!}
-            </div>
-        </div>
+
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -171,18 +163,18 @@
 
     <script>
 
-//        var mymap = L.map('mapid1').setView([53.523631, -113.5335], 9);
     var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">Go Queer</a>',
         osm = L.tileLayer(osmUrl, { maxZoom: 18, attribution: osmAttrib }),
         map = new L.Map('mapid1', { center: new L.LatLng(53.523631, -113.5335), zoom: 11 }),
-        drawnItems = L.featureGroup().addTo(map);
-        L.control.layers({'osm': osm.addTo(map), "google": L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}',
-        {
-            attribution: 'google'
-        })
-        }, { 'drawlayer': drawnItems }, { position: 'topleft', collapsed: false }).addTo(map);
-        map.addControl(new L.Control.Draw({
+    drawnItems = L.featureGroup().addTo(map);
+    L.control.layers({'osm': osm.addTo(map), "google": L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}',
+            {
+                attribution: 'google'
+            })}, { 'drawlayer': drawnItems },
+            { position: 'topleft', collapsed: false }
+        ).addTo(map);
+    map.addControl(new L.Control.Draw({
         edit: {
             featureGroup: drawnItems,
             poly: {
@@ -195,10 +187,9 @@
                 showArea: true
             }
         }
-        }));
+    }));
     map.on(L.Draw.Event.CREATED, function (event) {
         var layer = event.layer;
-
         drawnItems.addLayer(layer);
     });
 

@@ -21,8 +21,7 @@
             <th>No</th>
             <th>Title</th>
             <th>Description</th>
-            <th>X</th>
-            <th>Y</th>
+            <th>Coordinates</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($locations as $key => $location)
@@ -30,8 +29,8 @@
                 <td>{{ $location->id }}</td>
                 <td>{{ $location->name }}</td>
                 <td>{{ $location->description }}</td>
-                <td>{{ $location->x }}</td>
-                <td>{{ $location->y }}</td>
+                <td>{{ $location->coordinate }}</td>
+
                 <td>
                     <a class="btn btn-info" href="{{ route('location.show',$location->id) }}">Show</a>
                     <a class="btn btn-success" href="{{ route('location_media.show',$location->id) }}">Assign</a>

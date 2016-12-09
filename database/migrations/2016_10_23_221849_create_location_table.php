@@ -15,16 +15,15 @@ class CreateLocationTable extends Migration
         Schema::create('location', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->double('x');
-            $table->double('diameter');
-            $table->double('y');
+            $table->text('coordinate');
             $table->text('name');
             $table->text('description');
+            $table->text('address');
             $table->integer('user_id')->unsigned();
         });
 
         Schema::table('location', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users')
+            $table->foreign('user_id')->references('id')->on('user')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
 

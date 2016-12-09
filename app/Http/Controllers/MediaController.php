@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Location;
+use App\Models\Message;
 use App\Models\Media;
 use App\Models\MediaType;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ class MediaController extends Controller
     public function index(Request $request)
     {
         if (Auth::check()) {
-            $medias = Media::orderBy('id', 'DESC')->where('user_id',Auth::id())->paginate(5);
+            $medias = Media::orderBy('id', 'DESC')->paginate(5);
             return view('media.index', compact('medias'))
                 ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
         } else
@@ -79,7 +80,7 @@ class MediaController extends Controller
 
             DB::table('media')->insert(
                 ['source' => $request->source,
-                    'address' => $request->address,
+                    'description' => $request->description,
                     'filePath' => $filePath,
                     'created_at' => new \DateTime(),
                     'updated_at' => new \DateTime(),
@@ -105,7 +106,15 @@ class MediaController extends Controller
     {
         if (Auth::check()) {
             $media = Media::find($id);
-            return view('media.show', compact('media'))->with('email',Auth::user()->email)->with('media_id',$id);
+            $comments = Message::orderBy('id','DESC')->where('media_id',$id)->paginate(5);
+            $comments = DB::table('message')
+                ->join('user', 'user.id', '=', 'message.user_id')
+
+                ->select('message.*', 'user.name')
+                ->get();
+//            var_dump($comments);
+
+            return view('media.show', compact('media','comments'))->with('email',Auth::user()->email)->with('media_id',$id);
         } else
             return view('errors.permission');
     }

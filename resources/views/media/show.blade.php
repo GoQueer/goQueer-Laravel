@@ -40,9 +40,25 @@
     <br>
     <br>
     <hr/>
-    {!! Form::open(array('action' => 'CommentController@store','method'=>'POST')) !!}
+
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Sender</th>
+            <th>Content</th>
+        </tr>
+        @foreach ($comments as $key => $comment)
+            <tr>
+                <td width="30px">{{ $comment->id }}</td>
+                <td width="50px">{{ $comment->name }}</td>
+                <td>{{ $comment->content }}</td>
+                {{--<td>hii</td>--}}
+            </tr>
+        @endforeach
+    </table>
 
 
+    {!! Form::open(array('action' => 'MessageController@store','method'=>'POST')) !!}
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12" style="visibility: hidden">
         <div class="form-group">
@@ -58,12 +74,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-block">Send</button>
-
         </div>
-
-
-
-
     </div>
     {!! Form::close() !!}
 

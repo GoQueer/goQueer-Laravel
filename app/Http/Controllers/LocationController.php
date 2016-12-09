@@ -54,21 +54,19 @@ class LocationController extends Controller
     {
         if (Auth::check()) {
             $this->validate($request, [
-                'x' => 'required|numeric',
-                'y' => 'required|numeric',
-                'diameter' => 'required|numeric',
+                'coordinates' => 'required',
+                'address' => 'required',
                 'name' => 'required',
             ]);
 
             \DB::table('location')->insert(
                 [
-                    'x' => $request->x,
-                    'y' => $request->y,
-                    'diameter' => $request->diameter,
+                    'coordinates' => $request->coordinates,
+                    'address' => $request->address,
                     'name' => $request->name,
                     'description' => $request->description,
                     'user_id' => Auth::id(),
-                    'created_at' => 1
+                    'created_at' => new DateTime('now')
                 ]
             );
             return redirect()->route('location.index')

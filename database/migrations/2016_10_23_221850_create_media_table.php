@@ -17,15 +17,16 @@ class CreateMediaTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->text('source');
-            $table->text('address');
             $table->text('name');
+            $table->text('description');
             $table->text('filePath');
+            $table->integer('copyRightStatus_id')->unsigned();
             $table->integer('type_id')->unsigned();
             $table->integer('user_id')->unsigned();
         });
 
         Schema::table('media', function(Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users')
+            $table->foreign('user_id')->references('id')->on('user')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
             $table->foreign('type_id')->references('id')->on('media_type')

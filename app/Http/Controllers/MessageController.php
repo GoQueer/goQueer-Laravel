@@ -8,11 +8,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CommentController extends Controller
+class MessageController extends Controller
 {
 
     /**
@@ -58,15 +59,16 @@ class CommentController extends Controller
                 'media_id' => 'required',
             ]);
 
-            \DB::table('comment')->insert(
+            \DB::table('message')->insert(
                 [
                     'content' => $request->message,
+                    'created_at' => new \DateTime('now'),
                     'media_id' => $request->media_id,
                     'user_id' => Auth::id()
                 ]
             );
-            return redirect()->route('media.index')
-                ->with('success', 'comment added successfully')->with('email',Auth::user()->email);
+            return redirect()->route('media.show',[$request->media_id])
+                ->with('success', 'comment posted successfully')->with('email',Auth::user()->email);
         }else
             return view('errors.permission');
     }
@@ -80,8 +82,9 @@ class CommentController extends Controller
     public function show($id)
     {
         if (Auth::check()) {
+
             $location = Location::find($id);
-            return view('location.show', compact('location'))->with('email',Auth::user()->email);
+            return view('location.show', compact(['location'=> $location,'comments'=> $comments]))->with('email',Auth::user()->email);
         }
         else
             return view('errors.permission');

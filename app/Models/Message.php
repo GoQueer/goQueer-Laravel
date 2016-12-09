@@ -3,13 +3,13 @@
 use Illuminate\Database\Eloquent\Model;
 
 
-class Media extends Model
+class Message extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'media';
-    public $fillable = ['source','description','type_id','user_id','name','filePath'];
+    protected $table = 'message';
+    public $fillable = ['body','title','location_id','parent_message_id','user_id'];
 }

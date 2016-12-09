@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
-        DB::table('users')->insert([
+        DB::table('user')->insert([
             'id'=> '1',
             'name' => 'aaa',
             'email' => 'aaa@gmail.com',
@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
             'role_id' => '2',
         ]);
 
-        DB::table('users')->insert([
+        DB::table('user')->insert([
             'id'=> '2',
             'name' => 'bbb',
             'email' => 'bbb@gmail.com',

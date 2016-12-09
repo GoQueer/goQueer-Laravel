@@ -29,7 +29,7 @@ Route::get('/forms', function () {
 });
 Route::resource('location','LocationController');
 Route::resource('media','MediaController');
-Route::resource('comment','CommentController');
+Route::resource('message','MessageController');
 Route::resource('location_media','LocationMediaController');
 Route::auth();
 
