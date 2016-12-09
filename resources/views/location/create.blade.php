@@ -173,12 +173,11 @@
 
 //        var mymap = L.map('mapid1').setView([53.523631, -113.5335], 9);
     var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">Go Queer</a>',
         osm = L.tileLayer(osmUrl, { maxZoom: 18, attribution: osmAttrib }),
         map = new L.Map('mapid1', { center: new L.LatLng(53.523631, -113.5335), zoom: 11 }),
         drawnItems = L.featureGroup().addTo(map);
-    L.control.layers({'osm': osm.addTo(map),
-        "google": L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}',
+        L.control.layers({'osm': osm.addTo(map), "google": L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}',
         {
             attribution: 'google'
         })
@@ -209,14 +208,6 @@
 //            attribution: 'Go Queer &copy;' ,
 //            id: 'mapbox.streets'
 //        }).addTo(mymap);
-//
-//
-//
-//
-//
-//
-//
-//
 //        var popup = L.popup();
 //        var allcoordinates = new Array();
 //        var lastPolygon ;

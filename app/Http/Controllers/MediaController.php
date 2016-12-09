@@ -105,7 +105,7 @@ class MediaController extends Controller
     {
         if (Auth::check()) {
             $media = Media::find($id);
-            return view('media.show', compact('media'))->with('email',Auth::user()->email);
+            return view('media.show', compact('media'))->with('email',Auth::user()->email)->with('media_id',$id);
         } else
             return view('errors.permission');
     }

@@ -11,12 +11,21 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+
         DB::table('users')->insert([
             'id'=> '1',
-            'name' => 'bamdad',
-            'email' => 'bamdad.ag@gmail.com',
-            'password' => Hash::make('1234'),
-            'role_id' => '1',
+            'name' => 'aaa',
+            'email' => 'aaa@gmail.com',
+            'password' => Hash::make('123456'),
+            'role_id' => '2',
+        ]);
+
+        DB::table('users')->insert([
+            'id'=> '2',
+            'name' => 'bbb',
+            'email' => 'bbb@gmail.com',
+            'password' => Hash::make('123456'),
+            'role_id' => '2',
         ]);
     }
 }
