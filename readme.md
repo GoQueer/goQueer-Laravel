@@ -27,7 +27,7 @@ password: 123456
 
 ### Include ###
 
-* [HTML5 Boilerplate](http://html5boilerplate.com) for front architecture
+
 * [Bootstrap](http://getbootstrap.com) for CSS and jQuery plugins
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome) for the nice icons
 * [Leaflet](http://leaflet.com) the great map drawing and layer creating tool 
@@ -37,6 +37,7 @@ password: 123456
 
 * Home page
 * Custom Error Page 404
+* Under Construction Error
 * Authentication (registration, login, logout, password reset, mail confirmation, throttle)
 * Add Media
 * Define Locations/Polygons on maps
