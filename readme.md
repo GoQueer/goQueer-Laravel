@@ -13,14 +13,15 @@
 * `php artisan key:generate`
 * `php artisan migrate --seed` to create and populate tables
 * `php artisan serve` to start the app on http://localhost:8000/
-* open localhost:8000 on your browser and enjoy!
+* open localhost:8000 on your browser and enjoy! (only Location and Media section of the website work )
 * You can use any of below credentials to login or make your own user by 
  click on register from left column.
-username: aaa@gmail.com
+* username: aaa@gmail.com
 password: 123456
 
-username: bbb@gmail.com
+* username: bbb@gmail.com
 password: 123456
+
 
 
 
