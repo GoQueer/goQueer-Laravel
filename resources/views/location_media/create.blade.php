@@ -64,7 +64,7 @@
 
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div  class="form-group">
-                {!! Form::Label('type', 'Media:') !!}
+                {!! Form::Label('type', 'Select the Media Associated with current Location:') !!}
                 {!! Form::select('media_id', $medias, null, ['class' => 'form-control']) !!}
             </div>
         </div>

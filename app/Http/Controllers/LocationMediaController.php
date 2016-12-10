@@ -69,7 +69,7 @@ class LocationMediaController extends Controller
                 'media_id' => $request->media_id,
                 ]
         );
-        return redirect()->route('location.index')
+        return redirect()->route('location_media.show',[$request->location_id])
             ->with('success','Media Assigned successfully');
     }
 
