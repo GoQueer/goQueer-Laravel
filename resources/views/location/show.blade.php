@@ -14,14 +14,14 @@
     <div class="row">
         <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
-                <strong>X:</strong>
-                {{ $location->x }}
+                <strong>Coordinates:</strong>
+                {{ $location->coordinate }}
             </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
-                <strong>Y:</strong>
-                {{ $location->y }}
+                <strong>Address:</strong>
+                {{ $location->address }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

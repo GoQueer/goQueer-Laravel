@@ -68,9 +68,10 @@ class MediaController extends Controller
     {
         if (Auth::check()) {
             $this->validate($request, [
+
                 'source' => 'required',
-                'address' => 'required',
                 'type_id' => 'required',
+                'description' => 'required',
 
             ]);
 
@@ -88,6 +89,7 @@ class MediaController extends Controller
                     'updated_at' => new \DateTime(),
                     'name' => $request->name,
                     'type_id' => $request->type_id,
+                    'copyright_status_id' => $request->status_id,
                     'user_id' => Auth::id()]
             );
 

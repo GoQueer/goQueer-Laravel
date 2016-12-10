@@ -46,17 +46,24 @@
     <br>
     <br>
     <hr/>
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="text-center">
+                <h3> Comments</h3>
+            </div>
 
+        </div>
+    </div>
     <table class="table table-bordered">
         <tr>
-            <th>ID</th>
-            <th>Sender</th>
+            <th>Time</th>
+            <th>Sender's Name</th>
             <th>Content</th>
         </tr>
         @foreach ($comments as $key => $comment)
             <tr>
-                <td width="30px">{{ $comment->id }}</td>
-                <td width="50px">{{ $comment->name }}</td>
+                <td width="100px">{{ $comment->created_at }}</td>
+                <td width="150px">{{ $comment->name }}</td>
                 <td>{{ $comment->content }}</td>
                 {{--<td>hii</td>--}}
             </tr>
