@@ -9,13 +9,18 @@
 * `git clone https://github.com/bamzy/goQueer2.git projectname`
 * `cd projectname`
 * `composer install`
+* Create a local database/username/password and rename *.env.example* into *.env* and update the content by setting DB_DATABASE,DB_USERNAME,DB_PASSWORD to right value
 * `php artisan key:generate`
-* Create a local database and update *.env* by setting DB_CONNECTION,DB_HOST,DB_PORT,DB_DATABASE,DB_USERNAME,DB_PASSWORD
 * `php artisan migrate --seed` to create and populate tables
-* Inform *config/mail.php* for email sends
-* `php artisan vendor:publish` to publish filemanager
 * `php artisan serve` to start the app on http://localhost:8000/
+* open localhost:8000 on your browser and enjoy!
+* You can use any of below credentials to login or make your own user by 
+ click on register from left column.
+username: aaa@gmail.com
+password: 123456
 
+username: bbb@gmail.com
+password: 123456
 
 
 
