@@ -55,6 +55,7 @@ class LocationController extends Controller
         if (Auth::check()) {
             $this->validate($request, [
 
+                'coordinate' => 'required',
                 'address' => 'required',
                 'name' => 'required',
             ]);
@@ -85,12 +86,6 @@ class LocationController extends Controller
     {
         if (Auth::check()) {
             $location = Location::find($id);
-//            JavaScript::put([
-//
-//                'coordinates' => $location->coordinates,
-//
-//            ]);
-
             return view('location.show', compact('location'))->with('email',Auth::user()->email);
         }
         else

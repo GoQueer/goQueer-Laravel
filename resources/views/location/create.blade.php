@@ -123,201 +123,58 @@
 
 
     <script>
-
-    var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">Go Queer</a>',
-        osm = L.tileLayer(osmUrl, { maxZoom: 18, attribution: osmAttrib }),
-        map = new L.Map('mapid1', { center: new L.LatLng(53.523631, -113.5335), zoom: 11 }),
-    drawnItems = L.featureGroup().addTo(map);
-    L.control.layers({'osm': osm.addTo(map), "google": L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}',
-            {
-                attribution: 'google'
-            })}, { 'drawlayer': drawnItems },
-            { position: 'topleft', collapsed: false }
-        ).addTo(map);
-    map.addControl(new L.Control.Draw({
-        edit: {
-            featureGroup: drawnItems,
-            poly: {
-                allowIntersection: false
+        var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">Go Queer</a>',
+            osm = L.tileLayer(osmUrl, { maxZoom: 18, attribution: osmAttrib }),
+            map = new L.Map('mapid1', { center: new L.LatLng(53.523631, -113.5335), zoom: 11 }),
+        drawnItems = L.featureGroup().addTo(map);
+        L.control.layers({'osm': osm.addTo(map), "google": L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}',
+                {
+                    attribution: 'google'
+                })}, { 'drawlayer': drawnItems },
+                { position: 'topleft', collapsed: false }
+            ).addTo(map);
+        map.addControl(new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems,
+                poly: {
+                    allowIntersection: false
+                }
+            },
+            draw: {
+                polygon: {
+                    allowIntersection: false,
+                    showArea: true
+                }
             }
-        },
-        draw: {
-            polygon: {
-                allowIntersection: false,
-                showArea: true
+        }));
+        map.on(L.Draw.Event.CREATED, function (event) {
+            var layer = event.layer;
+            drawnItems.addLayer(layer);
+        });
+        map.on('draw:edited', function (e) {
+            console.log('edited')
+        });
+        map.on('draw:deleted', function (e) {
+            document.getElementById("coordinates").value ="No Polygon Selected";
+        });
+        map.on('draw:created', function (e) {
+            var type = e.layerType,
+                    layer = e.layer;
+
+            if (type === 'polygon') {
+                // here you got the polygon points
+                var points = layer._latlngs;
+
+                // here you can get it in geojson format
+                var geojson = layer.toGeoJSON();
+                document.getElementById("coordinates").value = JSON.stringify(geojson);
+                console.log('hi');
             }
-        }
-    }));
-    map.on(L.Draw.Event.CREATED, function (event) {
-        var layer = event.layer;
-        drawnItems.addLayer(layer);
-    });
-
-
-//    function onMapClick(e) {
-//       console.log('hi');
-//        document.getElementById("coordinates").value += "(" + e.latlng.lat +"," + e.latlng.lng +")";
-//        document.getElementById("yCoordinate").value = e.latlng.lng;
-//        var coordinates = new Array(e.latlng.lat, e.latlng.lng);
-//    }
-//    map.on('click', onMapClick);
-
-//    map.on('draw:created', function (e) {
-//        console.log('created')
-//    })
-    map.on('draw:edited', function (e) {
-        console.log('edited')
-    });
-    map.on('draw:deleted', function (e) {
-        document.getElementById("coordinates").value ="No Polygon Selected";
-    });
-//    map.on('draw:created', function (e) {
-//        var type = e.layerType,
-//                layer = e.layer;
-//
-//        if (type === 'polygon') {
-//            var points = layer._latlngs;
-//            console.log(points);
-//            var geojson = layer.toGeoJSON();
-//            console.log(geojson);
-////            document.getElementById("coordinates").value = points;
-//            document.getElementById("coordinates").value = geojson.stringify();
-//        }
-//        drawnItems.addLayer(layer);
-//    });
-    map.on('draw:created', function (e) {
-        var type = e.layerType,
-                layer = e.layer;
-
-        if (type === 'polygon') {
-            // here you got the polygon points
-            var points = layer._latlngs;
-
-            // here you can get it in geojson format
-            var geojson = layer.toGeoJSON();
-            document.getElementById("coordinates").value = JSON.stringify(geojson);
-            console.log('hi');
-        }
-        // here you add it to a layer to display it in the map
-        drawnItems.addLayer(layer);
-    });
-
-
-
-    //        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
-//            maxZoom: 18,
-//            attribution: 'Go Queer &copy;' ,
-//            id: 'mapbox.streets'
-//        }).addTo(mymap);
-//        var popup = L.popup();
-//        var allcoordinates = new Array();
-//        var lastPolygon ;
-//        var markers = new L.FeatureGroup();
-//        function onMapClick(e) {
-//            mymap.removeLayer(markers);
-//            popup
-//                    .setLatLng(e.latlng)
-//                    .setContent("You clicked the map at " + e.latlng.toString())
-//                    .openOn(mymap);
-//            var newMarker = new L.marker(e.latlng);
-//            markers.addLayer(newMarker);
-//            document.getElementById("xCoordinate").value = e.latlng.lat;
-//            document.getElementById("yCoordinate").value = e.latlng.lng;
-//            var coordinates = new Array(e.latlng.lat, e.latlng.lng);
-//            allcoordinates.push(coordinates);
-//            lastPolygon = L.polygon(allcoordinates);
-//            markers.addLayer(lastPolygon)
-//            //lastPolygon.addTo(mymap);
-//            mymap.addLayer(markers);
-//        }
-//
-//        mymap.on('click', onMapClick);
-
-        // create a map in the "map" div, set the view to a given place and zoom
-        //var map = L.map('map').setView([175.30867, -37.77914], 13);
-
-        // add an OpenStreetMap tile layer
-//        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-//            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-//        }).addTo(mymap);
-//        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
-//            maxZoom: 18,
-//            attribution: 'Go Queer &copy;' ,
-//            id: 'mapbox.streets'
-//        }).addTo(mymap);
-
-        // Initialize the FeatureGroup to store editable layers
-//        var drawnItems = new L.FeatureGroup();
-//        mymap.addLayer(drawnItems);
-//
-//        // Initialize the draw control and pass it the FeatureGroup of editable layers
-//        var drawControl = new L.Control.Draw({
-//            edit: {
-//                featureGroup: drawnItems
-//            }
-//        });
-//        mymap.addControl(drawControl);
-/*
-        var greenIcon = L.icon({
-            iconUrl: 'leaf-green.png',
-            shadowUrl: 'leaf-shadow.png',
-
-            iconSize:     [38, 95], // size of the icon
-            shadowSize:   [50, 64], // size of the shadow
-            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-            shadowAnchor: [4, 62],  // the same for the shadow
-            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            // here you add it to a layer to display it in the map
+            drawnItems.addLayer(layer);
         });
-        L.marker([51.5, -0.09], {icon: greenIcon}).addTo(mymap);
-*/
-//        var cities = new L.LayerGroup();
-//
-//        L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities),
-//                L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities),
-//                L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(cities),
-//                L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(cities);
-//
-//
-//        var mbAttr = 'Go Queer &copy;' ,
-//                mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw';
-//
-//        var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
-//                streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr});
-//
-//        var map = L.map('map', {
-//            center: [39.73, -104.99],
-//            zoom: 10,
-//            layers: [grayscale, cities]
-//        });
-//
-//        var baseLayers = {
-//            "Grayscale": grayscale,
-//            "Streets": streets
-//        };
-//
-//        var overlays = {
-//            "Cities": cities
-//        };
-//
-//        L.control.layers(baseLayers, overlays).addTo(map);
-/*
-        ///////////////////////////////////
-        var map, newMarker, markerLocation;
-        $(function(){
-            // Initialize the map
-            var map = L.map('map').setView([38.487, -75.641], 8);
-            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-                maxZoom: 18
-            }).addTo(map);
-            newMarkerGroup = new L.LayerGroup();
-            map.on('click', function(e){
-                var newMarker = new L.marker(e.latlng).addTo(map);
-            });
-        });
-*/
+
     </script>
 
 
