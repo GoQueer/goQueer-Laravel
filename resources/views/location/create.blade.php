@@ -153,8 +153,7 @@
         var layer = event.layer;
         drawnItems.addLayer(layer);
     });
-    var myLayer = L.geoJSON().addTo(map);
-    myLayer.addData(geojsonFeature);
+
 
 //    function onMapClick(e) {
 //       console.log('hi');
@@ -162,7 +161,7 @@
 //        document.getElementById("yCoordinate").value = e.latlng.lng;
 //        var coordinates = new Array(e.latlng.lat, e.latlng.lng);
 //    }
-    map.on('click', onMapClick);
+//    map.on('click', onMapClick);
 
 //    map.on('draw:created', function (e) {
 //        console.log('created')
@@ -198,6 +197,7 @@
             // here you can get it in geojson format
             var geojson = layer.toGeoJSON();
             document.getElementById("coordinates").value = JSON.stringify(geojson);
+            console.log('hi');
         }
         // here you add it to a layer to display it in the map
         drawnItems.addLayer(layer);
