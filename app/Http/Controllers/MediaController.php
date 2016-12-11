@@ -85,6 +85,7 @@ class MediaController extends Controller
                 ['source' => $request->source,
                     'description' => $request->description,
                     'filePath' => $filePath,
+                    'fileName' => $fileName,
                     'created_at' => new \DateTime(),
                     'updated_at' => new \DateTime(),
                     'name' => $request->name,
@@ -92,8 +93,6 @@ class MediaController extends Controller
                     'copyright_status_id' => $request->status_id,
                     'user_id' => Auth::id()]
             );
-
-//        Media::create($request->all());
             return redirect()->route('media.index')
                 ->with('success', 'Media added successfully')->with('email',Auth::user()->email);
         } else
@@ -110,14 +109,10 @@ class MediaController extends Controller
     {
         if (Auth::check()) {
             $media = Media::find($id);
-            $comments = Message::orderBy('id','DESC')->where('media_id',$id)->paginate(5);
             $comments = DB::table('message')
                 ->join('user', 'user.id', '=', 'message.user_id')
-
                 ->select('message.*', 'user.name')
                 ->get();
-//            var_dump($comments);
-
             return view('media.show', compact('media','comments'))->with('email',Auth::user()->email)->with('media_id',$id);
         } else
             return view('errors.permission');
@@ -154,7 +149,6 @@ class MediaController extends Controller
                 'type_id' => 'required',
                 'user_id' => 'required',
             ]);
-
             Media::find($id)->update($request->all());
             return redirect()->route('media.index')
                 ->with('success', 'Media updated successfully')->with('email',Auth::user()->email);

@@ -62,8 +62,6 @@ class LocationMediaController extends Controller
             'location_id' => 'required',
             'media_id' => 'required',
         ]);
-
-
         \DB::table('location_media')->insert(
             ['location_id' => $request->location_id,
                 'media_id' => $request->media_id,
@@ -118,7 +116,6 @@ class LocationMediaController extends Controller
             'type_id' => 'required',
             'user_id' => 'required',
         ]);
-
         Media::find($id)->update($request->all());
         return redirect()->route('media.index')
             ->with('success','Media updated successfully');
@@ -133,7 +130,6 @@ class LocationMediaController extends Controller
     public function destroy($id)
     {
         LocationMedia::find($id)->delete();
-
         return redirect()->route('location.index')
             ->with('success','Media deleted successfully');
     }

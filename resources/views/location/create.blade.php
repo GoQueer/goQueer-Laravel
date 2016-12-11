@@ -4,74 +4,35 @@
 
 
 
-    {{--<script src="libs/leaflet-src.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/leaflet-src.js') }}"></script>
-
-    {{--<link rel="stylesheet" href="libs/leaflet.css"/>--}}
     <link rel="stylesheet" href="{{ URL::asset('css/leaflet.css') }}" />
-
-    {{--<script src="/js/src/Leaflet.draw.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/Leaflet.draw.js') }}"></script>
-
-    {{--<script src="../../src/Leaflet.Draw.Event.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/Leaflet.Draw.Event.js') }}"></script>
-    {{--<link rel="stylesheet" href="../../src/leaflet.draw.css"/>--}}
     <link rel="stylesheet" href="{{ URL::asset('css/leaflet.draw.css') }}" />
-
-    {{--<script src="../../src/Toolbar.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/Toolbar.js') }}"></script>
-    {{--<script src="../../src/Tooltip.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/Tooltip.js') }}"></script>
-
-    {{--<script src="../../src/ext/GeometryUtil.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/ext/GeometryUtil.js') }}"></script>
-    {{--<script src="../../src/ext/LatLngUtil.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/ext/LatLngUtil.js') }}"></script>
-    {{--<script src="../../src/ext/LineUtil.Intersect.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/ext/LineUtil.Intersect.js') }}"></script>
-    {{--<script src="../../src/ext/Polygon.Intersect.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/ext/Polygon.Intersect.js') }}"></script>
-    {{--<script src="../../src/ext/Polyline.Intersect.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/ext/Polyline.Intersect.js') }}"></script>
-    {{--<script src="../../src/ext/TouchEvents.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/ext/TouchEvents.js') }}"></script>
-
-    {{--<script src="../../src/draw/DrawToolbar.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/draw/DrawToolbar.js') }}"></script>
-    {{--<script src="../../src/draw/handler/Draw.Feature.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/draw/handler/Draw.Feature.js') }}"></script>
-    {{--<script src="../../src/draw/handler/Draw.SimpleShape.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/draw/handler/Draw.SimpleShape.js') }}"></script>
-    {{--<script src="../../src/draw/handler/Draw.Polyline.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/draw/handler/Draw.Polyline.js') }}"></script>
-    {{--<script src="../../src/draw/handler/Draw.Circle.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/draw/handler/Draw.Circle.js') }}"></script>
-    {{--<script src="../../src/draw/handler/Draw.Marker.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/draw/handler/Draw.Marker.js') }}"></script>
-    {{--<script src="../../src/draw/handler/Draw.Polygon.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/draw/handler/Draw.Polygon.js') }}"></script>
-    {{--<script src="../../src/draw/handler/Draw.Rectangle.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/draw/handler/Draw.Rectangle.js') }}"></script>
-
-
-    {{--<script src="../../src/edit/EditToolbar.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/edit/EditToolbar.js') }}"></script>
-    {{--<script src="../../src/edit/handler/EditToolbar.Edit.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/edit/handler/EditToolbar.Edit.js') }}"></script>
-    {{--<script src="../../src/edit/handler/EditToolbar.Delete.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/edit/handler/EditToolbar.Delete.js') }}"></script>
-
-    {{--<script src="../../src/Control.Draw.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/Control.Draw.js') }}"></script>
-    {{--<script src="../../src/edit/handler/Edit.Poly.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/edit/handler/Edit.Poly.js') }}"></script>
-    {{--<script src="../../src/edit/handler/Edit.SimpleShape.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/edit/handler/Edit.SimpleShape.js') }}"></script>
-    {{--<script src="../../src/edit/handler/Edit.Circle.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/edit/handler/Edit.Circle.js') }}"></script>
-    {{--<script src="../../src/edit/handler/Edit.Rectangle.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/edit/handler/Edit.Rectangle.js') }}"></script>
-    {{--<script src="../../src/edit/handler/Edit.Marker.js"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/src/edit/handler/Edit.Marker.js') }}"></script>
 
 
@@ -192,9 +153,59 @@
         var layer = event.layer;
         drawnItems.addLayer(layer);
     });
+    var myLayer = L.geoJSON().addTo(map);
+    myLayer.addData(geojsonFeature);
+
+//    function onMapClick(e) {
+//       console.log('hi');
+//        document.getElementById("coordinates").value += "(" + e.latlng.lat +"," + e.latlng.lng +")";
+//        document.getElementById("yCoordinate").value = e.latlng.lng;
+//        var coordinates = new Array(e.latlng.lat, e.latlng.lng);
+//    }
+    map.on('click', onMapClick);
+
+//    map.on('draw:created', function (e) {
+//        console.log('created')
+//    })
+    map.on('draw:edited', function (e) {
+        console.log('edited')
+    });
+    map.on('draw:deleted', function (e) {
+        document.getElementById("coordinates").value ="No Polygon Selected";
+    });
+//    map.on('draw:created', function (e) {
+//        var type = e.layerType,
+//                layer = e.layer;
+//
+//        if (type === 'polygon') {
+//            var points = layer._latlngs;
+//            console.log(points);
+//            var geojson = layer.toGeoJSON();
+//            console.log(geojson);
+////            document.getElementById("coordinates").value = points;
+//            document.getElementById("coordinates").value = geojson.stringify();
+//        }
+//        drawnItems.addLayer(layer);
+//    });
+    map.on('draw:created', function (e) {
+        var type = e.layerType,
+                layer = e.layer;
+
+        if (type === 'polygon') {
+            // here you got the polygon points
+            var points = layer._latlngs;
+
+            // here you can get it in geojson format
+            var geojson = layer.toGeoJSON();
+            document.getElementById("coordinates").value = JSON.stringify(geojson);
+        }
+        // here you add it to a layer to display it in the map
+        drawnItems.addLayer(layer);
+    });
 
 
-//        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+
+    //        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
 //            maxZoom: 18,
 //            attribution: 'Go Queer &copy;' ,
 //            id: 'mapbox.streets'
