@@ -21,6 +21,10 @@ Route::get('/documentation', function () {
     return view('document.index')->with('email',Auth::user()->email);
 });
 
+Route::get('/features', function () {
+    return view('feature.index')->with('email',Auth::user()->email);
+});
+
 Route::get('/charts', function () {
     return view('errors.underConstruction')->with('email',Auth::user()->email);
 });

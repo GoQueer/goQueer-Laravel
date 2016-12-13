@@ -314,20 +314,18 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i>Docs<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('blank') }}">Blank Page</a>
+                                    <a href="{{ url ('documentation')  }}">Project Structure</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url ('login') }}">Login Page</a>
+                                    <a href="{{ url ('features') }}">Features</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>
-                        </li>
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
