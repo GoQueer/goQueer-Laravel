@@ -259,30 +259,7 @@
                         <li {{ (Request::is('*forms') ? 'class="active"' : '') }}>
                             <a href="{{ url ('forms') }}"><i class="fa fa-edit fa-fw"></i> Register</a>
                         </li>
-                        <li >
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('panels') }}">Panels and Collapsibles</a>
-                                </li>
-                                <li {{ (Request::is('*buttons') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('buttons' ) }}">Buttons</a>
-                                </li>
-                                <li {{ (Request::is('*notifications') ? 'class="active"' : '') }}>
-                                    <a href="{{ url('notifications') }}">Alerts</a>
-                                </li>
-                                <li {{ (Request::is('*typography') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('typography') }}">Typography</a>
-                                </li>
-                                <li {{ (Request::is('*icons') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('icons') }}"> Icons</a>
-                                </li>
-                                <li {{ (Request::is('*grid') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('grid') }}">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

@@ -6,16 +6,12 @@
             <div class="col-lg-12">
 
 
-                <br/>
-
 
                 <b>Authentication</b>
                 <ul>
                     <li>Allow users to log in with an a email and password</li>
                     <li>Users can register for a new account under “Register”</li>
-
                 </ul>
-
 
                 <b>Media</b>
                 <ul>
