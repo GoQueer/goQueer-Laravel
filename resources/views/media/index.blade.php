@@ -31,7 +31,7 @@
                 <td><div style="height:40px; overflow:hidden">{{ $media->name }}</div></td>
                 <td><div style="height:40px; overflow:hidden">{{ $media->source }}</div></td>
                 <td ><div style="height:60px; overflow:hidden">{{ $media->description }}</div></div></td>
-                <td>{{ $media->filePath }}</td>
+                <td>{{ $media->fileName }}</td>
 
                 <td>
                     <a class="btn btn-info" href="{{ route('media.show',$media->id) }}">Show</a>
