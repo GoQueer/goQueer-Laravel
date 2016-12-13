@@ -77,6 +77,7 @@ class MediaController extends Controller
                     'description' => $request->description,
                     'filePath' => $filePath,
                     'fileName' => $fileName,
+                    'date' => $request->date,
                     'created_at' => new \DateTime(),
                     'updated_at' => new \DateTime(),
                     'name' => $request->name,

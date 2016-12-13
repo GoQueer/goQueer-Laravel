@@ -243,7 +243,6 @@
                                 </button>
                             </span>
                             </div>
-                            <!-- /input-group -->
                         </li>
                         <li {{ (Request::is('/location') ? 'class="active"' : '') }}>
                             <a href="{{ url ('/location') }}"><i class="fa fa-dashboard fa-fw"></i> Locations</a>
@@ -251,11 +250,9 @@
                         <li {{ (Request::is('/media') ? 'class="active"' : '') }}>
                             <a href="{{ url ('/media') }}"><i class="fa fa-table fa-fw"></i> Media</a>
                         </li>
-                        <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
-                            <!-- /.nav-second-level -->
+                        <li {{ (Request::is('/map') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('/map') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Map</a>
                         </li>
-
                         <li {{ (Request::is('*forms') ? 'class="active"' : '') }}>
                             <a href="{{ url ('forms') }}"><i class="fa fa-edit fa-fw"></i> Register</a>
                         </li>
@@ -285,10 +282,8 @@
                                             <a href="#">Third Level Item</a>
                                         </li>
                                     </ul>
-                                    <!-- /.nav-third-level -->
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>Docs<span class="fa arrow"></span></a>
@@ -300,14 +295,11 @@
                                     <a href="{{ url ('features') }}">Features</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
 
                     </ul>
                 </div>
-                <!-- /.sidebar-collapse -->
             </div>
-            <!-- /.navbar-static-side -->
         </nav>
 
         <div id="page-wrapper">
@@ -315,13 +307,10 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">@yield('page_heading')</h1>
                 </div>
-                <!-- /.col-lg-12 -->
            </div>
 			<div class="row">
 				@yield('section')
-
             </div>
-            <!-- /#page-wrapper -->
         </div>
     </div>
 @stop

@@ -21,6 +21,7 @@ class CreateMediaTable extends Migration
             $table->text('description');
             $table->text('filePath');
             $table->text('fileName');
+            $table->date('date');
             $table->integer('copyright_status_id')->unsigned();
             $table->integer('type_id')->unsigned();
             $table->integer('user_id')->unsigned();

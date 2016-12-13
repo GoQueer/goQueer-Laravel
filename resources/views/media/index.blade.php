@@ -21,6 +21,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Source</th>
+            <th>Publish Date</th>
             <th>Description</th>
             <th>File Name</th>
             <th width="200px">Action</th>
@@ -30,8 +31,9 @@
                 <td><div style="height:40px; overflow:hidden">{{ ++$i }}</div></td>
                 <td><div style="height:40px; overflow:hidden">{{ $media->name }}</div></td>
                 <td><div style="height:40px; overflow:hidden">{{ $media->source }}</div></td>
-                <td ><div style="height:60px; overflow:hidden">{{ $media->description }}</div></div></td>
-                <td>{{ $media->fileName }}</td>
+                <td><div style="height:40px;width:80px; overflow:hidden">{{ $media->date }}</div></td>
+                <td ><div style="height:40px;width:250px; overflow:hidden">{{ $media->description }}</div></td>
+                <td><div style="height:40px;width:60px; overflow:hidden">{{ $media->fileName }}</div></td>
 
                 <td>
                     <a class="btn btn-info" href="{{ route('media.show',$media->id) }}">Show</a>
