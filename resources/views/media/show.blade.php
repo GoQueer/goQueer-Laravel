@@ -61,7 +61,7 @@
                 <div class="modal-body">
                     {{--<img src="{{ URL::to('/uploads/' .    $media->fileName) }}" class="img-responsive" alt="{{$media->name}}">--}}
                     <object  display="inline-block" clear="both"
-                             float="left" width="500" height="600" data="{{ URL::to('/uploads/' .    $media->fileName) }}"></object>
+                             float="left"   data="{{ URL::to('/uploads/' .    $media->fileName) }}"></object>
 
                 </div>
                 <div class="modal-footer ">

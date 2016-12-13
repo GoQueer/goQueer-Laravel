@@ -102,8 +102,8 @@ class MediaController extends Controller
             $media = Media::find($id);
             $comments = DB::table('message')
                 ->join('user', 'user.id', '=', 'message.user_id')
-                ->join('media', 'media.id', '=', 'message.media_id')
                 ->select('message.*', 'user.name')
+                ->where('media_id' , '=', $id)
                 ->get();
             return view('media.show', compact('media','comments'))->with('email',Auth::user()->email)->with('media_id',$id);
         } else
