@@ -14,19 +14,21 @@ class MediaTypeTableSeeder extends Seeder
         DB::table('media_type')->insert([
             'id'=> '1',
             'name' => 'Video',
-
         ]);
 
         DB::table('media_type')->insert([
             'id'=> '2',
             'name' => 'Sound',
-
         ]);
 
         DB::table('media_type')->insert([
             'id'=> '3',
             'name' => 'PDF',
+        ]);
 
+        DB::table('media_type')->insert([
+            'id'=> '4',
+            'name' => 'Image',
         ]);
     }
 }

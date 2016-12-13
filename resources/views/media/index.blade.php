@@ -27,10 +27,10 @@
         </tr>
         @foreach ($medias as $key => $media)
             <tr>
-                <td>{{ ++$i }}</td>
-                <td>{{ $media->name }}</td>
-                <td>{{ $media->source }}</td>
-                <td>{{ $media->description }}</td>
+                <td><div style="height:40px; overflow:hidden">{{ ++$i }}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{ $media->name }}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{ $media->source }}</div></td>
+                <td ><div style="height:60px; overflow:hidden">{{ $media->description }}</div></div></td>
                 <td>{{ $media->filePath }}</td>
 
                 <td>

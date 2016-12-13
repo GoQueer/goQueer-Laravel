@@ -10,7 +10,6 @@ namespace App\Http\Controllers;
 
 use App\Models\CopyrightStatus;
 use App\Models\Location;
-use App\Models\Message;
 use App\Models\Media;
 use App\Models\MediaType;
 use Illuminate\Http\Request;
@@ -42,18 +41,10 @@ class MediaController extends Controller
     public function create()
     {
         if (Auth::check()) {
-//        $types = MediaType::lists('name','id');
             $locations = Location::lists('name', 'id');
             $types = MediaType::lists('name', 'id');
             $statuses = CopyrightStatus::lists('status', 'id');
             return view('media.create', compact('id', 'types','statuses'))->with('email',Auth::user()->email);
-//        $models = $->models();
-//        return Response::eloquent($models->get(['id','name']));
-//        return View::make('media.create')->with('locations', $locations)->with('types',$types);
-//        return view('media.create')
-//            ->with('locations', Location::orderBy('id', 'asc')->lists('name','id'))
-//            ->with('types', MediaType::orderBy('id', 'asc')->lists('name','id'));
-//        return view('media.create',compact('types','locations'));
         } else
             return view('errors.permission');
     }
