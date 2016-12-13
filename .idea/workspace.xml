@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/MapController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/map/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/media/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/media/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/media/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/media/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/location/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/location/create.blade.php" />
     </list>
     <ignored path="secondTry.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,24 +35,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MediaController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MediaController.php">
+      <file leaf-file-name="MapController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MapController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="146" column="41" selection-start-line="146" selection-start-column="41" selection-end-line="146" selection-end-column="41" />
+            <state relative-caret-position="374">
+              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
               <folding>
-                <element signature="e#125#156#0#PHP" expanded="true" />
+                <element signature="e#125#149#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/media/show.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -57,35 +50,45 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/media/index.blade.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/map/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+            <state relative-caret-position="391">
+              <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
               <folding>
-                <element signature="e#749#785#0#HTML" expanded="true" />
-                <element signature="e#833#869#0#HTML" expanded="true" />
-                <element signature="e#925#961#0#HTML" expanded="true" />
-                <element signature="e#1019#1066#0#HTML" expanded="true" />
-                <element signature="e#1122#1170#0#HTML" expanded="true" />
+                <element signature="e#3395#3429#0#HTML" expanded="true" />
+                <element signature="e#3503#3525#0#HTML" expanded="true" />
+                <marker date="1481665599065" expanded="true" signature="4112:4118" ph="©" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
+      <file leaf-file-name="LocationController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2193">
-              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+            <state relative-caret-position="187">
+              <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/location/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-62">
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+              <folding>
+                <marker date="1481665284108" expanded="true" signature="5689:5695" ph="©" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,8 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/errors/permission.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/errors/503.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/errors/underConstruction.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/plane.blade.php" />
@@ -136,12 +137,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/LocationMediaController.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/resources/views/location/show.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/location/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" />
         <option value="$PROJECT_DIR$/database/seeds/MediaTypeTableSeeder.php" />
         <option value="$PROJECT_DIR$/resources/views/location/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/document/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/feature/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_10_23_221850_create_media_table.php" />
@@ -149,6 +147,11 @@
         <option value="$PROJECT_DIR$/resources/views/media/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/media/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/media/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MapController.php" />
+        <option value="$PROJECT_DIR$/resources/views/location/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" />
+        <option value="$PROJECT_DIR$/resources/views/map/index.blade.php" />
       </list>
     </option>
   </component>
@@ -256,6 +259,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="media" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="secondTry" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="map" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -447,15 +472,18 @@
       <recent name="C:\workspace\secondTry\public\css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\goQueer2\test\resources\views\map" />
+      <recent name="C:\workspace\goQueer2\test\app\Http\Controllers" />
       <recent name="C:\workspace\goQueer2\test\resources\views" />
       <recent name="C:\workspace\goQueer2\test" />
       <recent name="C:\workspace\goQueer2\app\Models" />
-      <recent name="C:\workspace\goQueer2\database\seeds" />
-      <recent name="C:\workspace\goQueer2\database\migrations" />
     </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <method />
     </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -485,6 +513,19 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -507,7 +548,7 @@
       <workItem from="1481134354718" duration="6644000" />
       <workItem from="1481304245934" duration="20910000" />
       <workItem from="1481330113517" duration="726000" />
-      <workItem from="1481653389153" duration="5822000" />
+      <workItem from="1481653389153" duration="9869000" />
     </task>
     <task id="LOCAL-00001" summary="working on media">
       <created>1479710016126</created>
@@ -698,11 +739,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481659811150</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="styling fix">
+      <created>1481660128289</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1481660128289</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63331000" />
+    <option name="totallyTimeSpent" value="67378000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -778,27 +826,14 @@
     <MESSAGE value="remove extra item from left navigation" />
     <MESSAGE value="added date to media" />
     <MESSAGE value="styling in media list" />
-    <option name="LAST_COMMIT_MESSAGE" value="styling in media list" />
+    <MESSAGE value="styling fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="styling fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/src/ext/LatLngUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/src/leaflet-src.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7953" column="8" selection-start-line="7953" selection-start-column="8" selection-end-line="7953" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/leaflet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1016,6 +1051,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="63" column="11" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,6 +1059,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="69" column="70" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,58 +1086,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/location/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="89" column="57" selection-start-line="89" selection-start-column="57" selection-end-line="89" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/MediaTypeTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/location/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/location/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2193">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MediaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="146" column="41" selection-start-line="146" selection-start-column="41" selection-end-line="146" selection-end-column="41" />
-          <folding>
-            <element signature="e#125#156#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1136,33 +1125,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/media/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/location/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="41" column="19" selection-start-line="18" selection-start-column="3" selection-end-line="41" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/location/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="57" column="14" selection-start-line="52" selection-start-column="7" selection-end-line="57" selection-end-column="14" />
+          <folding>
+            <marker date="1481653369774" expanded="true" signature="4631:4637" ph="©" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MediaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="146" column="41" selection-start-line="146" selection-start-column="41" selection-end-line="146" selection-end-column="41" />
+          <folding>
+            <element signature="e#125#156#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2193">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="442">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/media/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+        <state relative-caret-position="269">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
-            <element signature="e#749#785#0#HTML" expanded="true" />
-            <element signature="e#833#869#0#HTML" expanded="true" />
-            <element signature="e#925#961#0#HTML" expanded="true" />
-            <element signature="e#1019#1066#0#HTML" expanded="true" />
-            <element signature="e#1122#1170#0#HTML" expanded="true" />
+            <element signature="e#1233#1280#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/media/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MapController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
+        <state relative-caret-position="374">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+          <folding>
+            <element signature="e#125#149#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/location/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding>
+            <marker date="1481665284108" expanded="true" signature="5689:5695" ph="©" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/map/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+          <folding>
+            <element signature="e#3395#3429#0#HTML" expanded="true" />
+            <element signature="e#3503#3525#0#HTML" expanded="true" />
+            <marker date="1481665599065" expanded="true" signature="4112:4118" ph="©" />
+          </folding>
         </state>
       </provider>
     </entry>

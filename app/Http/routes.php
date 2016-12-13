@@ -25,9 +25,7 @@ Route::get('/features', function () {
     return view('feature.index')->with('email',Auth::user()->email);
 });
 
-Route::get('/charts', function () {
-    return view('errors.underConstruction')->with('email',Auth::user()->email);
-});
+
 Route::get('/forms', function () {
     return view('auth.register');
 });
@@ -35,6 +33,7 @@ Route::resource('location','LocationController');
 Route::resource('media','MediaController');
 Route::resource('message','MessageController');
 Route::resource('location_media','LocationMediaController');
+Route::resource('map','MapController');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

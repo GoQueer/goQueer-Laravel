@@ -66,15 +66,6 @@
         </div>
     </div>
 
-    {{--<div class="row">--}}
-        {{--<div class="col-lg-12 margin-tb">--}}
-            {{--<div class="form-group">--}}
-                {{--<strong>Select the Coordinate:</strong>--}}
-                {{--<div id="map" style="width: 100%; height: 800px;"></div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
 
     {!! Form::open(array('action' => 'LocationController@store','method'=>'POST')) !!}
 
