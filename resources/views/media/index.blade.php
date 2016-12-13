@@ -22,18 +22,18 @@
             <th>Name</th>
             <th>Source</th>
             <th>Publish Date</th>
-            <th>Description</th>
-            <th>File Name</th>
-            <th width="200px">Action</th>
+            <th width="450px">Description</th>
+            <th width="50px">File Name</th>
+            <th width="150px">Action</th>
         </tr>
         @foreach ($medias as $key => $media)
             <tr>
                 <td><div style="height:40px; overflow:hidden">{{ ++$i }}</div></td>
                 <td><div style="height:40px; overflow:hidden">{{ $media->name }}</div></td>
                 <td><div style="height:40px; overflow:hidden">{{ $media->source }}</div></td>
-                <td><div style="height:40px;width:80px; overflow:hidden">{{ $media->date }}</div></td>
-                <td ><div style="height:40px;width:250px; overflow:hidden">{{ $media->description }}</div></td>
-                <td><div style="height:40px;width:60px; overflow:hidden">{{ $media->fileName }}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{ $media->date }}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{ $media->description }}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{ $media->fileName }}</div></td>
 
                 <td>
                     <a class="btn btn-info" href="{{ route('media.show',$media->id) }}">Show</a>
@@ -41,6 +41,7 @@
                     {!! Form::open(['method' => 'DELETE','route' => ['media.destroy', $media->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
+
                 </td>
             </tr>
         @endforeach
