@@ -26,10 +26,10 @@
         </tr>
         @foreach ($locations as $key => $location)
             <tr>
-                <td>{{ $location->id }}</td>
-                <td>{{ $location->name }}</td>
-                <td>{{ $location->description }}</td>
-                <td>{{ $location->coordinate }}</td>
+                <td><div style="height:40px; overflow:hidden">{{ $location->id }}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{ $location->name }}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{ $location->description }}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{ $location->coordinate }}</div></td>
 
                 <td>
                     <a class="btn btn-info" href="{{ route('location.show',$location->id) }}">Show</a>
