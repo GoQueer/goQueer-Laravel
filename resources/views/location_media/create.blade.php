@@ -40,7 +40,6 @@
                 {{ Form::hidden('location_id', $id, array('id' => 'location_id')) }}
             </div>
         </div>
-
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div  class="form-group">
                 {!! Form::Label('type', 'Select the Media Associated with current Location:') !!}
@@ -75,7 +74,6 @@
                 <td>{{ $locationMedia->id }}</td>
                 <td>{{ $locationMedia->media_id  }}</td>
                 <td>
-
                     {!! Form::open(['method' => 'DELETE','route' => ['location_media.destroy', $locationMedia->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
