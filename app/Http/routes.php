@@ -25,14 +25,17 @@ Route::get('/features', function () {
     return view('feature.index')->with('email',Auth::user()->email);
 });
 
-
-Route::get('/forms', function () {
+Route::get('/register', function () {
     return view('auth.register');
 });
+
+
+
 Route::resource('location','LocationController');
 Route::resource('media','MediaController');
 Route::resource('message','MessageController');
 Route::resource('location_media','LocationMediaController');
+Route::resource('draft','DraftController');
 Route::resource('map','MapController');
 Route::auth();
 

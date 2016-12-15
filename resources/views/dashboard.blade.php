@@ -253,36 +253,20 @@
                         <li {{ (Request::is('/map') ? 'class="active"' : '') }}>
                             <a href="{{ url ('/map') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Map</a>
                         </li>
-                        <li {{ (Request::is('*forms') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('forms') }}"><i class="fa fa-edit fa-fw"></i> Register</a>
+                        <li {{ (Request::is('/register') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('register') }}"><i class="fa fa-edit fa-fw"></i> Register</a>
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Material Review<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="{{ url ('/draft') }}">Drafts</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="#">Finalized</a>
                                 </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                </li>
+
                             </ul>
                         </li>
                         <li>

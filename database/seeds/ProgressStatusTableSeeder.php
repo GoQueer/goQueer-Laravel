@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class MediaTypeTableSeeder extends Seeder
+class ProgressStatusTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
