@@ -6,6 +6,8 @@ Homestead.json
 .env
 /.idea/
 /.idea/blade.xml
-/.idea/workspace.xml
+.idea/workspace.xml
+.idea/secondTry.iml
 /.idea
 /public/uploads
+composer.phar
