@@ -14,8 +14,9 @@
 Route::get('/login', array('uses' => 'HomeController@showLogin'));
 Route::post('/login', array('uses' => 'HomeController@doLogin'));
 Route::get('/', function () {
-    return view('dashboard',['email' => 'James']);
+    return view('home',['email' => 'James']);
 });
+
 
 Route::get('/documentation', function () {
     return view('document.index')->with('email',Auth::user()->email);
