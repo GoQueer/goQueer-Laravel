@@ -67,7 +67,7 @@ class HomeController extends Controller
                 echo 'SUCCESS!';
             } else {
                 // validation not successful, send back to form
-                return Redirect::to('/documentation');
+                return Redirect::to('/location');
             }
         }
     }

@@ -125,7 +125,7 @@
                 })}, { 'drawlayer': drawnItems },
                 { position: 'topleft', collapsed: false }
             ).addTo(map);
-        map.addControl(new L.Control.Draw({
+        var drawControl = new L.Control.Draw({
             edit: {
                 featureGroup: drawnItems,
                 poly: {
@@ -136,9 +136,15 @@
                 polygon: {
                     allowIntersection: false,
                     showArea: true
-                }
+                },
+                polyline : false,
+                rectangle : true,
+                circle: false,
+                marker: false,
+                polygon: true
             }
-        }));
+        });
+        map.addControl(drawControl);
         map.on(L.Draw.Event.CREATED, function (event) {
             var layer = event.layer;
             drawnItems.addLayer(layer);
@@ -153,7 +159,7 @@
             var type = e.layerType,
                     layer = e.layer;
 
-            if (type === 'polygon') {
+            if (type === 'polygon' || type === 'circle' || type === 'rectangle') {
                 // here you got the polygon points
                 var points = layer._latlngs;
 
