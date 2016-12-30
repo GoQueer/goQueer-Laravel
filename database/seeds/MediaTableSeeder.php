@@ -20,6 +20,7 @@ class MediaTableSeeder extends Seeder
             'copyright_status_id' => 1,
             'type_id' => 1,
             'user_id' => 1,
+            'progress_status_id' => 1,
 
         ]);
 

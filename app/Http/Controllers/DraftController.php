@@ -15,7 +15,7 @@ use App\Models\MediaType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-class MediaController extends Controller
+class DraftController extends Controller
 {
 
     /**
@@ -26,7 +26,7 @@ class MediaController extends Controller
     public function index(Request $request)
     {
         if (Auth::check()) {
-            $medias = Media::orderBy('id', 'DESC')->paginate(5);
+            $medias = Media::orderBy('id', 'DESC')->where('progress_status_id','=','1')->paginate(5);
             return view('media.index', compact('medias'))
                 ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
         } else

@@ -54,7 +54,7 @@ class LocationController extends Controller
     {
         if (Auth::check()) {
             $this->validate($request, [
-
+                'coordinates' => 'required',
                 'address' => 'required',
                 'name' => 'required',
             ]);

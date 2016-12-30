@@ -11,7 +11,8 @@
         "willvincent/feeds": "dev-master",
         "barryvdh/laravel-debugbar": "^2.0",
         "illuminate/html": "~5.0",
-        "intervention/image": "^2.2"
+        "intervention/image": "^2.2",
+        "laracasts/utilities": "~2.0"
 
     },
     "require-dev": {
@@ -20,7 +21,8 @@
         "phpunit/phpunit": "~4.0",
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*",
-        "laravelcollective/html": "~5.0"
+        "laravelcollective/html": "~5.0",
+        "laracasts/utilities": "~2.0"
     },
     "autoload": {
         "classmap": [

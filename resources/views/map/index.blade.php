@@ -36,48 +36,32 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Location</h2>
+                <h2> All Spots</h2>
             </div>
 
         </div>
     </div>
 
-    <div class="row pull-right">
-        <div class="col-xs-3 col-sm-3 col-md-3">
-            <div class="form-group" >
-                <div id="mapid1" style="width: 500px; height: 300px"></div>
-            </div>
-        </div>
-    </div>
     <div class="row">
-        <div class="col-xs-3 col-sm-3 col-md-3">
-            <div class="form-group">
-                <strong>Coordinates:</strong>
-                <div id="coordinates"> {{ $location->coordinate }} </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group" >
+                <div id="mapid1" style="width: 100%; height: 700px"></div>
             </div>
         </div>
-        <div class="col-xs-4 col-sm-4 col-md-4">
-            <div class="form-group">
-                <strong>Address:</strong>
-                {{ $location->address }}
-            </div>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-4">
-            <div class="form-group">
-                <strong>Title:</strong>
-                {{ $location->name }}
-            </div>
-        </div>
-
-        <div class="col-xs-5 col-sm-5 col-md-5">
-            <div class="form-group">
-                <strong>Description:</strong>
-                {{ $location->description }}
-            </div>
-        </div>
-
-
     </div>
+    <div class="row" style="display: none;">
+        <table class="table table-bordered" id="coordinateTable">
+            <tr>
+                <th>No</th>
+            </tr>
+            @foreach ($locations as $key => $location)
+                <tr>
+                    <td>{{ $location->coordinate }}</td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
+
     <hr/>
     <div class="pull-right">
         <a class="btn btn-primary" href="{{ route('location.index') }}"> Back</a>
@@ -95,9 +79,13 @@
                 { position: 'topleft', collapsed: true }
         ).addTo(map);
         function codeAddress() {
-            var json = JSON.parse(coordinates.innerText);
-            L.geoJSON(json).addTo(map);
-            console.log(json["geometry"]["coordinates"]);
+            var table = document.getElementById("coordinateTable");
+            for (var i = 1, row; row = table.rows[i]; i++) {
+
+                var json = JSON.parse(row.cells[0].innerText);
+                L.geoJSON(json).addTo(map);
+
+            }
         }
         window.onload = codeAddress;
     </script>

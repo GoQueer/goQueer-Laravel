@@ -4,11 +4,9 @@
     <div class="row">
         <div class="box">
             <div class="col-lg-12">
-                <hr>
-                <h2 class="intro-text text-center"><strong>Our Project</strong></h2>
-                <hr>
-                <img class="img-responsive img-left" src="img/uofa_logo.png" alt="">
 
+                <img class="img-responsive img-left" src="img/uofa_logo.png" align="middle">
+                <br/>
 
                 <p>
                     This project is going to be used to allow the research team, working under Dr. Engel's supervision,
@@ -16,7 +14,7 @@
                     Edmonton Public Library, UofA Libraries and personal archives about the 253 historical locations
                     that should be investigated for the purpose of this research</br></br></br>
 
-
+                </p>
                     <b>Special Features</b>
                 <ul>
                     <li>Commenting on the message board of the website about the latest status of project what needs to
@@ -41,7 +39,7 @@
 
                 </ul>
                 <img class="img-responsive img-left" src="img/structure.png" alt="">
-
+                </br>
                 <p><b>GIS Framework</b></p>
                 <ul>
                     <li><b>QGIS:</b> is free, we can use existing web map servers or host our own.</li>

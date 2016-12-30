@@ -35,8 +35,13 @@
                 {!! Form::select('status_id', $statuses, null, ['class' => 'form-control']) !!}
             </div>
         </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div class="form-group">
+                {!! Form::Label('date', 'Publish Date:') !!}
+                {!! Form::date('date', null, array('placeholder' => 'Date','class' => 'form-control')) !!}
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8">
             <div class="form-group">
                 <strong>Title:</strong>
                 {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
@@ -48,11 +53,6 @@
                 {!! Form::text('source', null, array('placeholder' => 'Source','class' => 'form-control')) !!}
             </div>
         </div>
-        {{--<div class="col-xs-12 col-sm-12 col-md-12" style="visibility: hidden">--}}
-            {{--<div class="form-group">--}}
-                {{--{{ Form::hidden('user_id', '1', array('id' => 'user_id')) }}--}}
-            {{--</div>--}}
-        {{--</div>--}}
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Description:</strong>
@@ -63,7 +63,6 @@
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>File:</strong>
-{{--                {!! Form::text('x', null, array('placeholder' => 'X','class' => 'form-control','id'=>'xCoordinate')) !!}--}}
                 {!! Form::file('file_name', $attributes = array()) !!}
             </div>
         </div>
@@ -81,8 +80,12 @@
 
 
     <script>
-
-
+        $( function() {
+            $( "#date" ).datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        } );
     </script>
 
 

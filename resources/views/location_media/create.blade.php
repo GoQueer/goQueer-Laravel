@@ -30,28 +30,7 @@
 
 
 
-    <table class="table table-bordered">
-        <tr>
-            <th>ID</th>
-            <th>Media</th>
-            <th>Action</th>
 
-
-        </tr>
-        @foreach ($locationMedias as $key => $locationMedia)
-            <tr>
-                <td>{{ $locationMedia->id }}</td>
-                <td>{{ $locationMedia->media_id  }}</td>
-
-                <td>
-
-                    {!! Form::open(['method' => 'DELETE','route' => ['location_media.destroy', $locationMedia->id],'style'=>'display:inline']) !!}
-                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                    {!! Form::close() !!}
-                </td>
-            </tr>
-        @endforeach
-    </table>
 
     {!! Form::open(array('action' => 'LocationMediaController@store','method'=>'POST')) !!}
     <div class="row" >
@@ -61,8 +40,7 @@
                 {{ Form::hidden('location_id', $id, array('id' => 'location_id')) }}
             </div>
         </div>
-
-        <div class="col-xs-4 col-sm-4 col-md-4">
+        <div class="col-xs-6 col-sm-6 col-md-6">
             <div  class="form-group">
                 {!! Form::Label('type', 'Select the Media Associated with current Location:') !!}
                 {!! Form::select('media_id', $medias, null, ['class' => 'form-control']) !!}
@@ -73,8 +51,35 @@
             <a class="btn btn-primary" href="{{ route('location.index') }}">Back</a>
         </div>
     </div>
+    <br/>
+    <br/>
     {!! Form::close() !!}
-    <script>
-    </script>
+
+
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="text-center">
+                <h2>Already Assigned:  </h2>
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Media</th>
+            <th>Action</th>
+        </tr>
+        @foreach ($locationMedias as $key => $locationMedia)
+            <tr>
+                <td>{{ $locationMedia->id }}</td>
+                <td>{{ $locationMedia->media_id  }}</td>
+                <td>
+                    {!! Form::open(['method' => 'DELETE','route' => ['location_media.destroy', $locationMedia->id],'style'=>'display:inline']) !!}
+                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                    {!! Form::close() !!}
+                </td>
+            </tr>
+        @endforeach
+    </table>
 
 @endsection
