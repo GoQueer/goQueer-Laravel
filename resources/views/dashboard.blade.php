@@ -114,12 +114,20 @@
                             </span>
                             </div>
                         </li>
-                        <li {{ (Request::is('/location') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('/location') }}"><i class="fa fa-dashboard fa-fw"></i> Locations</a>
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Media<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ url ('/media') }}">Media</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url ('/gallery') }}">Gallery</a>
+                                </li>
+
+                            </ul>
+
                         </li>
-                        <li {{ (Request::is('/media') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('/media') }}"><i class="fa fa-table fa-fw"></i> Media</a>
-                        </li>
+
                         <li {{ (Request::is('/map') ? 'class="active"' : '') }}>
                             <a href="{{ url ('/map') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Map</a>
                         </li>

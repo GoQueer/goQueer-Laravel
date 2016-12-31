@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLocationMediaTable extends Migration
+class CreateGalleryMediaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,14 @@ class CreateLocationMediaTable extends Migration
      */
     public function up()
     {
-        Schema::create('location_media', function (Blueprint $table) {
+        Schema::create('gallery_media', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('location_id')->unsigned();
+            $table->integer('gallery_id')->unsigned();
             $table->integer('media_id')->unsigned();
         });
 
-        Schema::table('location_media', function (Blueprint $table) {
-            $table->foreign('location_id')->references('id')->on('location')
+        Schema::table('gallery_media', function (Blueprint $table) {
+            $table->foreign('gallery_id')->references('id')->on('gallery')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
             $table->foreign('media_id')->references('id')->on('media')
@@ -36,11 +36,11 @@ class CreateLocationMediaTable extends Migration
      */
     public function down()
     {
-        Schema::table('location_media', function (Blueprint $table) {
-            $table->dropForeign('location_media_location_id_foreign');
+        Schema::table('gallery_media', function (Blueprint $table) {
+            $table->dropForeign('gallery_media_gallery_id_foreign');
         });
-        Schema::table('location_media', function (Blueprint $table) {
-            $table->dropForeign('location_media_media_id_foreign');
+        Schema::table('gallery_media', function (Blueprint $table) {
+            $table->dropForeign('gallery_media_media_id_foreign');
         });
 
         Schema::drop('location_media');

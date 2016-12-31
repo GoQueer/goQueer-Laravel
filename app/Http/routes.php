@@ -34,6 +34,7 @@ Route::get('/register', function () {
 
 Route::resource('location','LocationController');
 Route::resource('media','MediaController');
+Route::resource('gallery','GalleryController');
 Route::resource('message','MessageController');
 Route::resource('location_media','LocationMediaController');
 Route::resource('draft','DraftController');
