@@ -43,6 +43,6 @@ class CreateGalleryMediaTable extends Migration
             $table->dropForeign('gallery_media_media_id_foreign');
         });
 
-        Schema::drop('location_media');
+        Schema::drop('gallery_media');
     }
 }

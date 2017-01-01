@@ -12,9 +12,12 @@
     <meta content="" name="description"/>
     <meta content="" name="author"/>
     <link rel="stylesheet" href="{{ asset("assets/stylesheets/styles.css") }}" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.7/leaflet.draw-src.js"></script>
+    <link rel="stylesheet" href="{{ asset("css/leaflet.css") }}" />
+    {{--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />--}}
+    {{--<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>--}}
+    <script type="text/javascript" src="{{ URL::asset('js/src/leaflet.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/src/leaflet.draw.js') }}"></script>
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.7/leaflet.draw-src.js"></script>--}}
 
 </head>
 <body>

@@ -115,7 +115,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Media<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-picture-o"></i>  Media<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{ url ('/media') }}">Media</a>
@@ -128,8 +128,18 @@
 
                         </li>
 
-                        <li {{ (Request::is('/map') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('/map') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Map</a>
+                        <li>
+                            <a href="#"><i class="fa fa-map-marker"></i>  Map<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ url ('/location') }}">Location</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url ('/map') }}">Global Map</a>
+                                </li>
+
+                            </ul>
+
                         </li>
                         <li {{ (Request::is('/register') ? 'class="active"' : '') }}>
                             <a href="{{ url ('register') }}"><i class="fa fa-edit fa-fw"></i> Register</a>

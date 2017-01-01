@@ -21,12 +21,12 @@
         </div>
     @endif
 
-    {!! Form::model($location, ['method' => 'PATCH','route' => ['location.update', $location->id]]) !!}
+    {!! Form::model($gallery, ['method' => 'PATCH','route' => ['gallery.update', $gallery->id]]) !!}
     <div class="row">
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Title:</strong>
+                <strong>Name:</strong>
                 {!! Form::text('name', null, array('placeholder' => 'Title','class' => 'form-control')) !!}
             </div>
         </div>
@@ -38,24 +38,10 @@
             </div>
         </div>
 
-        <div class="col-xs-3 col-sm-3 col-md-3">
-            <div class="form-group">
-                <strong>X:</strong>
-                {!! Form::text('x', null, array('placeholder' => 'X','class' => 'form-control')) !!}
-
-            </div>
-        </div>
-
-        <div class="col-xs-3 col-sm-3 col-md-3">
-            <div class="form-group">
-                <strong>Y:</strong>
-                {!! Form::text('y', null, array('placeholder' => 'Y','class' => 'form-control')) !!}
-            </div>
-        </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a class="btn btn-primary" href="{{ route('location.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('gallery.index') }}"> Back</a>
         </div>
 
     </div>

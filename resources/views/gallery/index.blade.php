@@ -31,12 +31,14 @@
                 <td><div style="height:40px;width:250px; overflow:hidden">{{ $gallery->description }}</div></td>
 
 
-                <td>
+                <td><div style="width:200px">
                     <a class="btn btn-info" href="{{ route('gallery.show',$gallery->id) }}">Show</a>
+                    <a class="btn btn-primary" href="{{ route('gallery.edit',$gallery->id) }}">Edit</a>
 
                     {!! Form::open(['method' => 'DELETE','route' => ['gallery.destroy', $gallery->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
+                    </div>
 
                 </td>
             </tr>
