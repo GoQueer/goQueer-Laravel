@@ -32,7 +32,7 @@
 
 
                 <td><div style="width:200px">
-                    <a class="btn btn-info" href="{{ route('gallery.show',$gallery->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('gallery.show',$gallery->id) }}">Config</a>
                     <a class="btn btn-primary" href="{{ route('gallery.edit',$gallery->id) }}">Edit</a>
 
                     {!! Form::open(['method' => 'DELETE','route' => ['gallery.destroy', $gallery->id],'style'=>'display:inline']) !!}

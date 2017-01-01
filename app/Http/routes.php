@@ -10,12 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-Route::get('/login', array('uses' => 'HomeController@showLogin'));
-Route::post('/login', array('uses' => 'HomeController@doLogin'));
 Route::get('/', function () {
     return view('home',['email' => 'James']);
 });
+
+Route::get('/login', array('uses' => 'HomeController@showLogin'));
+Route::post('/login', array('uses' => 'HomeController@doLogin'));
 
 
 Route::get('/documentation', function () {
@@ -30,22 +30,17 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
-
-
 Route::resource('location','LocationController');
 Route::resource('media','MediaController');
 Route::resource('gallery','GalleryController');
 Route::resource('message','MessageController');
-Route::resource('location_media','LocationMediaController');
+Route::resource('gallery_media','GalleryMediaController');
 Route::resource('draft','DraftController');
 Route::resource('map','MapController');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-// route to show the login form
-
-// route to process the form
 Route::get('/logout', array('uses' => 'HomeController@doLogout'));
 
 Route::controllers([

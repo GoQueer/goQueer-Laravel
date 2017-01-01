@@ -21,39 +21,35 @@
         </div>
     </div>
 
-    <div class="modal fade" id="favoritesModal"
-         tabindex="-1" role="dialog"
-         aria-labelledby="favoritesModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close"
-                            data-dismiss="modal"
-                            aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"
-                        id="favoritesModalLabel">{{$gallery->name}}</h4>
-                </div>
-                <div class="modal-body">
-                    {{--<img src="{{ URL::to('/uploads/' .    $media->fileName) }}" class="img-responsive" alt="{{$media->name}}">--}}
-                    <object  display="inline-block" clear="both"
-                             float="left"   data="{{ URL::to('/uploads/' .    $gallery->fileName) }}"></object>
-
-                </div>
-                <div class="modal-footer ">
-                    <button type="button"
-                            class="btn btn-default"
-                            data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 
 
     <br>
     <br>
+    <hr/>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Source</th>
+            <th>Publish Date</th>
+            <th>Description</th>
+        </tr>
+        @foreach ($medias as $key => $media)
+            <tr>
+                <td><div style="height:20px; overflow:hidden">{{ $media->id }}</div></td>
+                <td><div style="height:20px; overflow:hidden">{{ $media->name }}</div></td>
+                <td><div style="height:20px; overflow:hidden">{{ $media->source }}</div></td>
+                <td><div style="height:20px;width:80px; overflow:hidden">{{ $media->date }}</div></td>
+                <td><div style="height:20px;width:250px; overflow:hidden">{{ $media->description }}</div></td>
+
+                <td>
+                    <a class="btn btn-success" href="{{ route('gallery.show',$media->id) }}">Add</a>
+                </td>
+            </tr>
+        @endforeach
+    </table>
     <hr/>
     <div class="pull-right">
         <a class="btn btn-primary" href="{{ route('gallery.index') }}"> Back</a>

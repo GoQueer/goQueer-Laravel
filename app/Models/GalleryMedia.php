@@ -3,13 +3,13 @@
 use Illuminate\Database\Eloquent\Model;
 
 
-class LocationMedia extends Model
+class GalleryMedia extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'location_media';
-    public $fillable = ['location_id','media_id'];
+    protected $table = 'gallery_media';
+    public $fillable = ['gallery_id','media_id'];
 }

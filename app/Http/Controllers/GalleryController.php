@@ -9,7 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CopyrightStatus;
-use App\Models\Location;
+use App\Models\Media;
 use App\Models\Gallery;
 use App\Models\MediaType;
 use Illuminate\Http\Request;
@@ -82,7 +82,8 @@ class GalleryController extends Controller
     {
         if (Auth::check()) {
             $gallery = Gallery::find($id);
-            return view('gallery.show', compact('gallery'))->with('email',Auth::user()->email);
+            $medias = Media::orderBy('id', 'DESC')->paginate(5);
+            return view('gallery.show', compact('gallery','medias'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }

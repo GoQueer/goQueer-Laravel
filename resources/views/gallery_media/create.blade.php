@@ -74,7 +74,7 @@
                 <td>{{ $locationMedia->id }}</td>
                 <td>{{ $locationMedia->media_id  }}</td>
                 <td>
-                    {!! Form::open(['method' => 'DELETE','route' => ['location_media.destroy', $locationMedia->id],'style'=>'display:inline']) !!}
+                    {!! Form::open(['method' => 'DELETE','route' => ['gallery_media', $locationMedia->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
                 </td>

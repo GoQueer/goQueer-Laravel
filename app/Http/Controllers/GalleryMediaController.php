@@ -8,13 +8,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use App\Models\Location;
 use App\Models\LocationMedia;
 use App\Models\Media;
 use App\Models\MediaType;
 use Illuminate\Http\Request;
 
-class LocationMediaController extends Controller
+class GalleryMediaController extends Controller
 {
 
     /**
@@ -24,7 +25,7 @@ class LocationMediaController extends Controller
      */
     public function index(Request $request)
     {
-        $medias = LocationMedia::orderBy('id','DESC')->paginate(5);
+        $medias = GalleryMedia::orderBy('id','DESC')->paginate(5);
         return view('media.index',compact('medias'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -37,10 +38,10 @@ class LocationMediaController extends Controller
     public function create()
     {
 //        $types = MediaType::lists('name','id');
-        $medias = Media::lists('name','id');
+        $galleries = Gallery::lists('name','id');
         $types = MediaType::lists('name', 'id');
 
-        return view('location_media.create', compact('id', 'medias','location_id'));
+        return view('gallery_media.create', compact('id', 'galleries','location_id'));
 //        $models = $->models();
 //        return Response::eloquent($models->get(['id','name']));
 //        return View::make('media.create')->with('locations', $locations)->with('types',$types);
@@ -59,15 +60,15 @@ class LocationMediaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'location_id' => 'required',
+            'gallery_id' => 'required',
             'media_id' => 'required',
         ]);
-        \DB::table('location_media')->insert(
-            ['location_id' => $request->location_id,
+        \DB::table('gallery_media')->insert(
+            ['gallery_id' => $request->gallery_id,
                 'media_id' => $request->media_id,
                 ]
         );
-        return redirect()->route('location_media.show',[$request->location_id])
+        return redirect()->route('gallery_media.show',[$request->location_id])
             ->with('success','Media Assigned successfully');
     }
 
@@ -83,10 +84,10 @@ class LocationMediaController extends Controller
         $locationNames = \DB::table('location')
             ->where('id', '=', $id)
             ->get();
-        $locationMedias = \DB::table('location_media')
+        $locationMedias = \DB::table('gallery_media')
             ->where('location_id', '=', $id)
             ->get();
-        return view('location_media.create', compact('id', 'medias','locationMedias','locationNames'));
+        return view('gallery_media.create', compact('id', 'medias','locationMedias','locationNames'));
     }
 
     /**
