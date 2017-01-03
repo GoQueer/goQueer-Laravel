@@ -49,8 +49,13 @@ class GalleryMediaController extends Controller
 
             $id = $request->gallery_id;
             $gallery = Gallery::find($id);
-            $medias = Media::orderBy('id', 'DESC')->paginate(5);
-            return view('gallery.show', compact('gallery', 'medias', 'id'))->with('email', Auth::user()->email);
+            $all_medias = Media::orderBy('id', 'DESC')->paginate(5);
+            $assigned_medias =  DB::table('media')
+                ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
+                ->select('media.*','gallery_media.id AS finalId')
+                ->where('gallery_media.gallery_id' , '=', $id)
+                ->get();
+            return view('gallery.show', compact('gallery', 'all_medias','assigned_medias', 'id'))->with('email', Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -61,10 +66,7 @@ class GalleryMediaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function addMedia(){
 
-        return '1';
-    }
     public function store(Request $request)
     {
         var_dump($request);
@@ -82,23 +84,7 @@ class GalleryMediaController extends Controller
             ->with('success','Media Assigned successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $medias = Media::lists('name','id');
-        $locationNames = \DB::table('location')
-            ->where('id', '=', $id)
-            ->get();
-        $locationMedias = \DB::table('gallery_media')
-            ->where('location_id', '=', $id)
-            ->get();
-        return view('gallery_media.create', compact('id', 'medias','locationMedias','locationNames'));
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -138,10 +124,10 @@ class GalleryMediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        LocationMedia::find($id)->delete();
-        return redirect()->route('location.index')
-            ->with('success','Media deleted successfully');
+        GalleryMedia::find($request->gallery_media_id)->delete();
+        return redirect()->route('gallery.show',$request->gallery_id)
+            ->with('success','Association deleted successfully');
     }
 }

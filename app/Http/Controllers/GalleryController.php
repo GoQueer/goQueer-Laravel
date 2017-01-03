@@ -82,8 +82,13 @@ class GalleryController extends Controller
     {
         if (Auth::check()) {
             $gallery = Gallery::find($id);
-            $medias = Media::orderBy('id', 'DESC')->paginate(5);
-            return view('gallery.show', compact('gallery','medias','id'))->with('email',Auth::user()->email);
+            $all_medias = Media::orderBy('id', 'DESC')->paginate(5);
+            $assigned_medias =  DB::table('media')
+                ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
+                ->select('media.*','gallery_media.id AS finalId')
+                ->where('gallery_media.gallery_id' , '=', $id)
+                ->get();
+            return view('gallery.show', compact('gallery','all_medias','assigned_medias','id'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
