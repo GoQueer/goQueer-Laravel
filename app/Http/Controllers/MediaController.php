@@ -82,6 +82,7 @@ class MediaController extends Controller
                     'updated_at' => new \DateTime(),
                     'name' => $request->name,
                     'type_id' => $request->type_id,
+                    'progress_status_id' => '1',
                     'copyright_status_id' => $request->status_id,
                     'user_id' => Auth::id()]
             );

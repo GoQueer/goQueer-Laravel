@@ -11,6 +11,23 @@
         </div>
     </div>
 
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="row">
 
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -45,7 +62,7 @@
                 <td><div style="height:20px;width:250px; overflow:hidden">{{ $media->description }}</div></td>
 
                 <td>
-                    <a class="btn btn-success" href="{{ route('gallery.show',$media->id) }}">Add</a>
+                    <a class="btn btn-success" href="{{ route('gallery_media.create',Array('media_id' =>$media->id,'gallery_id' => $id)) }}">Add</a>
                 </td>
             </tr>
         @endforeach

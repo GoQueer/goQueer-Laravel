@@ -9,11 +9,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
-use App\Models\Location;
-use App\Models\LocationMedia;
+use App\Models\GalleryMedia;
 use App\Models\Media;
-use App\Models\MediaType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GalleryMediaController extends Controller
 {
@@ -35,20 +34,25 @@ class GalleryMediaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-//        $types = MediaType::lists('name','id');
-        $galleries = Gallery::lists('name','id');
-        $types = MediaType::lists('name', 'id');
+        if (Auth::check()) {
+            $this->validate($request, [
+                'gallery_id' => 'required',
+                'media_id' => 'required',
+            ]);
+            \DB::table('gallery_media')->insert(
+                ['gallery_id' => $request->gallery_id,
+                    'media_id' => $request->media_id,
+                ]
+            );
 
-        return view('gallery_media.create', compact('id', 'galleries','location_id'));
-//        $models = $->models();
-//        return Response::eloquent($models->get(['id','name']));
-//        return View::make('media.create')->with('locations', $locations)->with('types',$types);
-//        return view('media.create')
-//            ->with('locations', Location::orderBy('id', 'asc')->lists('name','id'))
-//            ->with('types', MediaType::orderBy('id', 'asc')->lists('name','id'));
-//        return view('media.create',compact('types','locations'));
+            $id = $request->gallery_id;
+            $gallery = Gallery::find($id);
+            $medias = Media::orderBy('id', 'DESC')->paginate(5);
+            return view('gallery.show', compact('gallery', 'medias', 'id'))->with('email', Auth::user()->email);
+        } else
+            return view('errors.permission');
     }
 
     /**
@@ -57,8 +61,14 @@ class GalleryMediaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function addMedia(){
+
+        return '1';
+    }
     public function store(Request $request)
     {
+        var_dump($request);
+//        var_dump($id1);
         $this->validate($request, [
             'gallery_id' => 'required',
             'media_id' => 'required',
