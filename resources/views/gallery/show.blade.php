@@ -53,17 +53,21 @@
             <th>Source</th>
             <th>Publish Date</th>
             <th>Description</th>
+            <th>Action</th>
 
         </tr>
         @foreach ($assigned_medias as $key => $assigned_media)
             <tr>
-                <td><div style="height:20px; overflow:hidden">{{ $assigned_media->id }}</div></td>
+                <td><div style="height:20px; overflow:hidden">{{ $assigned_media->finalId }}</div></td>
                 <td><div style="height:20px; overflow:hidden">{{ $assigned_media->name }}</div></td>
                 <td><div style="height:20px; overflow:hidden">{{ $assigned_media->source }}</div></td>
                 <td><div style="height:20px;width:80px; overflow:hidden">{{ $assigned_media->date }}</div></td>
                 <td><div style="height:20px;width:250px; overflow:hidden">{{ $assigned_media->description }}</div></td>
                 <td><div style="height:35px; overflow:hidden">
-                        <a class="btn btn-danger" href="{{ route('gallery_media.destroy',Array('gallery_media_id' =>$assigned_media->id, 'gallery_id' => $id)) }}">Delete</a>
+                        {{--<a class="btn btn-danger" href="{{ route('gallery_media.destroy',Array('gallery_media_id' =>$assigned_media->id, 'gallery_id' => $id)) }}">Delete</a>--}}
+                        {!! Form::open(['method' => 'DELETE','route' => ['gallery_media.destroy',Array($assigned_media->finalId,1)],'style'=>'display:inline']) !!}
+                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                        {!! Form::close() !!}
                     </div>
                 </td>
 
@@ -75,8 +79,7 @@
 
 
 
-    <br>
-    <br>
+
     <hr/>
     <table class="table table-bordered">
         <tr>
@@ -97,6 +100,8 @@
 
                 <td><div style="height:35px; overflow:hidden">
                     <a class="btn btn-success" href="{{ route('gallery_media.create',Array('media_id' =>$all_media->id,'gallery_id' => $id)) }}">Add</a>
+
+
                     </div>
                 </td>
             </tr>

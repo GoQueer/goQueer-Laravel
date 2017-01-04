@@ -50,7 +50,7 @@ class GalleryMediaController extends Controller
             $id = $request->gallery_id;
             $gallery = Gallery::find($id);
             $all_medias = Media::orderBy('id', 'DESC')->paginate(5);
-            $assigned_medias =  DB::table('media')
+            $assigned_medias =  \DB::table('media')
                 ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
                 ->select('media.*','gallery_media.id AS finalId')
                 ->where('gallery_media.gallery_id' , '=', $id)
@@ -124,10 +124,12 @@ class GalleryMediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id,$gallery_id)
     {
-        GalleryMedia::find($request->gallery_media_id)->delete();
-        return redirect()->route('gallery.show',$request->gallery_id)
+        GalleryMedia::find($id)->delete();
+//        var_dump($id);
+//        return;
+        return redirect()->route('gallery.show',$gallery_id)
             ->with('success','Association deleted successfully');
     }
 }
