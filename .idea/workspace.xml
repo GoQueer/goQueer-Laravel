@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GalleryMediaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GalleryMediaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_10_23_222823_create_gallery_media_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_10_23_222823_create_gallery_media_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/LocationTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/LocationTableSeeder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/gallery/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/gallery/show.blade.php" />
     </list>
     <ignored path="secondTry.iws" />
@@ -86,13 +80,13 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/gallery/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="704">
+              <caret line="83" column="10" lean-forward="true" selection-start-line="83" selection-start-column="10" selection-end-line="83" selection-end-column="10" />
               <folding>
                 <element signature="e#1998#2045#0#HTML" expanded="true" />
                 <element signature="e#2117#2163#0#HTML" expanded="true" />
                 <element signature="e#2472#2491#0#HTML" expanded="true" />
-                <element signature="e#2950#2969#0#HTML" expanded="true" />
+                <element signature="e#2812#2831#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -543,7 +537,7 @@
       <workItem from="1483228752808" duration="9510000" />
       <workItem from="1483394585163" duration="8296000" />
       <workItem from="1483411057922" duration="9254000" />
-      <workItem from="1483916851235" duration="13744000" />
+      <workItem from="1483916851235" duration="13771000" />
     </task>
     <task id="LOCAL-00001" summary="working on media">
       <created>1479710016126</created>
@@ -825,11 +819,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483929695148</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="fixed sorting">
+      <created>1483934868534</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1483934868534</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121784000" />
+    <option name="totallyTimeSpent" value="121811000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -904,7 +905,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="working comment section for media" />
     <MESSAGE value="added copyright status plus fix on seed and migration" />
     <MESSAGE value="updated readme file" />
     <MESSAGE value="some final fixes" />
@@ -929,7 +929,8 @@
     <MESSAGE value="working on delete" />
     <MESSAGE value="working on delete ..." />
     <MESSAGE value="weird fixing for adding and removing media to gallery" />
-    <option name="LAST_COMMIT_MESSAGE" value="weird fixing for adding and removing media to gallery" />
+    <MESSAGE value="fixed sorting" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed sorting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1299,13 +1300,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/gallery/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="704">
+          <caret line="83" column="10" lean-forward="true" selection-start-line="83" selection-start-column="10" selection-end-line="83" selection-end-column="10" />
           <folding>
             <element signature="e#1998#2045#0#HTML" expanded="true" />
             <element signature="e#2117#2163#0#HTML" expanded="true" />
             <element signature="e#2472#2491#0#HTML" expanded="true" />
-            <element signature="e#2950#2969#0#HTML" expanded="true" />
+            <element signature="e#2812#2831#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

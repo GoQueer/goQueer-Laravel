@@ -71,14 +71,11 @@
                         {!! Form::close() !!}
                 <td><div style="width:20px ">
                         {!! Form::open(['route' => ['order.update', $assigned_media->finalId.'&'.$id ], 'method'=>'PUT']) !!}
-{{--                        {{Form::button('<i class="glyphicon glyphicon-delete">↑</i>', array('type' => 'submit', 'class' => ''))}}--}}
                         {!! Form::submit('↑', ['class' => 'btn navbar-btn btn-info']) !!}
                         {!! Form::close() !!}
                     </div></td>
                 <td><div style="width:20px ">
-
                         {!! Form::open(['route' => ['order.destroy', $assigned_media->finalId.'&'.$id ], 'method'=>'DELETE']) !!}
-                        {{--{{Form::button('<i class="glyphicon glyphicon-delete">↓</i>', array('type' => 'submit', 'class' => ''))}}--}}
                         {!! Form::submit('↓', ['class' => 'btn navbar-btn btn-info']) !!}
                         {!! Form::close() !!} </div></td>
                     </div>
