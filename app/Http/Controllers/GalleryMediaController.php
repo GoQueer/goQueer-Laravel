@@ -34,27 +34,30 @@ class GalleryMediaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create($input)
     {
+
+        $parameters = explode("&", $input);
+        $gallery_id = $parameters[1];
+        $media_id = $parameters[0];
         if (Auth::check()) {
-            $this->validate($request, [
-                'gallery_id' => 'required',
-                'media_id' => 'required',
-            ]);
+
             \DB::table('gallery_media')->insert(
-                ['gallery_id' => $request->gallery_id,
-                    'media_id' => $request->media_id,
+                ['gallery_id' => $gallery_id,
+                    'media_id' => $media_id,
                 ]
             );
 
-            $id = $request->gallery_id;
+            $id = $gallery_id;
             $gallery = Gallery::find($id);
             $all_medias = Media::orderBy('id', 'DESC')->paginate(5);
+
             $assigned_medias =  \DB::table('media')
                 ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
                 ->select('media.*','gallery_media.id AS finalId')
                 ->where('gallery_media.gallery_id' , '=', $id)
                 ->get();
+
             return view('gallery.show', compact('gallery', 'all_medias','assigned_medias', 'id'))->with('email', Auth::user()->email);
         } else
             return view('errors.permission');
@@ -69,8 +72,7 @@ class GalleryMediaController extends Controller
 
     public function store(Request $request)
     {
-        var_dump($request);
-//        var_dump($id1);
+
         $this->validate($request, [
             'gallery_id' => 'required',
             'media_id' => 'required',
@@ -105,17 +107,43 @@ class GalleryMediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($input)
     {
-        $this->validate($request, [
-            'source' => 'required',
-            'address' => 'required',
-            'type_id' => 'required',
-            'user_id' => 'required',
-        ]);
-        Media::find($id)->update($request->all());
-        return redirect()->route('media.index')
-            ->with('success','Media updated successfully');
+        $parameters = explode("&", $input);
+        $gallery_id = $parameters[1];
+        $media_id = $parameters[0];
+        if (Auth::check()) {
+            $ifExist =  \DB::table('gallery_media')
+
+                ->select('gallery_media.*')
+                ->where('gallery_media.gallery_id' , '=', $gallery_id)
+                ->where('gallery_media.media_id' , '=', $media_id)
+                ->get();
+            if (sizeof($ifExist) == 0) {
+                \DB::table('gallery_media')->insert(
+                    ['gallery_id' => $gallery_id,
+                        'media_id' => $media_id,
+                    ]
+                );
+            }
+
+            $id = $gallery_id;
+            $gallery = Gallery::find($id);
+            $all_medias = Media::orderBy('id', 'DESC')->paginate(5);
+
+            $assigned_medias =  \DB::table('media')
+                ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
+                ->select('media.*','gallery_media.id AS finalId')
+                ->where('gallery_media.gallery_id' , '=', $id)
+                ->get();
+            if (sizeof($ifExist) != 0)
+                return view('gallery.show', compact('gallery', 'all_medias','assigned_medias', 'id'))->with('email', Auth::user()->email)
+                    ->with('success','Already assigned');
+            else
+                return view('gallery.show', compact('gallery', 'all_medias','assigned_medias', 'id'))->with('email', Auth::user()->email)
+                    ->with('success','Association created successfully');
+        } else
+            return view('errors.permission');
     }
 
     /**
@@ -124,12 +152,13 @@ class GalleryMediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id,$gallery_id)
+    public function destroy($input)
     {
-        GalleryMedia::find($id)->delete();
-//        var_dump($id);
-//        return;
-        return redirect()->route('gallery.show',$gallery_id)
+        $parameters = explode("&", $input);
+
+
+        GalleryMedia::find($parameters[0])->delete();
+        return redirect()->route('gallery.show',$parameters[1])
             ->with('success','Association deleted successfully');
     }
 }

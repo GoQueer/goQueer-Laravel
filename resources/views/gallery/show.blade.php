@@ -64,8 +64,7 @@
                 <td><div style="height:20px;width:80px; overflow:hidden">{{ $assigned_media->date }}</div></td>
                 <td><div style="height:20px;width:250px; overflow:hidden">{{ $assigned_media->description }}</div></td>
                 <td><div style="height:35px; overflow:hidden">
-                        {{--<a class="btn btn-danger" href="{{ route('gallery_media.destroy',Array('gallery_media_id' =>$assigned_media->id, 'gallery_id' => $id)) }}">Delete</a>--}}
-                        {!! Form::open(['method' => 'DELETE','route' => ['gallery_media.destroy',Array($assigned_media->finalId,1)],'style'=>'display:inline']) !!}
+                        {!! Form::open(['route' => ['gallery_media.destroy', $assigned_media->finalId . '&'.$id], 'method'=>'DELETE']) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </div>
@@ -74,11 +73,6 @@
             </tr>
         @endforeach
     </table>
-
-
-
-
-
 
     <hr/>
     <table class="table table-bordered">
@@ -98,10 +92,16 @@
                 <td><div style="height:20px;width:80px; overflow:hidden">{{ $all_media->date }}</div></td>
                 <td><div style="height:20px;width:250px; overflow:hidden">{{ $all_media->description }}</div></td>
 
-                <td><div style="height:35px; overflow:hidden">
-                    <a class="btn btn-success" href="{{ route('gallery_media.create',Array('media_id' =>$all_media->id,'gallery_id' => $id)) }}">Add</a>
-
-
+                <td>
+                    <div style="height:35px; overflow:hidden">
+                    {{--<a class="btn btn-success" href="{{ route('gallery_media.create',Array('media_id' =>$all_media->id,'gallery_id' => $id)) }}">Add</a>--}}
+                        {{--{!! Form::open(['method' => 'CREATE','route' => ['gallery_media.create',Array($assigned_media->finalId,1)],'style'=>'display:inline']) !!}--}}
+                        {{--{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}--}}
+                        {{--{!! Form::close() !!}--}}
+                        {!! Form::open(['route' => ['gallery_media.update', $all_media->id . '&'.$id], 'method'=>'PUT']) !!}
+{{--                        {!! Form::open(['action' => 'GalleryMediaController@create', $all_media->id . '&'.$id]) !!}--}}
+                        {!! Form::submit('Add', ['class' => 'btn btn-success']) !!}
+                        {!! Form::close() !!}
                     </div>
                 </td>
             </tr>
