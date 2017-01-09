@@ -77,9 +77,9 @@
                 <td><div style="width:20px ">
                         {!! Form::open(['route' => ['order.destroy', $assigned_media->finalId.'&'.$id ], 'method'=>'DELETE']) !!}
                         {!! Form::submit('↓', ['class' => 'btn navbar-btn btn-info']) !!}
-                        {!! Form::close() !!} </div></td>
-                    </div>
-                </td>
+                        {!! Form::close() !!}
+                    </div></td>
+
 
             </tr>
         @endforeach

@@ -31,11 +31,13 @@ Route::get('/register', function () {
 });
 Route::resource('order', 'OrderController');
 Route::resource('location','LocationController');
+Route::resource('draft','DraftController');
 Route::resource('media','MediaController');
 Route::resource('gallery','GalleryController');
 Route::resource('message','MessageController');
 Route::resource('gallery_media','GalleryMediaController');
-Route::resource('draft','DraftController');
+Route::resource('test','TestController');
+Route::resource('final','FinalController');
 Route::resource('map','MapController');
 Route::auth();
 

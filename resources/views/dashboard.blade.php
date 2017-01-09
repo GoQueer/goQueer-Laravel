@@ -152,7 +152,10 @@
                                     <a href="{{ url ('/draft') }}">Drafts</a>
                                 </li>
                                 <li>
-                                    <a href="#">Finalized</a>
+                                    <a href="{{ url ('/test') }}">Test</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url ('/final') }}">Final</a>
                                 </li>
 
                             </ul>

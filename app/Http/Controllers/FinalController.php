@@ -15,7 +15,7 @@ use App\Models\MediaType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-class DraftController extends Controller
+class FinalController extends Controller
 {
 
     /**
@@ -26,8 +26,8 @@ class DraftController extends Controller
     public function index(Request $request)
     {
         if (Auth::check()) {
-            $medias = Media::orderBy('id', 'DESC')->where('progress_status_id','=','1')->paginate(5);
-            return view('draft.index', compact('medias'))
+            $medias = Media::orderBy('id', 'DESC')->where('progress_status_id','=','3')->paginate(5);
+            return view('media.index', compact('medias'))
                 ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
@@ -121,7 +121,7 @@ class DraftController extends Controller
     {
         if (Auth::check()) {
             $media = Media::find($id);
-            return view('draft.edit', compact('media'))->with('email',Auth::user()->email);
+            return view('media.edit', compact('media'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -138,26 +138,12 @@ class DraftController extends Controller
         if (Auth::check()) {
             $this->validate($request, [
                 'source' => 'required',
-                'name' => 'required',
-                'description' => 'required',
+                'address' => 'required',
+                'type_id' => 'required',
+                'user_id' => 'required',
             ]);
             Media::find($id)->update($request->all());
-            return redirect()->route('draft.index')
-                ->with('success', 'Media updated successfully')->with('email',Auth::user()->email);
-        } else
-            return view('errors.permission');
-    }
-
-    public function moveToTest(Request $request, $id)
-    {
-        if (Auth::check()) {
-            $this->validate($request, [
-                'source' => 'required',
-                'name' => 'required',
-                'description' => 'required',
-            ]);
-            Media::find($id)->update($request->all());
-            return redirect()->route('draft.index')
+            return redirect()->route('media.index')
                 ->with('success', 'Media updated successfully')->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
