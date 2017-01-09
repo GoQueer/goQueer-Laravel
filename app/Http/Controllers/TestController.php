@@ -27,7 +27,7 @@ class TestController extends Controller
     {
         if (Auth::check()) {
             $medias = Media::orderBy('id', 'DESC')->where('progress_status_id','=','2')->paginate(5);
-            return view('media.index', compact('medias'))
+            return view('test.index', compact('medias'))
                 ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
         } else
             return view('errors.permission');

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="">
+    <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="a working draft to test">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/test/create.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/test/edit.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/test/index.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/test/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FinalController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FinalController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/draft/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/draft/index.blade.php" />
     </list>
@@ -42,26 +47,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GalleryController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GalleryController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="87" column="96" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="96" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/gallery/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-364">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/gallery/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,28 +72,48 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/draft/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="41" column="87" selection-start-line="41" selection-start-column="87" selection-end-line="41" selection-end-column="87" />
+            <state relative-caret-position="-85">
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="117" column="23" selection-start-line="117" selection-start-column="23" selection-end-line="117" selection-end-column="23" />
+            <state relative-caret-position="442">
+              <caret line="148" column="45" selection-start-line="140" selection-start-column="7" selection-end-line="148" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinalController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FinalController.php">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/test/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/test/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="38" column="64" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FinalController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FinalController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="153" column="7" selection-start-line="153" selection-start-column="7" selection-end-line="153" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -127,8 +132,8 @@
       <file leaf-file-name="DraftController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DraftController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="32" column="45" selection-start-line="27" selection-start-column="7" selection-end-line="32" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -158,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Models/CopyrightStatus.php" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/resources/views/location/show.blade.php" />
@@ -194,7 +198,6 @@
         <option value="$PROJECT_DIR$/resources/views/location/index.blade.php" />
         <option value="$PROJECT_DIR$/database/seeds/LocationTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Order.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FinalController.php" />
         <option value="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/draft/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
@@ -207,8 +210,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/GalleryMediaController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" />
         <option value="$PROJECT_DIR$/storage/framework/views/e957b476d48375840fda947b3eb4e97a97c92234.php" />
+        <option value="$PROJECT_DIR$/resources/views/test/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/draft/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FinalController.php" />
       </list>
     </option>
   </component>
@@ -361,51 +366,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="secondTry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goQueer" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="location" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="secondTry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goQueer" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gallery" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -573,8 +534,8 @@
       <recent name="C:\workspace\secondTry\public\css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\workspace\goQueer" />
       <recent name="C:\workspace\goQueer\resources\views" />
+      <recent name="C:\workspace\goQueer" />
       <recent name="C:\workspace\goQueer\app\Http\Controllers" />
       <recent name="C:\workspace\goQueer\public\js\src" />
       <recent name="C:\workspace\goQueer\app\Models" />
@@ -657,7 +618,7 @@
       <workItem from="1483394585163" duration="8296000" />
       <workItem from="1483411057922" duration="9254000" />
       <workItem from="1483916851235" duration="17107000" />
-      <workItem from="1483982362266" duration="2496000" />
+      <workItem from="1483982362266" duration="2968000" />
     </task>
     <task id="LOCAL-00001" summary="working on media">
       <created>1479710016126</created>
@@ -960,11 +921,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483983857169</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="a working draft to test">
+      <created>1483984891276</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1483984891276</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127643000" />
+    <option name="totallyTimeSpent" value="128115000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1039,7 +1007,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="updated readme file" />
     <MESSAGE value="some final fixes" />
     <MESSAGE value="show the already selected polygon" />
     <MESSAGE value="minor fix on storing geoJson" />
@@ -1064,15 +1031,14 @@
     <MESSAGE value="weird fixing for adding and removing media to gallery" />
     <MESSAGE value="fixed sorting" />
     <MESSAGE value="fixed ordering one more time" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed ordering one more time" />
+    <MESSAGE value="a working draft to test" />
+    <option name="LAST_COMMIT_MESSAGE" value="a working draft to test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_10_23_015355_create_media_type_table.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_10_22_221851_create_progress_status_table.php" />
     <entry file="file://$PROJECT_DIR$/database/seeds/MediaTableSeeder.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_10_22_221850_create_copyright_status_table.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
@@ -1183,14 +1149,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FinalController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/gallery/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1201,9 +1159,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DraftController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/test/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1211,16 +1169,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/draft/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="41" column="87" selection-start-line="41" selection-start-column="87" selection-end-line="41" selection-end-column="87" />
+        <state relative-caret-position="-85">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DraftController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="32" column="45" selection-start-line="27" selection-start-column="7" selection-end-line="32" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/test/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="38" column="64" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="117" column="23" selection-start-line="117" selection-start-column="23" selection-end-line="117" selection-end-column="23" />
+        <state relative-caret-position="442">
+          <caret line="148" column="45" selection-start-line="140" selection-start-column="7" selection-end-line="148" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FinalController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="153" column="7" selection-start-line="153" selection-start-column="7" selection-end-line="153" selection-end-column="7" />
           <folding />
         </state>
       </provider>

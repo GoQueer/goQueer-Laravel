@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="text-center">
-                <h2>Draft Media List</h2>
+                <h2>Test Media List</h2>
             </div>
         </div>
     </div>
@@ -36,9 +36,9 @@
                 <td><div style="height:40px;width:100px; overflow:hidden">{{ $media->fileName }}</div></td>
 
                 <td>
-                    <a class="btn btn-info" href="{{ route('draft.edit',$media->id) }}">Edit</a>
+                    <a class="btn btn-info" href="{{ route('test.edit',$media->id) }}">Edit</a>
                     {{--<a class="btn btn-success" href="{{ route('test.update',$media->id) }}">Upgrade</a>--}}
-                    {!! Form::open(['route' => ['test.update', $media->id], 'method'=>'PUT']) !!}
+                    {!! Form::open(['route' => ['final.update', $media->id], 'method'=>'PUT']) !!}
                     {!! Form::submit('Upgrade', ['class' => 'btn navbar-btn btn-success']) !!}
                     {!! Form::close() !!}
 

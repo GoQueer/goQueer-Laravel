@@ -136,15 +136,12 @@ class FinalController extends Controller
     public function update(Request $request, $id)
     {
         if (Auth::check()) {
-            $this->validate($request, [
-                'source' => 'required',
-                'address' => 'required',
-                'type_id' => 'required',
-                'user_id' => 'required',
-            ]);
-            Media::find($id)->update($request->all());
-            return redirect()->route('media.index')
-                ->with('success', 'Media updated successfully')->with('email',Auth::user()->email);
+            DB::table('media')
+                ->where('id', $id)
+                ->update(['progress_status_id' => 3]);
+
+            return redirect()->route('test.index')
+                ->with('success', 'Media moved to test')->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
