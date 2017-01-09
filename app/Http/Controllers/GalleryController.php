@@ -86,6 +86,7 @@ class GalleryController extends Controller
             $assigned_medias =  DB::table('media')
                 ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
                 ->select('media.*','gallery_media.id AS finalId')
+                ->orderBy('gallery_media.order', 'desc')
                 ->where('gallery_media.gallery_id' , '=', $id)
                 ->get();
             return view('gallery.show', compact('gallery','all_medias','assigned_medias','id'))->with('email',Auth::user()->email);

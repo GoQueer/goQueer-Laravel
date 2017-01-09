@@ -29,7 +29,7 @@ Route::get('/features', function () {
 Route::get('/register', function () {
     return view('auth.register');
 });
-
+Route::resource('order', 'OrderController');
 Route::resource('location','LocationController');
 Route::resource('media','MediaController');
 Route::resource('gallery','GalleryController');

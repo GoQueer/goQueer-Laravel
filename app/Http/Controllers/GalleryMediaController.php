@@ -55,6 +55,7 @@ class GalleryMediaController extends Controller
             $assigned_medias =  \DB::table('media')
                 ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
                 ->select('media.*','gallery_media.id AS finalId')
+                ->orderBy('gallery_media.order', 'asc')
                 ->where('gallery_media.gallery_id' , '=', $id)
                 ->get();
 
@@ -100,6 +101,12 @@ class GalleryMediaController extends Controller
         return view('media.edit',compact('media'));
     }
 
+    public function increase($input)
+    {
+        $parameters = explode("&", $input);
+        $gallery_id = $parameters[1];
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -134,6 +141,7 @@ class GalleryMediaController extends Controller
             $assigned_medias =  \DB::table('media')
                 ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
                 ->select('media.*','gallery_media.id AS finalId')
+                ->orderBy('gallery_media.order', 'desc')
                 ->where('gallery_media.gallery_id' , '=', $id)
                 ->get();
             if (sizeof($ifExist) != 0)

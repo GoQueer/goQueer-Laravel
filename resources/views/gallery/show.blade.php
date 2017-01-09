@@ -41,7 +41,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h3> Assigned Media</h3>
+                <h3> Assigned Media:</h3>
             </div>
 
         </div>
@@ -54,6 +54,8 @@
             <th>Publish Date</th>
             <th>Description</th>
             <th>Action</th>
+            <th>Up</th>
+            <th>Down</th>
 
         </tr>
         @foreach ($assigned_medias as $key => $assigned_media)
@@ -62,11 +64,23 @@
                 <td><div style="height:20px; overflow:hidden">{{ $assigned_media->name }}</div></td>
                 <td><div style="height:20px; overflow:hidden">{{ $assigned_media->source }}</div></td>
                 <td><div style="height:20px;width:80px; overflow:hidden">{{ $assigned_media->date }}</div></td>
-                <td><div style="height:20px;width:250px; overflow:hidden">{{ $assigned_media->description }}</div></td>
-                <td><div style="height:35px; overflow:hidden">
+                <td><div style="height:20px;width:250px;overflow:hidden">{{ $assigned_media->description }}</div></td>
+                <td><div style="height:50px;width:70px;overflow:hidden">
                         {!! Form::open(['route' => ['gallery_media.destroy', $assigned_media->finalId . '&'.$id], 'method'=>'DELETE']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                        {!! Form::submit('Delete', ['class' => 'btn navbar-btn btn-danger']) !!}
                         {!! Form::close() !!}
+                <td><div style="width:20px ">
+                        {!! Form::open(['route' => ['order.update', $assigned_media->finalId.'&'.$id ], 'method'=>'PUT']) !!}
+{{--                        {{Form::button('<i class="glyphicon glyphicon-delete">↑</i>', array('type' => 'submit', 'class' => ''))}}--}}
+                        {!! Form::submit('↑', ['class' => 'btn navbar-btn btn-info']) !!}
+                        {!! Form::close() !!}
+                    </div></td>
+                <td><div style="width:20px ">
+
+                        {!! Form::open(['route' => ['order.destroy', $assigned_media->finalId.'&'.$id ], 'method'=>'DELETE']) !!}
+                        {{--{{Form::button('<i class="glyphicon glyphicon-delete">↓</i>', array('type' => 'submit', 'class' => ''))}}--}}
+                        {!! Form::submit('↓', ['class' => 'btn navbar-btn btn-info']) !!}
+                        {!! Form::close() !!} </div></td>
                     </div>
                 </td>
 
@@ -75,6 +89,14 @@
     </table>
 
     <hr/>
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h3> All Media:</h3>
+            </div>
+
+        </div>
+    </div>
     <table class="table table-bordered">
         <tr>
             <th>ID</th>
