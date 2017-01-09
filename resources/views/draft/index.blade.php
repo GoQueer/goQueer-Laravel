@@ -37,7 +37,10 @@
 
                 <td>
                     <a class="btn btn-info" href="{{ route('draft.edit',$media->id) }}">Edit</a>
-                    <a class="btn btn-success" href="{{ route('draft.moveToTest',$media->id) }}">Move to Test</a>
+                    {{--<a class="btn btn-success" href="{{ route('test.update',$media->id) }}">Upgrade</a>--}}
+                    {!! Form::open(['route' => ['test.update', $media->id], 'method'=>'PUT']) !!}
+                    {!! Form::submit('Upgrade', ['class' => 'btn navbar-btn btn-success']) !!}
+                    {!! Form::close() !!}
 
                 </td>
             </tr>

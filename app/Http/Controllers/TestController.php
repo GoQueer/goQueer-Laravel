@@ -99,6 +99,7 @@ class TestController extends Controller
      */
     public function show($id)
     {
+
         if (Auth::check()) {
             $media = Media::find($id);
             $comments = DB::table('message')
@@ -119,6 +120,7 @@ class TestController extends Controller
      */
     public function edit($id)
     {
+
         if (Auth::check()) {
             $media = Media::find($id);
             return view('media.edit', compact('media'))->with('email',Auth::user()->email);
@@ -133,18 +135,16 @@ class TestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update( $id)
     {
+
         if (Auth::check()) {
-            $this->validate($request, [
-                'source' => 'required',
-                'address' => 'required',
-                'type_id' => 'required',
-                'user_id' => 'required',
-            ]);
-            Media::find($id)->update($request->all());
-            return redirect()->route('media.index')
-                ->with('success', 'Media updated successfully')->with('email',Auth::user()->email);
+            DB::table('media')
+                ->where('id', $id)
+                ->update(['progress_status_id' => 2]);
+
+            return redirect()->route('draft.index')
+                ->with('success', 'Media moved to test')->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
