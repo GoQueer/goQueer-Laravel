@@ -85,7 +85,7 @@ class GalleryController extends Controller
             $all_medias = Media::orderBy('id', 'DESC')->paginate(5);
             $assigned_medias =  DB::table('media')
                 ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
-                ->select('media.*','gallery_media.id AS finalId')
+                ->select('media.*','gallery_media.id AS finalId', 'gallery_media.order AS order')
                 ->orderBy('gallery_media.order', 'desc')
                 ->where('gallery_media.gallery_id' , '=', $id)
                 ->get();

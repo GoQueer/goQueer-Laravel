@@ -15,7 +15,7 @@ class CreateGalleryMediaTable extends Migration
         Schema::create('gallery_media', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('gallery_id')->unsigned();
-            $table->increments('order')->unsigned();
+            $table->integer('order')->unsigned();
             $table->integer('media_id')->unsigned();
         });
 

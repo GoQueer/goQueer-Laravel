@@ -53,6 +53,7 @@
             <th>Source</th>
             <th>Publish Date</th>
             <th>Description</th>
+            <th>Order</th>
             <th>Action</th>
             <th>Up</th>
             <th>Down</th>
@@ -65,6 +66,7 @@
                 <td><div style="height:20px; overflow:hidden">{{ $assigned_media->source }}</div></td>
                 <td><div style="height:20px;width:80px; overflow:hidden">{{ $assigned_media->date }}</div></td>
                 <td><div style="height:20px;width:250px;overflow:hidden">{{ $assigned_media->description }}</div></td>
+                <td><div style="height:20px;width:25px;overflow:hidden">{{ $assigned_media->order}}</div></td>
                 <td><div style="height:50px;width:70px;overflow:hidden">
                         {!! Form::open(['route' => ['gallery_media.destroy', $assigned_media->finalId . '&'.$id], 'method'=>'DELETE']) !!}
                         {!! Form::submit('Delete', ['class' => 'btn navbar-btn btn-danger']) !!}

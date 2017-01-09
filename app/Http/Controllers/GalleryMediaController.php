@@ -54,7 +54,7 @@ class GalleryMediaController extends Controller
 
             $assigned_medias =  \DB::table('media')
                 ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
-                ->select('media.*','gallery_media.id AS finalId')
+                ->select('media.*','gallery_media.id AS finalId', 'gallery_media.order AS order')
                 ->orderBy('gallery_media.order', 'asc')
                 ->where('gallery_media.gallery_id' , '=', $id)
                 ->get();
@@ -78,9 +78,13 @@ class GalleryMediaController extends Controller
             'gallery_id' => 'required',
             'media_id' => 'required',
         ]);
+        $newOrder = DB::table('gallery_media')->where('id', DB::raw("(select max(`order`) from gallery_media)"))->get();
+
+
         \DB::table('gallery_media')->insert(
             ['gallery_id' => $request->gallery_id,
                 'media_id' => $request->media_id,
+                'order' => (int)$newOrder+1,
                 ]
         );
         return redirect()->route('gallery_media.show',[$request->location_id])
@@ -140,7 +144,7 @@ class GalleryMediaController extends Controller
 
             $assigned_medias =  \DB::table('media')
                 ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
-                ->select('media.*','gallery_media.id AS finalId')
+                ->select('media.*','gallery_media.id AS finalId', 'gallery_media.order AS order')
                 ->orderBy('gallery_media.order', 'desc')
                 ->where('gallery_media.gallery_id' , '=', $id)
                 ->get();
