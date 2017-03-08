@@ -16,6 +16,7 @@ Route::get('/', function () {
 
 Route::get('/login', array('uses' => 'HomeController@showLogin'));
 Route::post('/login', array('uses' => 'HomeController@doLogin'));
+Route::get('/logout', array('uses' => 'HomeController@doLogout'));
 
 
 Route::get('/documentation', function () {
@@ -43,9 +44,6 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/logout', array('uses' => 'HomeController@doLogout'));
 
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
+
+Route::get('/client/getLocations', array('uses' => 'ClientController@getLocations'));
