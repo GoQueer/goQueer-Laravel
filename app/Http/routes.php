@@ -46,4 +46,5 @@ Route::get('/home', 'HomeController@index');
 
 
 
-Route::get('/client/getLocations', array('uses' => 'ClientController@getLocations'));
+Route::get('/client/getAllLocations', array('uses' => 'PlayerController@getAllLocations'));
+Route::get('/client/getMyLocations', array('uses' => 'PlayerController@getMyLocations'));
