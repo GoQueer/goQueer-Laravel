@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\Location;
+use App\Models\Media;
 use Illuminate\Http\Request;
 class PlayerController extends Controller
 {
@@ -40,6 +41,11 @@ class PlayerController extends Controller
             return $locations->toJson();
         }
 
+    }
+    public function downloadMedia(Request $request){
+        $media = Media::find($request->media_id);
+        if (sizeof($media) > 0 )
+        return response()->download($media->filePath);
     }
 
 

@@ -48,3 +48,4 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/client/getAllLocations', array('uses' => 'PlayerController@getAllLocations'));
 Route::get('/client/getMyLocations', array('uses' => 'PlayerController@getMyLocations'));
+Route::get('/client/downloadMedia', array('uses' => 'PlayerController@downloadMedia'));
