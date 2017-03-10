@@ -37,5 +37,6 @@ class CreatePlayerTable extends Migration
         Schema::table('player', function (Blueprint $table) {
             $table->dropForeign('player_user_id_foreign');
         });
+        Schema::drop('player');
     }
 }

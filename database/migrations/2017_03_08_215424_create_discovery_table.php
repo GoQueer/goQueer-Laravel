@@ -42,6 +42,7 @@ class CreateDiscoveryTable extends Migration
         Schema::table('discovery', function (Blueprint $table) {
             $table->dropForeign('discovery_player_id_foreign');
         });
+        Schema::drop('discovery');
 
     }
 }
