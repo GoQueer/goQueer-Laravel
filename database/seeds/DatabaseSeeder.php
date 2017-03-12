@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
          $this->call(CopyrightStatusTableSeeder::class);
          $this->call(LocationTableSeeder::class);
          $this->call(MediaTableSeeder::class);
+         $this->call(PlayerTableSeeder::class);
+         $this->call(DiscoveryTableSeeder::class);
     }
 }

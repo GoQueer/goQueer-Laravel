@@ -15,7 +15,7 @@ class CreatePlayerTable extends Migration
         Schema::create('player', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->text('device_id');
+            $table->char('device_id',15);
             $table->integer('user_id')->nullable()->unsigned();
 
         });
