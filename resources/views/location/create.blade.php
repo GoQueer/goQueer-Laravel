@@ -140,7 +140,7 @@
                 polyline : false,
                 rectangle : true,
                 circle: false,
-                marker: false,
+                marker: true,
                 polygon: true
             }
         });
@@ -159,7 +159,7 @@
             var type = e.layerType,
                     layer = e.layer;
 
-            if (type === 'polygon' || type === 'circle' || type === 'rectangle') {
+            if (type === 'polygon' || type === 'circle' || type === 'rectangle' || type== 'marker') {
                 // here you got the polygon points
                 var points = layer._latlngs;
 

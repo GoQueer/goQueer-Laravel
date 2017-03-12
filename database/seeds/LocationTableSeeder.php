@@ -22,5 +22,27 @@ class LocationTableSeeder extends Seeder
         ]);
 
 
+        DB::table('location')->insert([
+            'id'=> '2',
+            'coordinate' => '{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-113.52760791778564,53.54856947589931]}}',
+            'name' => 'Marker Near St. Joachim Catholic Cemetery',
+            'description' => 'Marker Near St. Joachim Catholic Cemetery',
+            'address' => '119 St NW and 106 Avenue NW',
+            'user_id' => 1,
+
+        ]);
+
+
+        DB::table('location')->insert([
+            'id'=> '3',
+            'coordinate' => '{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-113.48814725875856,53.518828630232385]}}',
+            'name' => 'Near My House',
+            'description' => 'Very Near to My House!!!',
+            'address' => '99 St. NW and Whyte Ave',
+            'user_id' => 1,
+
+        ]);
+
+
     }
 }
