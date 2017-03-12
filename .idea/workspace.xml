@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_10_21_030903_create_gallery_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_10_23_221851_create_gallery_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_03_08_210156_create_player_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_03_08_210156_create_player_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_03_08_215424_create_discovery_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_03_08_215424_create_discovery_table.php" />
     </list>
     <ignored path="secondTry.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="289">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
                 <element signature="e#6#90#0#PHP" expanded="true" />
                 <element signature="e#125#159#0#PHP" expanded="true" />
@@ -69,11 +70,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="2016_10_23_221851_create_gallery_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_10_23_221851_create_gallery_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2017_03_08_215424_create_discovery_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2017_03_08_215424_create_discovery_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="2017_03_08_210156_create_player_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2017_03_08_210156_create_player_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="551">
+              <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
               <folding>
                 <element signature="e#7#48#0#PHP" expanded="true" />
               </folding>
@@ -140,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" />
         <option value="$PROJECT_DIR$/resources/views/map/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/location_media/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_10_22_221851_create_progress_status_table.php" />
@@ -157,7 +177,6 @@
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/plane.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/gallery/edit.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_10_21_030903_create_gallery_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LocationMediaController.php" />
         <option value="$PROJECT_DIR$/app/Models/LocationMedia.php" />
         <option value="$PROJECT_DIR$/resources/views/gallery/index.blade.php" />
@@ -185,12 +204,14 @@
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2017_03_08_215424_create_discovery_table.php" />
         <option value="$PROJECT_DIR$/app/Models/Player.php" />
         <option value="$PROJECT_DIR$/app/Models/Discovery.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2017_03_08_210156_create_player_table.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_10_21_030903_create_gallery_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_10_23_221851_create_gallery_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_03_08_210156_create_player_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_03_08_215424_create_discovery_table.php" />
       </list>
     </option>
   </component>
@@ -533,7 +554,7 @@
       <workItem from="1483986749667" duration="1829000" />
       <workItem from="1484965131507" duration="2431000" />
       <workItem from="1488930793790" duration="3357000" />
-      <workItem from="1488934290176" duration="13548000" />
+      <workItem from="1488934290176" duration="15943000" />
     </task>
     <task id="LOCAL-00001" summary="working on media">
       <created>1479710016126</created>
@@ -864,11 +885,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489017698005</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="added downloading media file">
+      <created>1489020221383</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1489020221383</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149280000" />
+    <option name="totallyTimeSpent" value="151675000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -943,7 +971,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="minor fix on storing geoJson" />
     <MESSAGE value="show media" />
     <MESSAGE value="showing relevant comments" />
     <MESSAGE value="fixed showing right comments" />
@@ -968,7 +995,8 @@
     <MESSAGE value="a working draft to test" />
     <MESSAGE value="working on android apis" />
     <MESSAGE value="a working getMy and getAll location service" />
-    <option name="LAST_COMMIT_MESSAGE" value="a working getMy and getAll location service" />
+    <MESSAGE value="added downloading media file" />
+    <option name="LAST_COMMIT_MESSAGE" value="added downloading media file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -978,7 +1006,6 @@
     <entry file="file://$PROJECT_DIR$/resources/views/map/index.blade.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_10_23_221849_create_location_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_26_172904_create_post_tag_table.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_10_21_030903_create_gallery_table.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/gallery/edit.blade.php" />
     <entry file="file://$PROJECT_DIR$/app/Models/GalleryMedia.php" />
     <entry file="file://$PROJECT_DIR$/public/favicon.ico" />
@@ -1196,14 +1223,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_03_08_215424_create_discovery_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="40" column="11" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="40" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Player.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1220,22 +1239,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_03_08_210156_create_player_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding>
-            <element signature="e#7#48#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MediaController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="103" column="38" lean-forward="true" selection-start-line="103" selection-start-column="11" selection-end-line="103" selection-end-column="38" />
           <folding>
-            <element signature="e#125#156#0#PHP" expanded="true" />
+            <element signature="e#125#156#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1250,12 +1259,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="289">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
             <element signature="e#6#90#0#PHP" expanded="true" />
             <element signature="e#125#159#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_10_23_221851_create_gallery_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_03_08_210156_create_player_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+          <folding>
+            <element signature="e#7#48#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_03_08_215424_create_discovery_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

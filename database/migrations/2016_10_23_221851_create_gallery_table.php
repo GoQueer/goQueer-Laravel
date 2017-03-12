@@ -17,6 +17,12 @@ class CreateGalleryTable extends Migration
             $table->text('name');
             $table->text('description');
             $table->timestamps();
+            $table->integer('location_id')->unsigned();
+        });
+        Schema::table('gallery', function (Blueprint $table) {
+            $table->foreign('location_id')->references('id')->on('location')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
 
         });
     }
@@ -28,6 +34,9 @@ class CreateGalleryTable extends Migration
      */
     public function down()
     {
+        Schema::table('gallery', function (Blueprint $table) {
+            $table->dropForeign('gallery_location_id_foreign');
+        });
         Schema::drop('gallery');
     }
 }
