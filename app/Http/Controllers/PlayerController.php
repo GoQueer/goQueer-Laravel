@@ -42,11 +42,37 @@ class PlayerController extends Controller
         }
 
     }
-    public function downloadMedia(Request $request){
+    public function downloadMediaById(Request $request){
         $media = Media::find($request->media_id);
         if (sizeof($media) > 0 )
         return response()->download($media->filePath);
     }
+
+    public function getMediaById(Request $request)
+    {
+
+        $myLocations = DB::table('player')->where('player.device_id','=',$request->device_id)
+            ->join('discovery', 'discovery.player_id', '=', 'player.id')
+            ->join('location', 'location.id', '=', 'discovery.location_id')
+            ->join('gallery','location.gallery_id','=','gallery.id')
+            ->join('gallery_media','gallery_media.gallery_id','=','gallery.id')
+            ->join('gallery_media','gallery_media.media_id','=',$request->media_id)
+            ->select('media.source,media.name,media.description,media.date,media.type_id')
+            ->get();
+        return $myLocations;
+    }
+
+
+    public function getMediaByGalleryId(Request $request)
+    {
+
+        $myLocations = DB::table('gallery_media')->where('gallery_media.gallery_id','=',$request->gallery_id)
+            ->join('media', 'gallery_media.media_id', '=', 'media.id')
+            ->select('media.id','media.source','media.name','media.description','media.date','media.type_id')
+            ->get();
+        return $myLocations;
+    }
+
 
 
 }
