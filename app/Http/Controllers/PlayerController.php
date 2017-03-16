@@ -74,5 +74,16 @@ class PlayerController extends Controller
     }
 
 
+    public function getGalleryById(Request $request)
+    {
+
+        $gallery = DB::table('gallery')->where('gallery.id','=',$request->gallery_id)->get();
+
+            return $gallery;
+
+
+    }
+
+
 
 }

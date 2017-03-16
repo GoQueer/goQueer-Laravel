@@ -51,3 +51,4 @@ Route::get('/client/getMyLocations', array('uses' => 'PlayerController@getMyLoca
 Route::get('/client/downloadMedia', array('uses' => 'PlayerController@downloadMediaById'));
 Route::get('/client/getGalleryMediaById', array('uses' => 'PlayerController@getMediaByGalleryId'));
 Route::get('/client/getMediaById', array('uses' => 'PlayerController@getMediaById'));
+Route::get('/client/getGalleryById', array('uses' => 'PlayerController@getGalleryById'));
