@@ -48,7 +48,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/client/getAllLocations', array('uses' => 'PlayerController@getAllLocations'));
 Route::get('/client/getMyLocations', array('uses' => 'PlayerController@getMyLocations'));
-Route::get('/client/downloadMedia', array('uses' => 'PlayerController@downloadMediaById'));
+Route::get('/client/downloadMediaById', array('uses' => 'PlayerController@downloadMediaById'));
 Route::get('/client/getGalleryMediaById', array('uses' => 'PlayerController@getMediaByGalleryId'));
 Route::get('/client/getMediaById', array('uses' => 'PlayerController@getMediaById'));
 Route::get('/client/getGalleryById', array('uses' => 'PlayerController@getGalleryById'));
