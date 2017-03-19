@@ -45,7 +45,16 @@ class PlayerController extends Controller
     public function downloadMediaById(Request $request){
         $media = Media::find($request->media_id);
         if (sizeof($media) > 0 )
-        return response()->download($media->filePath);
+//        return response()->download('/uploads/'.$media->fileName);
+        {
+            $file = public_path() . "/uploads/" . $media->fileName;
+
+            $headers = array(
+                'Content-Type: application/pdf',
+            );
+
+            return response()->download($file, $media->fileName, $headers);
+        }
     }
 
     public function getMediaById(Request $request)
