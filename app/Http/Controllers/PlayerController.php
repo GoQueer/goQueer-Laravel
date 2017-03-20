@@ -92,6 +92,17 @@ class PlayerController extends Controller
 
 
     }
+    public function updateDiscoveryStatus(Request $request)
+    {
+            \DB::table('discovery')->insert(
+                [
+                    'location_id' => $request->location_id,
+                    'player_id' => '1',
+                    'created_at' => new \DateTime('now'),
+                    'updated_at' => new \DateTime('now')
+                ]
+            );
+    }
 
 
 
