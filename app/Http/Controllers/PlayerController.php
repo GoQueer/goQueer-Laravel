@@ -8,9 +8,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Discovery;
 use Illuminate\Support\Facades\DB;
 use App\Models\Location;
 use App\Models\Media;
+use App\Models\Player;
 use Illuminate\Http\Request;
 class PlayerController extends Controller
 {
@@ -94,14 +96,25 @@ class PlayerController extends Controller
     }
     public function updateDiscoveryStatus(Request $request)
     {
+        $player = Player::where('device_id','=',$request->device_id)->first();
+
+        $discovery = DB::table('discovery')->where('discovery.player_id', '=', $player->id)
+                ->where('discovery.location_id', '=',$request->location_id)
+            ->get();
+        if ($player != null && $discovery == null) {
+
+
             \DB::table('discovery')->insert(
                 [
                     'location_id' => $request->location_id,
-                    'player_id' => '1',
+                    'player_id' => $player->id,
                     'created_at' => new \DateTime('now'),
                     'updated_at' => new \DateTime('now')
                 ]
             );
+            return 'Successful';
+        }
+        return 'Failed';
     }
 
 

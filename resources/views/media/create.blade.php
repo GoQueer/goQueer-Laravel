@@ -24,6 +24,12 @@
     {!! Form::open(array('action' => 'MediaController@store','method'=>'POST','files'=>true)) !!}
     <div class="row" >
         <div class="col-xs-4 col-sm-4 col-md-4">
+            <div class="form-group">
+                {!! Form::Label('date', 'Publish Date:') !!}
+                {!! Form::date('publish_date', null, array('placeholder' => 'Publish Date','class' => 'form-control')) !!}
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
             <div  class="form-group">
                 {!! Form::Label('type', 'Type:') !!}
                 {!! Form::select('type_id', $types, null, ['class' => 'form-control']) !!}
@@ -35,10 +41,23 @@
                 {!! Form::select('status_id', $statuses, null, ['class' => 'form-control']) !!}
             </div>
         </div>
-        <div class="col-xs-4 col-sm-4 col-md-4">
+        <div class="col-xs-8 col-sm-8 col-md-8">
             <div class="form-group">
-                {!! Form::Label('date', 'Publish Date:') !!}
-                {!! Form::date('date', null, array('placeholder' => 'Date','class' => 'form-control')) !!}
+                {!! Form::Label('date', 'Display Date:') !!}
+                {!! Form::text('display_date', null, array('placeholder' => 'Display Date','class' => 'form-control')) !!}
+            </div>
+            <div>
+
+                [1867?]: probable date
+                [ca. 1867]: approximate date
+                [before 1867]: terminal date
+                [after 5 Jan. 1867]: terminal date
+                [1892 or 1893]: one year or the other
+                [between 1915 and 1918]: use only for dates fewer than 20 years apart
+                [197-]: decade certain
+                [186-?]: probable decade
+                [17–]: century certain
+                [17–?]: probable century
             </div>
         </div>
         <div class="col-xs-8 col-sm-8 col-md-8">
