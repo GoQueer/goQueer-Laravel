@@ -46,7 +46,7 @@
                 {!! Form::Label('date', 'Display Date:') !!}
                 {!! Form::text('display_date', null, array('placeholder' => 'Display Date','class' => 'form-control')) !!}
             </div>
-            <div>
+            <div style="color: #f90f0b;">
 
                 [1867?]: probable date
                 [ca. 1867]: approximate date
