@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,7 +40,8 @@ class LocationController extends Controller
     public function create()
     {
         if (Auth::check()) {
-            return view('location.create')->with('email',Auth::user()->email);
+            $galleries = Gallery::lists('name', 'id');
+            return view('location.create',compact('galleries'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -57,6 +59,7 @@ class LocationController extends Controller
                 'coordinates' => 'required',
                 'address' => 'required',
                 'name' => 'required',
+                'gallery_id' => 'required',
             ]);
 
             \DB::table('location')->insert(
@@ -66,7 +69,9 @@ class LocationController extends Controller
                     'name' => $request->name,
                     'description' => $request->description,
                     'user_id' => Auth::id(),
-                    'created_at' => new \DateTime('now')
+                    'gallery_id' => $request->gallery_id,
+                    'created_at' => new \DateTime('now'),
+                    'updated_at' => new \DateTime('now')
                 ]
             );
             return redirect()->route('location.index')

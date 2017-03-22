@@ -24,6 +24,7 @@
     {!! Form::open(array('action' => 'GalleryController@store','method'=>'POST','files'=>true)) !!}
     <div class="row" >
 
+
         <div class="col-xs-8 col-sm-8 col-md-8">
             <div class="form-group">
                 <strong>Name:</strong>

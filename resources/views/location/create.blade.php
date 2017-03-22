@@ -100,7 +100,12 @@
                 {!! Form::text('coordinates', null, array('placeholder' => 'Selected Coordinates','class' => 'form-control','id'=>'coordinates','readonly    php ')) !!}
             </div>
         </div>
-
+        <div class="col-xs-8 col-sm-8 col-md-8">
+            <div class="form-group">
+                <strong>Associated Gallery:</strong>
+                {!! Form::select('name', $galleries, null, ['class' => 'form-control']) !!}
+            </div>
+        </div>
 
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -109,6 +114,7 @@
         </div>
 
     </div>
+
     {!! Form::close() !!}
 
 
