@@ -68,7 +68,7 @@ class PlayerController extends Controller
             ->join('gallery','location.gallery_id','=','gallery.id')
             ->join('gallery_media','gallery_media.gallery_id','=','gallery.id')
             ->join('gallery_media','gallery_media.media_id','=',$request->media_id)
-            ->select('media.source,media.name,media.description,media.date,media.type_id')
+            ->select('media.source,media.name,media.description,media.publish_date,media.display_date,media.type_id')
             ->get();
         return $myLocations;
     }
@@ -79,7 +79,7 @@ class PlayerController extends Controller
 
         $myLocations = DB::table('gallery_media')->where('gallery_media.gallery_id','=',$request->gallery_id)
             ->join('media', 'gallery_media.media_id', '=', 'media.id')
-            ->select('media.id','media.source','media.name','media.description','media.date','media.type_id')
+            ->select('media.id','media.source','media.name','media.description','media.publish_date','media.display_date','media.type_id')
             ->get();
         return $myLocations;
     }

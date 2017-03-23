@@ -64,7 +64,7 @@
                 <td><div style="height:20px; overflow:hidden">{{ $assigned_media->finalId }}</div></td>
                 <td><div style="height:20px; overflow:hidden">{{ $assigned_media->name }}</div></td>
                 <td><div style="height:20px; overflow:hidden">{{ $assigned_media->source }}</div></td>
-                <td><div style="height:20px;width:80px; overflow:hidden">{{ $assigned_media->date }}</div></td>
+                <td><div style="height:20px;width:80px; overflow:hidden">{{ $assigned_media->publish_date }}</div></td>
                 <td><div style="height:20px;width:250px;overflow:hidden">{{ $assigned_media->description }}</div></td>
                 <td><div style="height:20px;width:25px;overflow:hidden">{{ $assigned_media->order}}</div></td>
                 <td><div style="height:50px;width:70px;overflow:hidden">
@@ -110,7 +110,7 @@
                 <td><div style="height:20px; overflow:hidden">{{ $all_media->id }}</div></td>
                 <td><div style="height:20px; overflow:hidden">{{ $all_media->name }}</div></td>
                 <td><div style="height:20px; overflow:hidden">{{ $all_media->source }}</div></td>
-                <td><div style="height:20px;width:80px; overflow:hidden">{{ $all_media->date }}</div></td>
+                <td><div style="height:20px;width:80px; overflow:hidden">{{ $all_media->publish_date }}</div></td>
                 <td><div style="height:20px;width:250px; overflow:hidden">{{ $all_media->description }}</div></td>
 
                 <td>
