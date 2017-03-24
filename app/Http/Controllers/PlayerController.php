@@ -35,13 +35,13 @@ class PlayerController extends Controller
     }
     public function getAllLocations(Request $request)
     {
-        $player = DB::table('player')->where('player.device_id','=',$request->device_id)->get();
-        if (sizeof($player) == 0)
-            return $player;
-        else {
+//        $player = DB::table('player')->where('player.device_id','=',$request->device_id)->get();
+//        if (sizeof($player) == 0)
+//            return $player;
+//        else {
             $locations = Location::all();
             return $locations->toJson();
-        }
+//        }
 
     }
     public function downloadMediaById(Request $request){
@@ -96,18 +96,34 @@ class PlayerController extends Controller
     }
     public function updateDiscoveryStatus(Request $request)
     {
-        $player = Player::where('device_id','=',$request->device_id)->first();
+        $player = DB::table('player')->where('device_id','=',$request->device_id)->first();
+        var_dump($request->device_id);
+        var_dump($player);
 
-        $discovery = DB::table('discovery')->where('discovery.player_id', '=', $player->id)
+        $data = new Player;
+        if ($player == null ) {
+
+            $data->user_id = 1;
+            $data->device_id = $request->device_id;
+            $data->created_at = new \DateTime('now');
+            $data->updated_at = new \DateTime('now');
+            $data->save();
+        } else
+            $data->id = $player->id;
+
+
+
+
+
+
+        $discovery = DB::table('discovery')->where('discovery.player_id', '=', $data->id)
                 ->where('discovery.location_id', '=',$request->location_id)
             ->get();
-        if ($player != null && $discovery == null) {
-
-
+        if ($discovery == null) {
             \DB::table('discovery')->insert(
                 [
                     'location_id' => $request->location_id,
-                    'player_id' => $player->id,
+                    'player_id' => $data->id,
                     'created_at' => new \DateTime('now'),
                     'updated_at' => new \DateTime('now')
                 ]
