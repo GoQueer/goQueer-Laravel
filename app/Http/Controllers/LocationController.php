@@ -106,7 +106,8 @@ class LocationController extends Controller
     {
         if (Auth::check()) {
             $location = Location::find($id);
-            return view('location.edit', compact('location'))->with('email',Auth::user()->email);
+            $galleries = Gallery::lists('name', 'id');
+            return view('location.edit', compact('location'))->with('galleries',$galleries)->with('email',Auth::user()->email);
         }else
             return view('errors.permission');
     }
@@ -124,11 +125,15 @@ class LocationController extends Controller
             $this->validate($request, [
                 'name' => 'required',
                 'description' => 'required',
-                'x' => 'required',
-                'y' => 'required',
+                'address' => 'required',
+
             ]);
 
-            Location::find($id)->update($request->all());
+          $location =   Location::find($id);
+
+
+//            dd($new_location);
+            $location->fill(['id' => $id , 'description' => $request->description, 'address' => $request->address , 'name' => $request->name, 'gallery_id' => $request->id])->save();
             return redirect()->route('location.index')
                 ->with('success', 'location updated successfully')->with('email',Auth::user()->email);
         } else

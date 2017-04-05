@@ -38,22 +38,22 @@
             </div>
         </div>
 
-        <div class="col-xs-3 col-sm-3 col-md-3">
+        <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-                <strong>X:</strong>
-                {!! Form::text('x', null, array('placeholder' => 'X','class' => 'form-control')) !!}
+                <strong>Address</strong>
+                {!! Form::text('address', null, array('placeholder' => 'address','class' => 'form-control')) !!}
 
             </div>
         </div>
 
-        <div class="col-xs-3 col-sm-3 col-md-3">
+        <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-                <strong>Y:</strong>
-                {!! Form::text('y', null, array('placeholder' => 'Y','class' => 'form-control')) !!}
+                <strong>Associated Gallery:</strong>
+                {!! Form::select('id', $galleries, null, ['class' => 'form-control']) !!}
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <div class="col-xs-7 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
             <a class="btn btn-primary" href="{{ route('location.index') }}"> Back</a>
         </div>
