@@ -25,29 +25,24 @@ class PlayerController extends Controller
     }
     public function getMyLocations(Request $request)
     {
-
-        $myLocations = DB::table('player')->where('player.device_id','=',$request->device_id)
-            ->join('discovery', 'discovery.player_id', '=', 'player.id')
-            ->join('location', 'location.id', '=', 'discovery.location_id')
-            ->select('location.*')
-            ->get();
-        return $myLocations;
+        $locations = Location::all();
+        return $locations->toJson();
+//        $myLocations = DB::table('player')->where('player.device_id','=',$request->device_id)
+//            ->join('discovery', 'discovery.player_id', '=', 'player.id')
+//            ->join('location', 'location.id', '=', 'discovery.location_id')
+//            ->select('location.*')
+//            ->get();
+//        return $myLocations;
     }
     public function getAllLocations(Request $request)
     {
-//        $player = DB::table('player')->where('player.device_id','=',$request->device_id)->get();
-//        if (sizeof($player) == 0)
-//            return $player;
-//        else {
             $locations = Location::all();
             return $locations->toJson();
-//        }
 
     }
     public function downloadMediaById(Request $request){
         $media = Media::find($request->media_id);
         if (sizeof($media) > 0 )
-//        return response()->download('/uploads/'.$media->fileName);
         {
             $file = public_path() . "/uploads/" . $media->fileName;
 

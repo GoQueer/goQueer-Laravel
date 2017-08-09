@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
          $this->call(MediaTableSeeder::class);
          $this->call(PlayerTableSeeder::class);
          $this->call(DiscoveryTableSeeder::class);
+         $this->call(SetTableSeeder::class);
     }
 }
