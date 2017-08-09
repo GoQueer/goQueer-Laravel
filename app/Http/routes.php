@@ -40,6 +40,7 @@ Route::resource('gallery_media','GalleryMediaController');
 Route::resource('test','TestController');
 Route::resource('final','FinalController');
 Route::resource('map','MapController');
+Route::resource('set','SetController');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

@@ -118,6 +118,9 @@
                             <a href="#"><i class="fa fa-picture-o"></i>  Media<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
+                                    <a href="{{ url ('/set') }}">Set</a>
+                                </li>
+                                <li>
                                     <a href="{{ url ('/media') }}">Media</a>
                                 </li>
                                 <li>

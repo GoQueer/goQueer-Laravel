@@ -16,6 +16,7 @@ class CreateSetsTable extends Migration
             $table->increments('id')->unique();
             $table->text('name');
             $table->text('description');
+            $table->timestamps();
             $table->integer('parent_set_id')->nullable()->unsigned();
         });
 
