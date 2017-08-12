@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Set;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SetController extends Controller
 {
@@ -34,10 +35,14 @@ class SetController extends Controller
      */
     public function create()
     {
-//        $media = Media::find($id);
-//        return view('media.show',compact('media'));
-        $sets = Set::orderBy('id','DESC');
-        return view('set.create',compact('sets'));
+
+        if (Auth::check()) {
+            $sets = Set::orderBy('id','DESC');
+            return view('set.create',compact('sets'));
+        } else
+            return view('errors.permission');
+
+
     }
 
     /**
