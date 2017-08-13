@@ -13,10 +13,14 @@ class SetTableSeeder extends Seeder
     {
         DB::table('sets')->insert([
             'id'=> '1',
-            'description' => 'Demo Description',
-            'name' => 'Demo',
+            'description' => 'Demo1 Description',
+            'name' => 'Demo1',
+        ]);
 
-
+        DB::table('sets')->insert([
+            'id'=> '4',
+            'description' => 'Demo2 Description',
+            'name' => 'Demo2',
         ]);
 
 

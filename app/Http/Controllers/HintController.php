@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Hint;
 
 class HintController extends Controller
 {
@@ -57,7 +58,9 @@ class HintController extends Controller
             \DB::table('hint')->insert(
                 [
                     'content' => $request->hint_text,
-                    'set_id' => $request->set_id
+                    'set_id' => $request->set_id,
+                    'created_at' => new \DateTime('now'),
+                    'updated_at' => new \DateTime('now')
                 ]
             );
             return redirect()->route('set.show',[$request->set_id])
@@ -117,6 +120,9 @@ class HintController extends Controller
     public function destroy($id)
     {
         if (Auth::check()) {
+            Hint::find($id)->delete();
+            return redirect()->route('set.index')
+                ->with('success', 'Hint deleted successfully')->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
