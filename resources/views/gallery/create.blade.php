@@ -42,6 +42,13 @@
             <a class="btn btn-primary" href="{{ route('gallery.index') }}">Back</a>
         </div>
 
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div  class="form-group">
+                {!! Form::Label('set', 'Belongs to what set:') !!}
+                {!! Form::select('set_id', $sets, null, ['class' => 'form-control']) !!}
+            </div>
+        </div>
+
     </div>
     {!! Form::close() !!}
 

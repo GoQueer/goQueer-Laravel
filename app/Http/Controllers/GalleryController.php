@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Media;
 use App\Models\Gallery;
+use App\Models\Set;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -24,8 +25,14 @@ class GalleryController extends Controller
     public function index(Request $request)
     {
         if (Auth::check()) {
-            $galleries = Gallery::orderBy('id', 'DESC')->paginate(5);
-            return view('gallery.index', compact('galleries'))
+//            $galleries = Gallery::orderBy('id', 'DESC')->paginate(5);
+            $galleries =  DB::table('gallery')
+                ->join('sets', 'gallery.set_id', '=', 'sets.id')
+                ->select('gallery.*','sets.name AS set_name')
+                ->orderBy('gallery.id', 'desc')
+                ->paginate();
+
+            return view('gallery.index')->with('galleries', $galleries)
                 ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
@@ -39,7 +46,10 @@ class GalleryController extends Controller
     public function create()
     {
         if (Auth::check()) {
-            return view('gallery.create')->with('email',Auth::user()->email);
+
+            $sets = Set::lists('name', 'id');
+//            return view('media.create', compact('id', 'types','statuses'))->with('email',Auth::user()->email);
+            return view('gallery.create', compact('sets'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -56,13 +66,17 @@ class GalleryController extends Controller
             $this->validate($request, [
                 'name' => 'required',
                 'description' => 'required',
+                'set_id' => 'required'
             ]);
 
 
 
             DB::table('gallery')->insert(
-                ['name' => $request->name,
-                    'description' => $request->description]
+                [
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'set_id' => $request->set_id
+                ]
             );
             return redirect()->route('gallery.index')
                 ->with('success', 'Gallery created successfully')->with('email',Auth::user()->email);
@@ -81,13 +95,16 @@ class GalleryController extends Controller
         if (Auth::check()) {
             $gallery = Gallery::find($id);
             $all_medias = Media::orderBy('id', 'DESC')->paginate(5);
+
+            $set = Set::find($gallery->set_id);
+            $set_name = $set->name;
             $assigned_medias =  DB::table('media')
                 ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
                 ->select('media.*','gallery_media.id AS finalId', 'gallery_media.order AS order')
                 ->orderBy('gallery_media.order', 'desc')
                 ->where('gallery_media.gallery_id' , '=', $id)
                 ->get();
-            return view('gallery.show', compact('gallery','all_medias','assigned_medias','id'))->with('email',Auth::user()->email);
+            return view('gallery.show', compact('gallery','all_medias','assigned_medias','id','set_name'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -102,6 +119,7 @@ class GalleryController extends Controller
     {
         if (Auth::check()) {
             $gallery = Gallery::find($id);
+
             return view('gallery.edit', compact('gallery'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');

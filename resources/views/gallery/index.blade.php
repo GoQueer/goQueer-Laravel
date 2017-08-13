@@ -20,6 +20,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Set</th>
             <th>Description</th>
 
             <th width="150px">Action</th>
@@ -28,6 +29,7 @@
             <tr>
                 <td><div style="height:40px; overflow:hidden">{{ ++$i }}</div></td>
                 <td><div style="height:40px; overflow:hidden">{{ $gallery->name }}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{ $gallery->set_name }}</div></td>
                 <td><div style="height:40px;width:250px; overflow:hidden">{{ $gallery->description }}</div></td>
 
 

@@ -29,10 +29,18 @@
     @endif
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="form-group">
                 <strong>Description:</strong>
                 {{ $gallery->description }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div class="form-group">
+                <strong>Belongs to set:</strong>
+                {{ $set_name }}
             </div>
         </div>
     </div>
