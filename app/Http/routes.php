@@ -41,6 +41,7 @@ Route::resource('test','TestController');
 Route::resource('final','FinalController');
 Route::resource('map','MapController');
 Route::resource('set','SetController');
+Route::resource('hint','HintController');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
