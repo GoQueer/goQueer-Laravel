@@ -27,12 +27,7 @@ class PlayerController extends Controller
     {
         $locations = Location::all();
         return $locations->toJson();
-//        $myLocations = DB::table('player')->where('player.device_id','=',$request->device_id)
-//            ->join('discovery', 'discovery.player_id', '=', 'player.id')
-//            ->join('location', 'location.id', '=', 'discovery.location_id')
-//            ->select('location.*')
-//            ->get();
-//        return $myLocations;
+        //return $this->gemine($request->device_id);
     }
     public function getAllLocations(Request $request)
     {
@@ -128,6 +123,38 @@ class PlayerController extends Controller
         return 'Failed';
     }
 
+    public function getHint(Request $request)
+    {
+        $hints = [];
+        $player = DB::table('player')->where('device_id','=',$request->device_id)->first();
+        $user = DB::table('user')->where('user_id','=',$player->user_id)->first();
+        $myLocations = $this->getMyDiscoveredLocations($request->device_id);
+        foreach ($myLocations as $location) {
+            $hints = array_merge($hints,DB::table('hint')->where('set_id','=',$location->set_id));
+        }
+        if (sizeof($hints) > 0 ) {
+            $hint_request = new DateTime($user->hint_request);
+            $current_date = date('Y-m-d h:i:s', time());
+            $duration = date_diff($current_date, $hint_request);
+            if ($duration->h > 5 )
+                return $hints[rand(0,sizeof($hints)-1)]->content;
+
+        }
+    }
+
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function getMyDiscoveredLocations($device_id)
+    {
+        $myLocations = DB::table('player')->where('player.device_id', '=', $device_id)
+            ->join('discovery', 'discovery.player_id', '=', 'player.id')
+            ->join('location', 'location.id', '=', 'discovery.location_id')
+            ->select('location.*')
+            ->get();
+        return $myLocations;
+    }
 
 
 }
