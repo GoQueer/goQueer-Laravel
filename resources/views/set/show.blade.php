@@ -52,18 +52,18 @@
         </div>
     </div>
 
-
     <table class="table table-bordered">
         <tr>
             <th>ID</th>
-            <th>Content</th>
+            <th>Hint Content</th>
 
 
             <th width="150px">Action</th>
         </tr>
         @foreach ($hints as $key => $hint)
+
             <tr>
-                <td><div style="height:40px; overflow:hidden">{{ ++$i }}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{$hint->id}}</div></td>
                 <td><div style="height:40px; overflow:hidden">{{ $hint->content }}</div></td>
                 <td><div style="width:200px">
                         {!! Form::open(['method' => 'DELETE','route' => ['hint.destroy', $hint->id],'style'=>'display:inline']) !!}
@@ -97,14 +97,6 @@
         </div>
     </div>
     {!! Form::close() !!}
-
-
-
-
-
-
-
-
 
 
 @endsection

@@ -74,8 +74,7 @@ class SetController extends Controller
     {
         $set = Set::find($id);
 
-        $hints = Hint::orderBy('id','DESC')->where('set_id',$id);
-
+        $hints = Hint::orderBy('id','DESC')->where('set_id',$id)->get();
         return view('set.show',compact('set','hints'))->with('email',Auth::user()->email);
     }
 
