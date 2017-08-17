@@ -25,15 +25,18 @@ class PlayerController extends Controller
     }
     public function getMyLocations(Request $request)
     {
-        $locations = Location::all();
-        return $locations->toJson();
-        //return $this->gemine($request->device_id);
+//        $locations = Location::all();
+        $locations = $this->getMyDiscoveredLocationsAsList($request->device_id);
+        return $locations;
     }
-    public function getAllLocations(Request $request)
+    public function getAllLocations()
     {
-            $locations = Location::all();
-            return $locations->toJson();
+        $locations = $this->getAllLocationsAsList();
+        return $locations;
 
+    }
+    public function getAllLocationsAsList(){
+        return Location::all();
     }
     public function downloadMediaById(Request $request){
         $media = Media::find($request->media_id);
@@ -126,27 +129,49 @@ class PlayerController extends Controller
     public function getHint(Request $request)
     {
         $hints = [];
-        $player = DB::table('player')->where('device_id','=',$request->device_id)->first();
-        $user = DB::table('user')->where('user_id','=',$player->user_id)->first();
-        $myLocations = $this->getMyDiscoveredLocations($request->device_id);
-        foreach ($myLocations as $location) {
-            $hints = array_merge($hints,DB::table('hint')->where('set_id','=',$location->set_id));
+        $player = DB::table('player')->where('device_id', '=', $request->device_id)->first();
+        $user = DB::table('user')->where('id', '=', $player->user_id)->first();
+        $myLocations = $this->getMyDiscoveredLocationsAsList($request->device_id);
+        $allLocations = $this->getAllLocationsAsList();
+        $flag= false;
+        foreach ($allLocations as $allLocation) {
+            $flag = false;
+            foreach ($myLocations as $myLocation) {
+                if ($allLocation->id === $myLocation->id){
+                    $flag = true;
+                }
+            }
+            if (!$flag ){
+                $temp = DB::table('hint')->where('location_id', '=', $allLocation->id)->get();
+
+                $hints = array_merge($hints, $temp);
+            }
         }
         if (sizeof($hints) > 0 ) {
-            $hint_request = new DateTime($user->hint_request);
-            $current_date = date('Y-m-d h:i:s', time());
-            $duration = date_diff($current_date, $hint_request);
-            if ($duration->h > 5 )
-                return $hints[rand(0,sizeof($hints)-1)]->content;
 
-        }
+
+            $start_date = new \DateTime($user->hint_request);
+            $current_date = $date = date('Y-m-d h:i:s');
+            $current_date = new \DateTime($current_date);
+            $since_start = $start_date->diff($current_date);
+            $minutes = $since_start->days * 24 * 60;
+            $minutes += $since_start->h * 60;
+            $minutes += $since_start->i;
+//            dd($minutes);
+            if ($minutes > 300 )
+                return $hints[rand(0,sizeof($hints)-1)]->content;
+            else
+                return "You have used all your hints for now try again later";
+
+        } else
+            return "No more hints left";
     }
 
     /**
      * @param Request $request
      * @return mixed
      */
-    public function getMyDiscoveredLocations($device_id)
+    public function getMyDiscoveredLocationsAsList($device_id)
     {
         $myLocations = DB::table('player')->where('player.device_id', '=', $device_id)
             ->join('discovery', 'discovery.player_id', '=', 'player.id')
@@ -155,6 +180,11 @@ class PlayerController extends Controller
             ->get();
         return $myLocations;
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+
 
 
 }
