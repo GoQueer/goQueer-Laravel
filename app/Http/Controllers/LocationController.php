@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use App\Models\Location;
+use App\Models\Hint;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -89,8 +90,9 @@ class LocationController extends Controller
     public function show($id)
     {
         if (Auth::check()) {
+            $hints = Hint::orderBy('id','DESC')->where('location_id',$id)->get();
             $location = Location::find($id);
-            return view('location.show', compact('location'))->with('email',Auth::user()->email);
+            return view('location.show', compact('location','hints'))->with('email',Auth::user()->email);
         }
         else
             return view('errors.permission');

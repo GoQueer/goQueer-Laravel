@@ -32,7 +32,11 @@
     <script type="text/javascript" src="{{ URL::asset('js/src/edit/handler/Edit.Rectangle.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/src/edit/handler/Edit.Marker.js') }}"></script>
 
-
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -41,16 +45,26 @@
 
         </div>
     </div>
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <div class="row pull-right">
-        <div class="col-xs-3 col-sm-3 col-md-3">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group" >
                 <div id="mapid1" style="width: 500px; height: 300px"></div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-3 col-sm-3 col-md-3">
+        <div class="col-xs-9 col-sm-9 col-md-9">
             <div class="form-group">
                 <strong>Coordinates:</strong>
                 <div id="coordinates"> {{ $location->coordinate }} </div>
@@ -101,5 +115,62 @@
         }
         window.onload = codeAddress;
     </script>
+
+
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="text-center">
+                <h2>Associated Hints:</h2>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Hint Content</th>
+
+
+            <th width="150px">Action</th>
+        </tr>
+        @foreach ($hints as $key => $hint)
+
+            <tr>
+                <td><div style="height:40px; overflow:hidden">{{$hint->id}}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{ $hint->content }}</div></td>
+                <td><div style="width:200px">
+                        {!! Form::open(['method' => 'DELETE','route' => ['hint.destroy', $hint->id],'style'=>'display:inline']) !!}
+                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                        {!! Form::close() !!}
+                    </div>
+
+                </td>
+            </tr>
+        @endforeach
+    </table>
+
+
+
+    {!! Form::open(array('action' => 'HintController@store','method'=>'POST')) !!}
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" style="visibility: hidden">
+            <div class="form-group">
+                {{ Form::hidden('location_id', $location->id, array('id' => 'location_id')) }}
+            </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+
+                {!! Form::textarea('hint_text', null, array('placeholder' => 'Write your hint here','class' => 'form-control','style'=>'height:100px')) !!}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <button type="submit" class="btn btn-block">Add</button>
+        </div>
+    </div>
+    {!! Form::close() !!}
+
+
 
 @endsection

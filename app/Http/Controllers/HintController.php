@@ -52,18 +52,18 @@ class HintController extends Controller
 
             $this->validate($request, [
                 'hint_text' => 'required',
-                'set_id' => 'required',
+                'location_id' => 'required',
             ]);
 
             \DB::table('hint')->insert(
                 [
                     'content' => $request->hint_text,
-                    'set_id' => $request->set_id,
+                    'location_id' => $request->location_id,
                     'created_at' => new \DateTime('now'),
                     'updated_at' => new \DateTime('now')
                 ]
             );
-            return redirect()->route('set.show',[$request->set_id])
+            return redirect()->route('location.show',[$request->location_id])
                 ->with('success', 'Hint added successfully')->with('email',Auth::user()->email);
 //        }else
             return view('errors.permission');
@@ -121,7 +121,7 @@ class HintController extends Controller
     {
         if (Auth::check()) {
             Hint::find($id)->delete();
-            return redirect()->route('set.index')
+            return redirect()->route('location.index')
                 ->with('success', 'Hint deleted successfully')->with('email',Auth::user()->email);
         } else
             return view('errors.permission');

@@ -16,12 +16,12 @@ class CreateHintTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->text('content');
-            $table->integer('set_id')->unsigned();
+            $table->integer('location_id')->unsigned();
 
         });
 
         Schema::table('hint', function (Blueprint $table) {
-            $table->foreign('set_id')->references('id')->on('sets');
+            $table->foreign('location_id')->references('id')->on('location');
 
         });
     }
@@ -34,7 +34,7 @@ class CreateHintTable extends Migration
     public function down()
     {
         Schema::table('hint', function (Blueprint $table) {
-            $table->dropForeign('hint_set_id_foreign');
+            $table->dropForeign('hint_location_id_foreign');
         });
         Schema::drop('hint');
     }
