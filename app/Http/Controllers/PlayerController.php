@@ -130,6 +130,9 @@ class PlayerController extends Controller
     {
         $hints = [];
         $player = DB::table('player')->where('device_id', '=', $request->device_id)->first();
+        if ($player == null ){
+            return "Device ID is not registered";
+        }
         $user = DB::table('user')->where('id', '=', $player->user_id)->first();
         $myLocations = $this->getMyDiscoveredLocationsAsList($request->device_id);
         $allLocations = $this->getAllLocationsAsList();
@@ -148,20 +151,23 @@ class PlayerController extends Controller
             }
         }
         if (sizeof($hints) > 0 ) {
-
-
+            date_default_timezone_set("America/Edmonton");
             $start_date = new \DateTime($user->hint_request);
             $current_date = $date = date('Y-m-d h:i:s');
-            $current_date = new \DateTime($current_date);
+
+            $current_date = new \DateTime($current_date,new \DateTimeZone('America/Edmonton'));
+//            var_dump($current_date);
             $since_start = $start_date->diff($current_date);
             $minutes = $since_start->days * 24 * 60;
             $minutes += $since_start->h * 60;
             $minutes += $since_start->i;
-//            dd($minutes);
-            if ($minutes > 300 )
-                return $hints[rand(0,sizeof($hints)-1)]->content;
+            if ($minutes > 300 ) {
+                DB::table('user')->where('id', '=', $player->user_id)->update(['hint_request' =>new \DateTime('now',new \DateTimeZone('America/Edmonton'))]);
+//                return $hints[rand(0, sizeof($hints) - 1)]->content .'|current='. $current_date->format('Y-m-d h:i:s') . '|minutes='. $minutes . '|day=' . $since_start->days . '|h='.  $since_start->h . '|m='.  $since_start->m .'|i='.$since_start->i  ;
+                return $hints[rand(0, sizeof($hints) - 1)]->content  ;
+            }
             else
-                return "You have used all your hints for now try again later";
+                return "You have used all your hints for now, try again in ". (300 - $minutes) . " minutes" ;
 
         } else
             return "No more hints left";
