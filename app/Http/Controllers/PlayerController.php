@@ -26,7 +26,8 @@ class PlayerController extends Controller
     public function getMyLocations(Request $request)
     {
 //        $locations = Location::all();
-        $locations = $this->getMyDiscoveredLocationsAsList($request->device_id);
+
+        $locations = $this->getMyDiscoveredLocationsAsList($request->device_id,$request->profile_name);
         return $locations;
     }
     public function getAllLocations()
@@ -134,7 +135,7 @@ class PlayerController extends Controller
             return "Device ID is not registered";
         }
         $user = DB::table('user')->where('id', '=', $player->user_id)->first();
-        $myLocations = $this->getMyDiscoveredLocationsAsList($request->device_id);
+        $myLocations = $this->getMyDiscoveredLocationsAsList($request->device_id,$request->profile_name);
         $allLocations = $this->getAllLocationsAsList();
         $flag= false;
         foreach ($allLocations as $allLocation) {
@@ -177,11 +178,13 @@ class PlayerController extends Controller
      * @param Request $request
      * @return mixed
      */
-    public function getMyDiscoveredLocationsAsList($device_id)
+    public function getMyDiscoveredLocationsAsList($device_id,$profile_name)
     {
+        $profile = DB::table('profile')->where('profile.name','=',$profile_name)->first();
         $myLocations = DB::table('player')->where('player.device_id', '=', $device_id)
             ->join('discovery', 'discovery.player_id', '=', 'player.id')
             ->join('location', 'location.id', '=', 'discovery.location_id')
+            ->where('location.profile_id','=',$profile->id)
             ->select('location.*')
             ->get();
         return $myLocations;
