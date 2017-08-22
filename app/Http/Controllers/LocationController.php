@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use App\Models\Location;
+use App\Models\Profile;
 use App\Models\Hint;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -42,7 +43,8 @@ class LocationController extends Controller
     {
         if (Auth::check()) {
             $galleries = Gallery::lists('name', 'id');
-            return view('location.create',compact('galleries'))->with('email',Auth::user()->email);
+            $profiles = Profile::lists('name', 'id');
+            return view('location.create',compact('galleries','profiles'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -61,6 +63,7 @@ class LocationController extends Controller
                 'address' => 'required',
                 'name' => 'required',
                 'id' => 'required',
+                'profile_id' => 'required'
             ]);
 
             \DB::table('location')->insert(
@@ -72,7 +75,8 @@ class LocationController extends Controller
                     'user_id' => Auth::id(),
                     'gallery_id' => $request->id,
                     'created_at' => new \DateTime('now'),
-                    'updated_at' => new \DateTime('now')
+                    'updated_at' => new \DateTime('now'),
+                    'profile_id' => $request->profile_id
                 ]
             );
             return redirect()->route('location.index')
@@ -91,7 +95,13 @@ class LocationController extends Controller
     {
         if (Auth::check()) {
             $hints = Hint::orderBy('id','DESC')->where('location_id',$id)->get();
-            $location = Location::find($id);
+//            $location = Location::find($id);
+            $location =  \DB::table('location')
+                ->join('profile', 'profile.id', '=', 'location.profile_id')
+                ->select('location.*','profile.name AS profile_name')
+                ->where('location.id' , '=', $id)
+                ->first();
+
             return view('location.show', compact('location','hints'))->with('email',Auth::user()->email);
         }
         else

@@ -30,14 +30,16 @@ class PlayerController extends Controller
         $locations = $this->getMyDiscoveredLocationsAsList($request->device_id,$request->profile_name);
         return $locations;
     }
-    public function getAllLocations()
+    public function getAllLocations(Request $request)
     {
-        $locations = $this->getAllLocationsAsList();
+        $locations = $this->getAllLocationsAsList($request->profile_name);
         return $locations;
 
     }
-    public function getAllLocationsAsList(){
-        return Location::all();
+    public function getAllLocationsAsList($profile_name){
+        $profile = DB::table('profile')->where('profile.name','=',$profile_name)->first();
+        if ($profile != null)
+        return DB::table('location')->where('profile_id','=',$profile->id);
     }
     public function downloadMediaById(Request $request){
         $media = Media::find($request->media_id);
@@ -136,7 +138,7 @@ class PlayerController extends Controller
         }
         $user = DB::table('user')->where('id', '=', $player->user_id)->first();
         $myLocations = $this->getMyDiscoveredLocationsAsList($request->device_id,$request->profile_name);
-        $allLocations = $this->getAllLocationsAsList();
+        $allLocations = $this->getAllLocationsAsList($request->profile_name);
         $flag= false;
         foreach ($allLocations as $allLocation) {
             $flag = false;

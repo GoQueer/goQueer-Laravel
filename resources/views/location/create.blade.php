@@ -67,6 +67,7 @@
     </div>
 
 
+
     {!! Form::open(array('action' => 'LocationController@store','method'=>'POST')) !!}
 
 
@@ -104,6 +105,12 @@
             <div class="form-group">
                 <strong>Associated Gallery:</strong>
                 {!! Form::select('id', $galleries, null, ['class' => 'form-control']) !!}
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div  class="form-group">
+                {!! Form::Label('profile', 'Which profile this location belongs to:') !!}
+                {!! Form::select('profile_id', $profiles, null, ['class' => 'form-control']) !!}
             </div>
         </div>
 

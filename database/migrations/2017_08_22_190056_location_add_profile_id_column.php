@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class LocationAddGalleryIdColumn extends Migration
+class LocationAddProfileIdColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class LocationAddGalleryIdColumn extends Migration
     public function up()
     {
         Schema::table('location', function (Blueprint $table) {
-            $table->integer('gallery_id')->unsigned();
-            $table->foreign('gallery_id')->references('id')->on('gallery');
+            $table->integer('profile_id')->unsigned();
+            $table->foreign('profile_id')->references('id')->on('profile');
         });
 
-        DB::statement("ALTER TABLE `gallery` DROP foreign key `gallery_location_id_foreign`");
-        DB::statement("ALTER TABLE `gallery` DROP COLUMN `location_id`");
+
     }
 
     /**

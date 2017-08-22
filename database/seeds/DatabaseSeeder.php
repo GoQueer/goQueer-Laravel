@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
          $this->call(ProgressStatusTableSeeder::class);
          $this->call(CopyrightStatusTableSeeder::class);
          $this->call(GalleryTableSeeder::class);
+         $this->call(ProfileTableSeeder::class);
          $this->call(LocationTableSeeder::class);
          $this->call(MediaTableSeeder::class);
          $this->call(PlayerTableSeeder::class);

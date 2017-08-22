@@ -19,6 +19,7 @@ class LocationTableSeeder extends Seeder
             'address' => 'White Ave, 99 st',
             'user_id' => 1,
             'gallery_id' => 1,
+            'profile_id' => 1
 
         ]);
 
@@ -31,6 +32,7 @@ class LocationTableSeeder extends Seeder
             'address' => '119 St NW and 106 Avenue NW',
             'user_id' => 1,
             'gallery_id' => 1,
+            'profile_id' => 1
 
         ]);
 
@@ -43,6 +45,7 @@ class LocationTableSeeder extends Seeder
             'address' => '99 St. NW and Whyte Ave',
             'user_id' => 1,
             'gallery_id' => 1,
+            'profile_id' => 1
 
         ]);
 
@@ -55,6 +58,7 @@ class LocationTableSeeder extends Seeder
             'address' => '99 St. NW and Whyte Ave',
             'user_id' => 1,
             'gallery_id' => 1,
+            'profile_id' => 1
 
 
         ]);

@@ -78,8 +78,8 @@
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="form-group">
-                <strong>Title:</strong>
-                {{ $location->name }}
+                <strong>Profile:</strong>
+                {{ $location->profile_name }}
             </div>
         </div>
 
