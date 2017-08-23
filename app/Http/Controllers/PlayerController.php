@@ -183,13 +183,15 @@ class PlayerController extends Controller
     public function getMyDiscoveredLocationsAsList($device_id,$profile_name)
     {
         $profile = DB::table('profile')->where('profile.name','=',$profile_name)->first();
-        $myLocations = DB::table('player')->where('player.device_id', '=', $device_id)
-            ->join('discovery', 'discovery.player_id', '=', 'player.id')
-            ->join('location', 'location.id', '=', 'discovery.location_id')
-            ->where('location.profile_id','=',$profile->id)
-            ->select('location.*')
-            ->get();
-        return $myLocations;
+        if ($profile != null) {
+            $myLocations = DB::table('player')->where('player.device_id', '=', $device_id)
+                ->join('discovery', 'discovery.player_id', '=', 'player.id')
+                ->join('location', 'location.id', '=', 'discovery.location_id')
+                ->where('location.profile_id', '=', $profile->id)
+                ->select('location.*')
+                ->get();
+            return $myLocations;
+        }
     }
 
     /**

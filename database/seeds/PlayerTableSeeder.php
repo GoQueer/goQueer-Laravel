@@ -15,7 +15,7 @@ class PlayerTableSeeder extends Seeder
         DB::table('player')->insert([
             'id'=> '1',
             'user_id' => '1',
-            'device_id' => '5602afaea7a00bb',
+            'device_id' => '60f8c5fb484d5097',
         ]);
 
 
