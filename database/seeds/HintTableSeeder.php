@@ -23,5 +23,11 @@ class HintTableSeeder extends Seeder
             'content' => 'go south a bit more',
             'location_id' => '2',
         ]);
+
+        DB::table('hint')->insert([
+            'id'=> '3',
+            'content' => 'this is the new hint',
+            'location_id' => '4',
+        ]);
     }
 }

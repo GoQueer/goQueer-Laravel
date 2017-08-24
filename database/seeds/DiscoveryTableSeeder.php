@@ -30,6 +30,18 @@ class DiscoveryTableSeeder extends Seeder
             'player_id' => '1',
         ]);
 
+        DB::table('discovery')->insert([
+            'id'=> '4',
+            'location_id' => '1',
+            'player_id' => '2',
+        ]);
+
+        DB::table('discovery')->insert([
+            'id'=> '5',
+            'location_id' => '2',
+            'player_id' => '2',
+        ]);
+
 
     }
 }
