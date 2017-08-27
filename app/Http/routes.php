@@ -54,3 +54,4 @@ Route::get('/client/getMediaById', array('uses' => 'PlayerController@getMediaByI
 Route::get('/client/getGalleryById', array('uses' => 'PlayerController@getGalleryById'));
 Route::get('/client/setDiscoveryStatus', array('uses' => 'PlayerController@updateDiscoveryStatus'));
 Route::get('/client/getHint', array('uses' => 'PlayerController@getHint'));
+Route::get('/client/getSetStatusSummary', array('uses' => 'PlayerController@getSetStatusSummary'));

@@ -10,7 +10,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Discovery;
 use Illuminate\Support\Facades\DB;
-use App\Models\Location;
+use App\Models\Gallery;
+use App\Models\Set;
 use App\Models\Media;
 use App\Models\Player;
 use Illuminate\Http\Request;
@@ -79,6 +80,32 @@ class PlayerController extends Controller
             ->get();
         return $myLocations;
     }
+
+
+    public function getSetStatusSummary(Request $request)
+    {
+        $player = DB::table('player')->where('device_id','=',$request->device_id)->first();
+        $id = $player->id;
+        $gallery = Gallery::find($request->gallery_id);
+        $set = Set::find($gallery->set_id);
+        $galleries =  DB::table('gallery')->where('gallery.set_id','=',$set->id)->get();
+
+        $discoveredLocationCounter = 0;
+        $allLocationCounter = 0;
+        foreach ($galleries as $gallery) {
+            $locations = DB::table('location')->where('location.gallery_id','=',$gallery->id)->get();
+            $allLocationCounter = $allLocationCounter + sizeof($locations);
+            foreach ($locations as $location) {
+                $discoveredLocations = DB::table('discovery')->where('location_id', '=', $location->id)
+                    ->where('player_id', '=', $player->id)->get();
+                $discoveredLocationCounter = $discoveredLocationCounter + sizeof($discoveredLocations);
+            }
+        }
+        return "This gallery is one of the " . sizeof($galleries) . " galleries in this set and\n
+            You have discovered. " . $discoveredLocationCounter. " out of " . $allLocationCounter . " locations";
+
+    }
+
 
 
     public function getGalleryById(Request $request)
@@ -158,9 +185,7 @@ class PlayerController extends Controller
             date_default_timezone_set("America/Edmonton");
             $start_date = new \DateTime($user->hint_request);
             $current_date = $date = date('Y-m-d h:i:s');
-
             $current_date = new \DateTime($current_date,new \DateTimeZone('America/Edmonton'));
-//            var_dump($current_date);
             $since_start = $start_date->diff($current_date);
             $minutes = $since_start->days * 24 * 60;
             $minutes += $since_start->h * 60;
