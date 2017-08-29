@@ -4,7 +4,6 @@
     <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
     </list>
     <ignored path="secondTry.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +48,8 @@
       <file leaf-file-name="PlayerController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="175" column="17" lean-forward="false" selection-start-line="175" selection-start-column="17" selection-end-line="175" selection-end-column="17" />
+            <state relative-caret-position="427">
+              <caret line="90" column="88" lean-forward="true" selection-start-line="90" selection-start-column="88" selection-end-line="90" selection-end-column="88" />
               <folding>
                 <element signature="e#125#150#0#PHP" expanded="true" />
               </folding>
@@ -547,14 +546,7 @@
       <workItem from="1503269708427" duration="8694000" />
       <workItem from="1503362425626" duration="4920000" />
       <workItem from="1503453307495" duration="1548000" />
-      <workItem from="1503798047563" duration="6147000" />
-    </task>
-    <task id="LOCAL-00023" summary="fixed showing right comments">
-      <created>1481597323944</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1481597323944</updated>
+      <workItem from="1503798047563" duration="7334000" />
     </task>
     <task id="LOCAL-00024" summary="added feature page">
       <created>1481654400373</created>
@@ -892,11 +884,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503541902498</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="now a working hint and location with the profile system">
+      <created>1503809948166</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1503809948166</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249224000" />
+    <option name="totallyTimeSpent" value="250411000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -970,7 +969,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed sorting" />
     <MESSAGE value="fixed ordering one more time" />
     <MESSAGE value="a working draft to test" />
     <MESSAGE value="working on android apis" />
@@ -995,7 +993,8 @@
     <MESSAGE value="wip" />
     <MESSAGE value="successfully added profile to location and to APIs, but APIs haven't been tested" />
     <MESSAGE value="now a working hint and location with the profile system" />
-    <option name="LAST_COMMIT_MESSAGE" value="now a working hint and location with the profile system" />
+    <MESSAGE value="a working set status" />
+    <option name="LAST_COMMIT_MESSAGE" value="a working set status" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1324,6 +1323,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
           <caret line="13" column="43" lean-forward="false" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1384,8 +1384,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="175" column="17" lean-forward="false" selection-start-line="175" selection-start-column="17" selection-end-line="175" selection-end-column="17" />
+        <state relative-caret-position="427">
+          <caret line="90" column="88" lean-forward="true" selection-start-line="90" selection-start-column="88" selection-end-line="90" selection-end-column="88" />
           <folding>
             <element signature="e#125#150#0#PHP" expanded="true" />
           </folding>

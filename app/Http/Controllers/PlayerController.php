@@ -101,8 +101,7 @@ class PlayerController extends Controller
                 $discoveredLocationCounter = $discoveredLocationCounter + sizeof($discoveredLocations);
             }
         }
-        return "This gallery is one of the " . sizeof($galleries) . " galleries in this set and\n
-            You have discovered. " . $discoveredLocationCounter. " out of " . $allLocationCounter . " locations";
+        return "This gallery is one of the " . sizeof($galleries) . " galleries in this set and you have discovered. " . $discoveredLocationCounter. " out of " . $allLocationCounter . " locations";
 
     }
 
