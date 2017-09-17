@@ -38,6 +38,13 @@
             </div>
         </div>
 
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div  class="form-group">
+                {!! Form::Label('sets', 'Parent Set ID:') !!}
+                {!! Form::select('parent_set_id', $sets, null, ['class' => 'form-control']) !!}
+            </div>
+        </div>
+
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>

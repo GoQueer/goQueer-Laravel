@@ -34,7 +34,14 @@
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Publish Date:</strong>
-                {{ $media->date }}
+                {{ $media->publish_date }}
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+                <strong>Display Date:</strong>
+                {{ $media->display_date }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -64,10 +71,10 @@
                     <h4 class="modal-title"
                         id="favoritesModalLabel">{{$media->name}}</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" >
                     {{--<img src="{{ URL::to('/uploads/' .    $media->fileName) }}" class="img-responsive" alt="{{$media->name}}">--}}
-                    <object  display="inline-block" clear="both"
-                             float="left"   data="{{ URL::to('/uploads/' .    $media->fileName) }}"></object>
+                    <object  display="inline-block" clear="both" width="550" height="400"
+                             float="center"   data="{{ URL::to('/uploads/' .    $media->fileName) }}"></object>
 
                 </div>
                 <div class="modal-footer ">

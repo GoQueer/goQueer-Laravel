@@ -25,14 +25,21 @@
 
         </div>
     </div>
-
-
-
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Description:</strong>
                 {{ $set->description }}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Parent Set ID:</strong>
+                {{ $set->parent_set_id }}
             </div>
         </div>
     </div>

@@ -74,7 +74,7 @@ class SetController extends Controller
     {
         $set = Set::find($id);
 
-        $hints = Hint::orderBy('id','DESC')->where('set_id',$id)->get();
+        $hints = Hint::orderBy('id','DESC')->where('id',$id)->get();
         return view('set.show',compact('set','hints'))->with('email',Auth::user()->email);
     }
 
@@ -87,7 +87,8 @@ class SetController extends Controller
     public function edit($id)
     {
         $set = Set::find($id);
-        return view('set.edit',compact('set'));
+        $sets = Set::lists('name', 'id');
+        return view('set.edit',compact('set','sets'));
     }
 
     /**
@@ -101,6 +102,7 @@ class SetController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+
 
         ]);
 
