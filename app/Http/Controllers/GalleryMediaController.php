@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 use App\Models\Gallery;
 use App\Models\GalleryMedia;
 use App\Models\Media;
+use App\Models\Set;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -50,7 +51,9 @@ class GalleryMediaController extends Controller
 
             $id = $gallery_id;
             $gallery = Gallery::find($id);
-            $all_medias = Media::orderBy('id', 'DESC')->paginate(5);
+            $final_all_medias=array();
+            $all_medias = Media::orderBy('id', 'DESC');
+
 
             $assigned_medias =  \DB::table('media')
                 ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
@@ -58,8 +61,19 @@ class GalleryMediaController extends Controller
                 ->orderBy('gallery_media.order', 'asc')
                 ->where('gallery_media.gallery_id' , '=', $id)
                 ->get();
+            foreach ( $all_medias as $media){
+                $flag  = false;
+                foreach ($assigned_medias as $assigned_media){
+                    if ($assigned_media->id == $media->id){
+                        $flag != true;
+                    }
+                }
+                if (!$flag)
+                    array_push($final_all_medias,$media);
 
-            return view('gallery.show', compact('gallery', 'all_medias','assigned_medias', 'id'))->with('email', Auth::user()->email);
+
+            }
+            return view('gallery.show', compact('gallery', 'final_all_medias','assigned_medias', 'id'))->with('email', Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -121,6 +135,7 @@ class GalleryMediaController extends Controller
     public function update($input)
     {
         $parameters = explode("&", $input);
+        //dd($parameters);
         $gallery_id = $parameters[1];
         $media_id = $parameters[0];
         if (Auth::check()) {
@@ -140,7 +155,8 @@ class GalleryMediaController extends Controller
 
             $id = $gallery_id;
             $gallery = Gallery::find($id);
-            $all_medias = Media::orderBy('id', 'DESC')->paginate(5);
+            $all_medias = Media::orderBy('id', 'DESC');
+            $final_all_medias=array();
 
             $assigned_medias =  \DB::table('media')
                 ->join('gallery_media', 'media.id', '=', 'gallery_media.media_id')
@@ -148,11 +164,26 @@ class GalleryMediaController extends Controller
                 ->orderBy('gallery_media.order', 'desc')
                 ->where('gallery_media.gallery_id' , '=', $id)
                 ->get();
+            $set = Set::find($gallery->set_id);
+            $set_name = $set->name;
+            foreach ( $all_medias as $media){
+                $flag  = false;
+                foreach ($assigned_medias as $assigned_media){
+                    if ($assigned_media->id == $media->id){
+                        $flag = true;
+                    }
+                }
+                if (!$flag)
+                    array_push($final_all_medias,$media);
+
+
+            }
+
             if (sizeof($ifExist) != 0)
-                return view('gallery.show', compact('gallery', 'all_medias','assigned_medias', 'id'))->with('email', Auth::user()->email)
+                return view('gallery.show', compact('gallery', 'final_all_medias','assigned_medias', 'id','set_name'))->with('email', Auth::user()->email)
                     ->with('success','Already assigned');
             else
-                return view('gallery.show', compact('gallery', 'all_medias','assigned_medias', 'id'))->with('email', Auth::user()->email)
+                return view('gallery.show', compact('gallery', 'final_all_medias','assigned_medias', 'id','set_name'))->with('email', Auth::user()->email)
                     ->with('success','Association created successfully');
         } else
             return view('errors.permission');

@@ -50,6 +50,12 @@
                 {{ $media->description }}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            {{--<img src="{{ URL::to('/uploads/' .    $media->fileName) }}" class="img-responsive" alt="{{$media->name}}">--}}
+            <object  display="inline-block" clear="both" width="100" height="100"
+                     float="center"   data="{{ URL::to('/uploads/' .    $media->fileName) }}"></object>
+
+        </div>
     </div>
     <button
             type="button"
@@ -73,7 +79,7 @@
                 </div>
                 <div class="modal-body" >
                     {{--<img src="{{ URL::to('/uploads/' .    $media->fileName) }}" class="img-responsive" alt="{{$media->name}}">--}}
-                    <object  display="inline-block" clear="both" width="550" height="400"
+                    <object  display="inline-block" clear="both" width="550" height="500"
                              float="center"   data="{{ URL::to('/uploads/' .    $media->fileName) }}"></object>
 
                 </div>

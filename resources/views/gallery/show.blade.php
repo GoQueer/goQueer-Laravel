@@ -113,7 +113,7 @@
             <th>Description</th>
             <th>Action</th>
         </tr>
-        @foreach ($all_medias as $key => $all_media)
+        @foreach ($final_all_medias as $key => $all_media)
             <tr>
                 <td><div style="height:20px; overflow:hidden">{{ $all_media->id }}</div></td>
                 <td><div style="height:20px; overflow:hidden">{{ $all_media->name }}</div></td>
