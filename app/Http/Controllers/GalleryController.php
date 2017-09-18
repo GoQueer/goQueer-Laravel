@@ -94,7 +94,7 @@ class GalleryController extends Controller
     {
         if (Auth::check()) {
             $gallery = Gallery::find($id);
-            $all_medias = Media::orderBy('id', 'DESC');
+            $all_medias = Media::orderBy('id', 'DESC')->get();
             $final_all_medias=array();
             $set = Set::find($gallery->set_id);
             $set_name = $set->name;
@@ -117,7 +117,7 @@ class GalleryController extends Controller
 
 
             }
-
+          //  dd($all_medias);
             return view('gallery.show', compact('gallery','final_all_medias','assigned_medias','id','set_name'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');

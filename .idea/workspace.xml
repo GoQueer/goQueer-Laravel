@@ -5,8 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GalleryMediaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GalleryMediaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/gallery/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/gallery/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/media/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/media/show.blade.php" />
     </list>
     <ignored path="secondTry.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,14 +46,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GalleryMediaController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GalleryMediaController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GalleryMediaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3810">
-              <caret line="185" column="70" lean-forward="false" selection-start-line="185" selection-start-column="70" selection-end-line="185" selection-end-column="70" />
+            <state relative-caret-position="551">
+              <caret line="149" column="40" lean-forward="true" selection-start-line="149" selection-start-column="40" selection-end-line="149" selection-end-column="40" />
               <folding>
                 <element signature="e#125#148#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DraftController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DraftController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,11 +78,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GalleryController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GalleryController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GalleryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="163" column="50" lean-forward="true" selection-start-line="163" selection-start-column="50" selection-end-line="163" selection-end-column="50" />
+            <state relative-caret-position="309">
+              <caret line="96" column="26" lean-forward="false" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MediaController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MediaController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="670">
+              <caret line="62" column="39" lean-forward="true" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gallery.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Gallery.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -168,8 +196,8 @@
         <option value="$PROJECT_DIR$/app/Models/Set.php" />
         <option value="$PROJECT_DIR$/resources/views/media/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/gallery/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/GalleryMediaController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GalleryController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/GalleryMediaController.php" />
       </list>
     </option>
   </component>
@@ -567,14 +595,7 @@
       <workItem from="1503362425626" duration="4920000" />
       <workItem from="1503453307495" duration="1548000" />
       <workItem from="1503798047563" duration="7465000" />
-      <workItem from="1505684990461" duration="7643000" />
-    </task>
-    <task id="LOCAL-00026" summary="added date to media">
-      <created>1481659307990</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1481659307990</updated>
+      <workItem from="1505684990461" duration="8242000" />
     </task>
     <task id="LOCAL-00027" summary="styling in media list">
       <created>1481659811150</created>
@@ -912,11 +933,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505687470417</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="wip">
+      <created>1505693358550</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1505693358550</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258185000" />
+    <option name="totallyTimeSpent" value="258784000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1010,25 +1038,18 @@
     <MESSAGE value="moved hint to locations successfully" />
     <MESSAGE value="a working hint engine" />
     <MESSAGE value="corrected the time" />
-    <MESSAGE value="wip" />
     <MESSAGE value="successfully added profile to location and to APIs, but APIs haven't been tested" />
     <MESSAGE value="now a working hint and location with the profile system" />
     <MESSAGE value="a working set status" />
     <MESSAGE value="verified sets and media" />
-    <option name="LAST_COMMIT_MESSAGE" value="verified sets and media" />
+    <MESSAGE value="wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Models/Message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/EloquentUserProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2750">
@@ -1085,13 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Gallery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1326,14 +1340,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MediaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="45" column="63" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/set/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -1401,21 +1407,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GalleryMediaController.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Gallery.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3810">
-          <caret line="185" column="70" lean-forward="false" selection-start-line="185" selection-start-column="70" selection-end-line="185" selection-end-column="70" />
-          <folding>
-            <element signature="e#125#148#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MediaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="62" column="39" lean-forward="true" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GalleryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="163" column="50" lean-forward="true" selection-start-line="163" selection-start-column="50" selection-end-line="163" selection-end-column="50" />
+        <state relative-caret-position="309">
+          <caret line="96" column="26" lean-forward="false" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DraftController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GalleryMediaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="149" column="40" lean-forward="true" selection-start-line="149" selection-start-column="40" selection-end-line="149" selection-end-column="40" />
+          <folding>
+            <element signature="e#125#148#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -52,7 +52,7 @@ class GalleryMediaController extends Controller
             $id = $gallery_id;
             $gallery = Gallery::find($id);
             $final_all_medias=array();
-            $all_medias = Media::orderBy('id', 'DESC');
+            $all_medias = Media::orderBy('id', 'DESC')->get();
 
 
             $assigned_medias =  \DB::table('media')
@@ -155,7 +155,7 @@ class GalleryMediaController extends Controller
 
             $id = $gallery_id;
             $gallery = Gallery::find($id);
-            $all_medias = Media::orderBy('id', 'DESC');
+            $all_medias = Media::orderBy('id', 'DESC')->get();
             $final_all_medias=array();
 
             $assigned_medias =  \DB::table('media')
