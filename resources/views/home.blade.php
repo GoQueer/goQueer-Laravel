@@ -13,7 +13,7 @@
     <div class="inner">
 
         <nav id="nav">
-            <a href="/">Home</a>
+            <a href="/media">Home</a>
             <a href="/login">Dashboard</a>
         </nav>
         <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
