@@ -117,6 +117,7 @@
                         <li>
                             <a href="#"><i class="fa fa-picture-o"></i>  Media<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
+
                                 <li>
                                     <a href="{{ url ('/set') }}">Set</a>
                                 </li>
@@ -134,6 +135,9 @@
                         <li>
                             <a href="#"><i class="fa fa-map-marker"></i>  Map<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ url ('/profile') }}">Profile</a>
+                                </li>
                                 <li>
                                     <a href="{{ url ('/location') }}">Location</a>
                                 </li>
