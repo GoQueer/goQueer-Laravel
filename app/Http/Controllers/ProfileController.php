@@ -41,7 +41,7 @@ class ProfileController extends Controller
     {
 
         if (Auth::check()) {
-            return view('Profile.create');
+            return view('profile.create');
         } else
             return view('errors.permission');
 
