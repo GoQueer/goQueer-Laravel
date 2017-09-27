@@ -13,8 +13,8 @@
     <div class="inner">
 
         <nav id="nav">
-            <a href="/media">Home</a>
-            <a href="/login">Dashboard</a>
+            <a href="/">Home</a>
+            <a href="/media">Dashboard</a>
         </nav>
         <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
     </div>
@@ -50,7 +50,7 @@
         </div>
 
         <footer>
-            <a href="/login" class="button">Get Started</a>
+            <a href="/document" class="button">Get Started</a>
         </footer>
     </div>
 </section>

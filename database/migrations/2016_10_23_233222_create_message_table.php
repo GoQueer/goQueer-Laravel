@@ -23,7 +23,7 @@ class CreateMessageTable extends Migration
         });
 
         Schema::table('message', function (Blueprint $table) {
-            $table->foreign('media_id')->references('id')->on('location')
+            $table->foreign('media_id')->references('id')->on('media')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
 //            $table->foreign('parent_message_id')->references('id')->on('message')
