@@ -47,7 +47,7 @@ class HintController extends Controller
      */
     public function store(Request $request)
     {
-//        if (Auth::check()) {
+        if (Auth::check()) {
 
 
             $this->validate($request, [
@@ -65,7 +65,7 @@ class HintController extends Controller
             );
             return redirect()->route('location.show',[$request->location_id])
                 ->with('success', 'Hint added successfully')->with('email',Auth::user()->email);
-//        }else
+        }else
             return view('errors.permission');
     }
 

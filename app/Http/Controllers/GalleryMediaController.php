@@ -87,22 +87,24 @@ class GalleryMediaController extends Controller
 
     public function store(Request $request)
     {
+        if (Auth::check()) {
+            $this->validate($request, [
+                'gallery_id' => 'required',
+                'media_id' => 'required',
+            ]);
+            $newOrder = DB::table('gallery_media')->where('id', DB::raw("(select max(`order`) from gallery_media)"))->get();
 
-        $this->validate($request, [
-            'gallery_id' => 'required',
-            'media_id' => 'required',
-        ]);
-        $newOrder = DB::table('gallery_media')->where('id', DB::raw("(select max(`order`) from gallery_media)"))->get();
 
-
-        \DB::table('gallery_media')->insert(
-            ['gallery_id' => $request->gallery_id,
-                'media_id' => $request->media_id,
-                'order' => (int)$newOrder+1,
-                ]
-        );
-        return redirect()->route('gallery_media.show',[$request->location_id])
-            ->with('success','Media Assigned successfully');
+            \DB::table('gallery_media')->insert(
+                ['gallery_id' => $request->gallery_id,
+                    'media_id' => $request->media_id,
+                    'order' => (int)$newOrder+1,
+                    ]
+            );
+            return redirect()->route('gallery_media.show',[$request->location_id])
+                ->with('success','Media Assigned successfully');
+        } else
+            return view('errors.permission');
     }
 
 
@@ -115,14 +117,20 @@ class GalleryMediaController extends Controller
      */
     public function edit($id)
     {
-        $media = LocationMedia::find($id);
-        return view('media.edit',compact('media'));
+        if (Auth::check()) {
+            $media = LocationMedia::find($id);
+            return view('media.edit',compact('media'));
+        } else
+            return view('errors.permission');
     }
 
     public function increase($input)
     {
-        $parameters = explode("&", $input);
-        $gallery_id = $parameters[1];
+        if (Auth::check()) {
+            $parameters = explode("&", $input);
+            $gallery_id = $parameters[1];
+        } else
+            return view('errors.permission');
     }
 
     /**
@@ -134,6 +142,7 @@ class GalleryMediaController extends Controller
      */
     public function update($input)
     {
+
         $parameters = explode("&", $input);
         //dd($parameters);
         $gallery_id = $parameters[1];
@@ -197,11 +206,14 @@ class GalleryMediaController extends Controller
      */
     public function destroy($input)
     {
-        $parameters = explode("&", $input);
+        if (Auth::check()) {
+            $parameters = explode("&", $input);
 
 
-        GalleryMedia::find($parameters[0])->delete();
-        return redirect()->route('gallery.show',$parameters[1])
-            ->with('success','Association deleted successfully');
+            GalleryMedia::find($parameters[0])->delete();
+            return redirect()->route('gallery.show',$parameters[1])
+                ->with('success','Association deleted successfully');
+        } else
+            return view('errors.permission');
     }
 }

@@ -32,7 +32,7 @@
                 <td><div style="height:40px; overflow:hidden">{{ $location->coordinate }}</div></td>
 
                 <td>
-                    <a class="btn btn-info" href="{{ route('location.show',$location->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('location.show',$location->id) }}">Config</a>
                     <a class="btn btn-success" href="{{ route('location.edit',$location->id) }}">Edit</a>
                     {!! Form::open(['method' => 'DELETE','route' => ['location.destroy', $location->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}

@@ -25,9 +25,12 @@ class SetController extends Controller
      */
     public function index(Request $request)
     {
-        $sets = Set::orderBy('id','DESC')->paginate(5);
-        return view('set.index',compact('sets'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        if (Auth::check()) {
+            $sets = Set::orderBy('id','DESC')->paginate(5);
+            return view('set.index',compact('sets'))
+                ->with('i', ($request->input('page', 1) - 1) * 5);
+        } else
+            return view('errors.permission');
     }
 
     /**
@@ -55,13 +58,16 @@ class SetController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-        ]);
+        if (Auth::check()) {
+            $this->validate($request, [
+                'name' => 'required',
+            ]);
 
-        Set::create($request->all());
-        return redirect()->route('set.index')
-            ->with('success','Set added successfully');
+            Set::create($request->all());
+            return redirect()->route('set.index')
+                ->with('success','Set added successfully');
+        } else
+            return view('errors.permission');
     }
 
     /**
@@ -72,10 +78,12 @@ class SetController extends Controller
      */
     public function show($id)
     {
-        $set = Set::find($id);
-
-        $hints = Hint::orderBy('id','DESC')->where('id',$id)->get();
-        return view('set.show',compact('set','hints'))->with('email',Auth::user()->email);
+        if (Auth::check()) {
+            $set = Set::find($id);
+            $hints = Hint::orderBy('id','DESC')->where('id',$id)->get();
+            return view('set.show',compact('set','hints'))->with('email',Auth::user()->email);
+        } else
+            return view('errors.permission');
     }
 
     /**
@@ -86,9 +94,12 @@ class SetController extends Controller
      */
     public function edit($id)
     {
-        $set = Set::find($id);
-        $sets = Set::lists('name', 'id');
-        return view('set.edit',compact('set','sets'));
+        if (Auth::check()) {
+            $set = Set::find($id);
+            $sets = Set::lists('name', 'id');
+            return view('set.edit',compact('set','sets'));
+        } else
+            return view('errors.permission');
     }
 
     /**
@@ -100,15 +111,18 @@ class SetController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
+        if (Auth::check()) {
+            $this->validate($request, [
+                'name' => 'required',
 
 
-        ]);
+            ]);
 
-        Set::find($id)->update($request->all());
-        return redirect()->route('set.index')
-            ->with('success','Set updated successfully');
+            Set::find($id)->update($request->all());
+            return redirect()->route('set.index')
+                ->with('success','Set updated successfully');
+        } else
+            return view('errors.permission');
     }
 
     /**
@@ -119,8 +133,11 @@ class SetController extends Controller
      */
     public function destroy($id)
     {
-        Set::find($id)->delete();
-        return redirect()->route('set.index')
-            ->with('success','Set deleted successfully');
+        if (Auth::check()) {
+            Set::find($id)->delete();
+            return redirect()->route('set.index')
+                ->with('success','Set deleted successfully');
+        } else
+            return view('errors.permission');
     }
 }

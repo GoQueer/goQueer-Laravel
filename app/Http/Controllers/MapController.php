@@ -23,10 +23,9 @@ class MapController extends Controller
     public function index(Request $request)
     {
         if (Auth::check()) {
-
-        $locations = Location::orderBy('id','DESC')->paginate(5);
-        return view('map.index',compact('locations'))
-            ->with('email',Auth::user()->email);
+            $locations = Location::orderBy('id','DESC')->paginate(5);
+            return view('map.index',compact('locations'))
+                ->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
