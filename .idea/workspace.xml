@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_10_23_233222_create_message_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_10_23_233222_create_message_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
     </list>
     <ignored path="secondTry.iws" />
@@ -36,6 +35,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="753">
+              <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -49,8 +58,8 @@
       <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="44" column="46" lean-forward="true" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+            <state relative-caret-position="352">
+              <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -624,14 +633,7 @@
       <workItem from="1503453307495" duration="1548000" />
       <workItem from="1503798047563" duration="7465000" />
       <workItem from="1505684990461" duration="10883000" />
-      <workItem from="1506384395394" duration="4889000" />
-    </task>
-    <task id="LOCAL-00031" summary="add progress to database">
-      <created>1481686681977</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1481686681977</updated>
+      <workItem from="1506384395394" duration="5018000" />
     </task>
     <task id="LOCAL-00032" summary="add progress to database">
       <created>1483072050575</created>
@@ -969,11 +971,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506469566899</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="tiny fixes">
+      <created>1506471933208</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1506471933208</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266314000" />
+    <option name="totallyTimeSpent" value="266443000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1047,7 +1056,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="more seeders" />
     <MESSAGE value="at night" />
     <MESSAGE value="minor chnages" />
     <MESSAGE value="fully working  download" />
@@ -1072,7 +1080,8 @@
     <MESSAGE value="a working profile UI" />
     <MESSAGE value="some clean ups" />
     <MESSAGE value="typo errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="typo errors" />
+    <MESSAGE value="tiny fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="tiny fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1386,14 +1395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/profile/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="752">
@@ -1472,10 +1473,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="44" column="46" lean-forward="true" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+        <state relative-caret-position="352">
+          <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="35" />
           <folding />
         </state>
       </provider>
