@@ -123,7 +123,10 @@ class TestController extends Controller
 
         if (Auth::check()) {
             $media = Media::find($id);
-            return view('media.edit', compact('media'))->with('email',Auth::user()->email);
+            $locations = Location::lists('name', 'id');
+            $types = MediaType::lists('name', 'id');
+            $statuses = CopyrightStatus::lists('status', 'id');
+            return view('media.edit', compact('media','locations','types','statuses'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
