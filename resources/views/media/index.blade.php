@@ -24,7 +24,7 @@
             <th>Publish Date</th>
             <th>Description</th>
             <th>File Name</th>
-            <th width="150px">Action</th>
+            <th width="200px">Action</th>
         </tr>
         @foreach ($medias as $key => $media)
             <tr>
@@ -36,8 +36,8 @@
                 <td><div style="height:40px;width:60px; overflow:hidden">{{ $media->fileName }}</div></td>
 
                 <td>
-                    <a class="btn btn-info" href="{{ route('media.show',$media->id) }}">Show</a>
-
+                    <a class="btn btn-success" href="{{ route('media.show',$media->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('media.edit',$media->id) }}">Edit</a>
                     {!! Form::open(['method' => 'DELETE','route' => ['media.destroy', $media->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}

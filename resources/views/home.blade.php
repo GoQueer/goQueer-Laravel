@@ -50,7 +50,7 @@
         </div>
 
         <footer>
-            <a href="/documentation" class="button">Get Started</a>
+            <a href="/media" class="button">Get Started</a>
         </footer>
     </div>
 </section>

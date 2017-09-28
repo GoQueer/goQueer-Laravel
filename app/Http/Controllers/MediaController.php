@@ -62,6 +62,7 @@ class MediaController extends Controller
 
                 'source' => 'required',
                 'type_id' => 'required',
+                'file_name' => 'required',
                 'description' => 'required',
 
             ]);
@@ -123,7 +124,10 @@ class MediaController extends Controller
     {
         if (Auth::check()) {
             $media = Media::find($id);
-            return view('media.edit', compact('media'))->with('email',Auth::user()->email);
+            $locations = Location::lists('name', 'id');
+            $types = MediaType::lists('name', 'id');
+            $statuses = CopyrightStatus::lists('status', 'id');
+            return view('media.edit', compact('media','types','statuses'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -140,11 +144,35 @@ class MediaController extends Controller
         if (Auth::check()) {
             $this->validate($request, [
                 'source' => 'required',
-                'address' => 'required',
                 'type_id' => 'required',
-                'user_id' => 'required',
+//                'file_name' => 'required',
+                'description' => 'required',
             ]);
-            Media::find($id)->update($request->all());
+
+//            $file = $request->file('file_name');
+//            $fileName = $file->getClientOriginalName();
+//            $filePath = $file->getRealPath();
+//            $destinationPath = 'uploads';
+//            $file->move($destinationPath, $file->getClientOriginalName());
+            DB::table('media')
+                ->where('id',$id)
+                ->update(
+                ['source' => $request->source,
+                    'description' => $request->description,
+//                    'filePath' => $filePath,
+//                    'fileName' => $fileName,
+                    'publish_date' => $request->publish_date,
+                    'display_date' => $request->display_date,
+                    'updated_at' => new \DateTime(),
+                    'name' => $request->name,
+                    'type_id' => $request->type_id,
+                    'progress_status_id' => '1',
+                    'copyright_status_id' => $request->copyright_status_id,
+                    'user_id' => Auth::id()]
+            );
+
+
+           // Media::find($id)->update($request->all());
             return redirect()->route('media.index')
                 ->with('success', 'Media updated successfully')->with('email',Auth::user()->email);
         } else

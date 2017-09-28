@@ -30,5 +30,10 @@ class MediaTypeTableSeeder extends Seeder
             'id'=> '4',
             'name' => 'Image',
         ]);
+
+        DB::table('media_type')->insert([
+            'id'=> '5',
+            'name' => 'None',
+        ]);
     }
 }
