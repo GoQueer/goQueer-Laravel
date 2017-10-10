@@ -209,15 +209,21 @@ class PlayerController extends Controller
     {
         $profile = DB::table('profile')->where('profile.name','=',$profile_name)->first();
         if ($profile != null) {
-            $myLocations = DB::table('player')->where('player.device_id', '=', $device_id)
-                ->join('discovery', 'discovery.player_id', '=', 'player.id')
-                ->join('location', 'location.id', '=', 'discovery.location_id')
-                ->where('location.profile_id', '=', $profile->id)
-                ->select('location.*')
-                ->get();
-//        var_dump($myLocations);
-            return $myLocations;
+            if ($profile->show)
+                return $this->getAllLocationsAsList($profile_name);
+            else {
+
+                $myLocations = DB::table('player')->where('player.device_id', '=', $device_id)
+                    ->join('discovery', 'discovery.player_id', '=', 'player.id')
+                    ->join('location', 'location.id', '=', 'discovery.location_id')
+                    ->where('location.profile_id', '=', $profile->id)
+                    ->select('location.*')
+                    ->get();
+    //        var_dump($myLocations);
+                return $myLocations;
+            }
         }
+        else return null;
     }
 
     /**

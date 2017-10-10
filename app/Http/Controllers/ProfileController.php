@@ -59,6 +59,7 @@ class ProfileController extends Controller
         if (Auth::check()) {
             $this->validate($request, [
                 'name' => 'required',
+                'show' => 'required',
             ]);
 
             Profile::create($request->all());
@@ -93,6 +94,7 @@ class ProfileController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+            'show' => 'required',
 
 
         ]);
