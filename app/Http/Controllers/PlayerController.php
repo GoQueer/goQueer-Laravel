@@ -39,6 +39,7 @@ class PlayerController extends Controller
     }
     public function getAllLocationsAsList($profile_name){
         $profile = DB::table('profile')->where('profile.name','=',$profile_name)->first();
+
         if ($profile != null)
         return DB::table('location')->where('profile_id','=',$profile->id)->get();
     }
@@ -208,6 +209,7 @@ class PlayerController extends Controller
     public function getMyDiscoveredLocationsAsList($device_id,$profile_name)
     {
         $profile = DB::table('profile')->where('profile.name','=',$profile_name)->first();
+        //dd ($profile->name);
         if ($profile != null) {
             if ($profile->show)
                 return $this->getAllLocationsAsList($profile_name);

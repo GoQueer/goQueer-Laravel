@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" />
     </list>
     <ignored path="secondTry.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,21 +45,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LocationController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LocationController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="294">
+              <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="207" column="20" lean-forward="false" selection-start-line="207" selection-start-column="20" selection-end-line="207" selection-end-column="20" />
+            <state relative-caret-position="478">
+              <caret line="67" column="19" lean-forward="false" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1092">
+              <caret line="52" column="39" lean-forward="false" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -86,7 +98,7 @@
       <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/profile/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
+            <state relative-caret-position="1050">
               <caret line="50" column="39" lean-forward="false" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
               <folding />
             </state>
@@ -127,9 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get star</find>
-      <find>l.control.d</find>
-      <find>medias</find>
       <find>get started</find>
       <find>leaflet.css</find>
       <find>media</find>
@@ -157,6 +166,9 @@
       <find>set_name</find>
       <find>final_all</find>
       <find>edit</find>
+      <find>getMedia</find>
+      <find>getMediaByGalleryId</find>
+      <find>getGalleryMedia</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,7 +193,6 @@
         <option value="$PROJECT_DIR$/database/seeds/LocationTableSeeder.php" />
         <option value="$PROJECT_DIR$/resources/views/location/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/location/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" />
         <option value="$PROJECT_DIR$/database/seeds/HintTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/PlayerTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/DiscoveryTableSeeder.php" />
@@ -212,10 +223,11 @@
         <option value="$PROJECT_DIR$/app/Models/Profile.php" />
         <option value="$PROJECT_DIR$/database/seeds/ProfileTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_09_09_075736_alter_profile_table_add_show_column.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" />
         <option value="$PROJECT_DIR$/resources/views/profile/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/profile/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PlayerController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" />
       </list>
     </option>
   </component>
@@ -332,6 +344,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -406,26 +419,10 @@
               <item name="views" type="cbb8eebc:String" user="views" />
               <item name="profile" type="cbb8eebc:String" user="profile" />
             </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
-              <item name="C:" type="cbb8eebc:String" user="C:" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
-              <item name="C:" type="cbb8eebc:String" user="C:" />
-              <item name="workspace" type="cbb8eebc:String" user="workspace" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -573,14 +570,8 @@
       <workItem from="1506558581514" duration="4662000" />
       <workItem from="1507594219517" duration="1153000" />
       <workItem from="1507595473185" duration="2253000" />
-      <workItem from="1507607956184" duration="2863000" />
-    </task>
-    <task id="LOCAL-00037" summary="a working media to gallery assignment">
-      <created>1483410496332</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1483410496332</updated>
+      <workItem from="1507607956184" duration="5578000" />
+      <workItem from="1507745117476" duration="1764000" />
     </task>
     <task id="LOCAL-00038" summary="working on delete">
       <created>1483415465386</created>
@@ -918,11 +909,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507608960300</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="implemented new column to show everything in profile">
+      <created>1507616378464</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1507616378464</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278956000" />
+    <option name="totallyTimeSpent" value="283435000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -937,17 +935,16 @@
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13426423" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1358754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23370786" sideWeight="0.23845327" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28618422" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3258427" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2354788" sideWeight="0.53590786" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33932585" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2354788" sideWeight="0.53590786" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26741573" sideWeight="0.76154673" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26741573" sideWeight="0.76154673" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33045527" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -957,6 +954,7 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3258427" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1253,13 +1251,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="45" column="14" lean-forward="false" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/gallery/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2625">
@@ -1271,6 +1262,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2268">
           <caret line="118" column="13" lean-forward="false" selection-start-line="96" selection-start-column="12" selection-end-line="118" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,6 +1270,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2562">
           <caret line="131" column="43" lean-forward="false" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="43" />
+          <folding>
+            <element signature="e#125#148#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1292,6 +1287,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2457">
           <caret line="128" column="63" lean-forward="false" selection-start-line="126" selection-start-column="12" selection-end-line="128" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1299,6 +1295,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2499">
           <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1313,6 +1310,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2562">
           <caret line="133" column="7" lean-forward="false" selection-start-line="133" selection-start-column="7" selection-end-line="133" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1347,14 +1345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2331">
@@ -1381,16 +1371,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/profile/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
+        <state relative-caret-position="1050">
           <caret line="50" column="39" lean-forward="false" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="52" column="39" lean-forward="false" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="207" column="20" lean-forward="false" selection-start-line="207" selection-start-column="20" selection-end-line="207" selection-end-column="20" />
+        <state relative-caret-position="478">
+          <caret line="67" column="19" lean-forward="false" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
           <folding />
         </state>
       </provider>
