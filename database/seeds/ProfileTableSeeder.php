@@ -15,12 +15,14 @@ class ProfileTableSeeder extends Seeder
             'id'=> '1',
             'description' => 'Edmonton\'s Queer History',
             'name' => 'Edmonton',
+            'show' => true
         ]);
 
         DB::table('profile')->insert([
             'id'=> '2',
             'description' => 'Dream City ',
             'name' => 'just dreamy',
+            'show' => true
         ]);
 
 

@@ -27,9 +27,9 @@ class LocationController extends Controller
     {
         if (Auth::check()) {
 
-        $locations = Location::orderBy('id','DESC')->where('user_id',Auth::id())->paginate(5);
+        $locations = Location::orderBy('id','DESC')->paginate(500);
         return view('location.index',compact('locations'))
-            ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
+            ->with('i', ($request->input('page', 1) - 1) * 500)->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }

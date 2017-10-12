@@ -37,6 +37,12 @@
                 {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
             </div>
         </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div  class="form-group">
+                {!! Form::Label('show', 'Show all Locations:') !!}
+                {!! Form::select('show', array('0'=>'No', '1'=>'Yes'), null, ['class' => 'form-control']) !!}
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
             <a class="btn btn-primary" href="{{ route('profile.index') }}">Back</a>
