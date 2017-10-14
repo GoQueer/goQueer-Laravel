@@ -104,7 +104,7 @@
         <div class="col-xs-8 col-sm-8 col-md-8">
             <div class="form-group">
                 <strong>Associated Gallery:</strong>
-                {!! Form::select('id', $galleries, null, ['class' => 'form-control']) !!}
+                {!! Form::select('gallery_id', $galleries, null, ['class' => 'form-control']) !!}
             </div>
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">

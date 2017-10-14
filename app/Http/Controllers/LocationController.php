@@ -62,7 +62,7 @@ class LocationController extends Controller
                 'coordinates' => 'required',
                 'address' => 'required',
                 'name' => 'required',
-                'id' => 'required',
+                'gallery_id' => 'required',
                 'profile_id' => 'required'
             ]);
 
@@ -73,7 +73,7 @@ class LocationController extends Controller
                     'name' => $request->name,
                     'description' => $request->description,
                     'user_id' => Auth::id(),
-                    'gallery_id' => $request->id,
+                    'gallery_id' => $request->gallery_id,
                     'created_at' => new \DateTime('now'),
                     'updated_at' => new \DateTime('now'),
                     'profile_id' => $request->profile_id
@@ -117,9 +117,9 @@ class LocationController extends Controller
     public function edit($id)
     {
         if (Auth::check()) {
-            $location = Location::find($id);
+            $locations = Location::find($id);
             $galleries = Gallery::lists('name', 'id');
-            return view('location.edit', compact('location'))->with('galleries',$galleries)->with('email',Auth::user()->email);
+            return view('location.edit', compact('locations'))->with('galleries',$galleries)->with('email',Auth::user()->email);
         }else
             return view('errors.permission');
     }
@@ -145,7 +145,7 @@ class LocationController extends Controller
 
 
 //            dd($new_location);
-            $location->fill(['id' => $id , 'description' => $request->description, 'address' => $request->address , 'name' => $request->name, 'gallery_id' => $request->id])->save();
+            $location->fill(['id' => $id , 'description' => $request->description, 'address' => $request->address , 'name' => $request->name, 'gallery_id' => $request->gallery_id])->save();
             return redirect()->route('location.index')
                 ->with('success', 'location updated successfully')->with('email',Auth::user()->email);
         } else
