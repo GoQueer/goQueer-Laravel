@@ -117,9 +117,10 @@ class LocationController extends Controller
     public function edit($id)
     {
         if (Auth::check()) {
-            $locations = Location::find($id);
+            $location = Location::find($id);
             $galleries = Gallery::lists('name', 'id');
-            return view('location.edit', compact('locations'))->with('galleries',$galleries)->with('email',Auth::user()->email);
+            $profiles = Profile::lists('name', 'id');
+            return view('location.edit', compact('location','profiles'))->with('galleries',$galleries)->with('email',Auth::user()->email);
         }else
             return view('errors.permission');
     }
@@ -138,14 +139,17 @@ class LocationController extends Controller
                 'name' => 'required',
                 'description' => 'required',
                 'address' => 'required',
+                'coordinate' => 'required',
 
             ]);
 
-          $location =   Location::find($id);
-
-
-//            dd($new_location);
-            $location->fill(['id' => $id , 'description' => $request->description, 'address' => $request->address , 'name' => $request->name, 'gallery_id' => $request->gallery_id])->save();
+      //    $location =   Location::find($id);
+//            dd($request->coordinate);
+        //    $location->fill(['id' => $id , 'description' => $request->description, 'address' => $request->address , 'name' => $request->name, 'gallery_id' => $request->id , 'coordinate' => $request->coordinate])->save();
+            \DB::table('location')
+                ->where('id', $id)
+                ->update(['description' => $request->description, 'address' => $request->address , 'name' => $request->name, 'gallery_id' => $request->gallery_id , 'coordinate' => $request->coordinate, 'profile_id' => $request->profile_id , 'updated_at' => new \DateTime('now'),]);
+            Location::find($id)->update($request->all());
             return redirect()->route('location.index')
                 ->with('success', 'location updated successfully')->with('email',Auth::user()->email);
         } else

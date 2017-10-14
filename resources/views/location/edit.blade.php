@@ -37,7 +37,6 @@
 
 
 
-
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="text-center">
@@ -57,7 +56,20 @@
         </div>
     @endif
 
-    {!! Form::model($locations, ['method' => 'PATCH','route' => ['location.update', $locations->id]]) !!}
+    <div class="row" style="display: none;">
+        <table class="table table-bordered" id="coordinateTable">
+            <tr>
+                <th>No</th>
+            </tr>
+
+                <tr>
+                    <td>{{ $location->coordinate }}</td>
+                </tr>
+
+        </table>
+    </div>
+
+    {!! Form::model($location, ['method' => 'PATCH','route' => ['location.update', $location->id]]) !!}
     <div class="row">
 
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -85,7 +97,14 @@
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Associated Gallery:</strong>
-                {!! Form::select('id', $galleries, null, ['class' => 'form-control']) !!}
+                {!! Form::select('gallery_id', $galleries, null, ['class' => 'form-control']) !!}
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+                <strong>Belongs to Profile:</strong>
+                {!! Form::select('profile_id', $profiles, null, ['class' => 'form-control']) !!}
             </div>
         </div>
 
@@ -93,8 +112,24 @@
             <button type="submit" class="btn btn-primary">Submit</button>
             <a class="btn btn-primary" href="{{ route('location.index') }}"> Back</a>
         </div>
+        <div class="row">
+            <div class="col-lg-12 margin-tb">
+                <div class="form-group" >
+                    <strong>Select the Area:</strong>
+                    <div id="mapid1" style="width: 100%; height: 600px;border: 2px solid black"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8">
+            <div class="form-group">
+                <strong>Coordinates:</strong>
+                {!! Form::text('coordinate', null, array('placeholder' => 'coordinate','class' => 'form-control','id'=>'coordinate','readonly')) !!}
+            </div>
+        </div>
 
     </div>
+
+
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -104,8 +139,6 @@
         </div>
     </div>
     {!! Form::close() !!}
-
-
 
     <script>
         var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -117,8 +150,58 @@
             {
                 attribution: 'google'
             })}, { 'drawlayer': drawnItems },
-            { position: 'topleft', collapsed: true }
+            { position: 'topleft', collapsed: false }
         ).addTo(map);
+        var drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems,
+                poly: {
+                    allowIntersection: false
+                }
+            },
+            draw: {
+                polygon: {
+                    allowIntersection: false,
+                    showArea: true
+                },
+                polyline : false,
+                rectangle : true,
+                circle: false,
+                marker: true,
+                polygon: true
+            }
+        });
+        map.addControl(drawControl);
+        map.on(L.Draw.Event.CREATED, function (event) {
+            var layer = event.layer;
+            drawnItems.addLayer(layer);
+        });
+        map.on('draw:edited', function (e) {
+            console.log('edited')
+        });
+        map.on('draw:deleted', function (e) {
+            document.getElementById("coordinate").value ="No Polygon Selected";
+        });
+        map.on('draw:created', function (e) {
+            var type = e.layerType,
+                layer = e.layer;
+
+            if (type === 'polygon' || type === 'circle' || type === 'rectangle' || type== 'marker') {
+                // here you got the polygon points
+                var points = layer._latlngs;
+
+                // here you can get it in geojson format
+                var geojson = layer.toGeoJSON();
+                document.getElementById("coordinate").value = JSON.stringify(geojson);
+                console.log('hi');
+            }
+            // here you add it to a layer to display it in the map
+            drawnItems.addLayer(layer);
+        });
+
+
+
+
         function codeAddress() {
             var table = document.getElementById("coordinateTable");
             for (var i = 1, row; row = table.rows[i]; i++) {
@@ -129,8 +212,7 @@
             }
         }
         window.onload = codeAddress;
+
+
     </script>
-
-
-
 @endsection

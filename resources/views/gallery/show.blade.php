@@ -45,6 +45,15 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+            <div class="form-group">
+                <strong>Created By:</strong>
+                {{ $user_name}}
+            </div>
+        </div>
+    </div>
+
     <hr/>
     <div class="row">
         <div class="col-lg-12 margin-tb">
