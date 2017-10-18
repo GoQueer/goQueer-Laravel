@@ -26,7 +26,24 @@ class PlayerController extends Controller
     }
     public function getMyLocations(Request $request)
     {
-//        $locations = Location::all();
+        if ($request->device_id == null)
+            return;
+
+        $player = DB::table('player')->where('device_id', '=', $request->device_id)->first();
+        if ($player == null) {
+
+
+            $id = \DB::table('player')->insert(
+                [
+                    'user_id' => '1',
+                    'device_id' => $request->device_id,
+
+                ]
+            );
+
+        }
+
+
         $locations = $this->getMyDiscoveredLocationsAsList($request->device_id,$request->profile_name);
 
         return $locations;
@@ -86,7 +103,20 @@ class PlayerController extends Controller
     public function getSetStatusSummary(Request $request)
     {
         $player = DB::table('player')->where('device_id','=',$request->device_id)->first();
-        $id = $player->id;
+        $id = null;
+        if ($player == null) {
+            $id = \DB::table('player')->insert(
+                [
+                    'user_id' => '1',
+                    'device_id' => $request->device_id,
+
+                ]
+            );
+
+        } else {
+            $id = $player->id;
+        }
+
         $gallery = Gallery::find($request->gallery_id);
         $set = Set::find($gallery->set_id);
         $galleries =  DB::table('gallery')->where('gallery.set_id','=',$set->id)->get();
@@ -160,8 +190,15 @@ class PlayerController extends Controller
     {
         $hints = [];
         $player = DB::table('player')->where('device_id', '=', $request->device_id)->first();
-        if ($player == null ){
-            return "Device ID is not registered";
+        if ($player == null) {
+            $id = \DB::table('player')->insert(
+                [
+                    'user_id' => '1',
+                    'device_id' => $request->device_id,
+
+                ]
+            );
+
         }
         $user = DB::table('user')->where('id', '=', $player->user_id)->first();
         $myLocations = $this->getMyDiscoveredLocationsAsList($request->device_id,$request->profile_name);
@@ -221,6 +258,7 @@ class PlayerController extends Controller
                     ->where('location.profile_id', '=', $profile->id)
                     ->select('location.*')
                     ->get();
+                dd($myLocations);
     //        var_dump($myLocations);
                 return $myLocations;
             }
