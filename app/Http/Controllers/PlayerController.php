@@ -200,7 +200,12 @@ class PlayerController extends Controller
             );
 
         }
-        $user = DB::table('user')->where('id', '=', $player->user_id)->first();
+        $player = DB::table('player')->where('device_id', '=', $request->device_id)->first();
+
+
+        $user = \DB::table('user')->where('id', '=', $player->user_id)->first();
+        if ($user == null)
+            return "There is no hint for not registered users";
         $myLocations = $this->getMyDiscoveredLocationsAsList($request->device_id,$request->profile_name);
         $allLocations = $this->getAllLocationsAsList($request->profile_name);
         $flag= false;
