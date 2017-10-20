@@ -89,7 +89,28 @@
         </div>
     </div>
 </section>
+<section id="three" class="wrapper align-center">
+    <div class="inner">
+        <div class="flex flex-2">
 
+
+            <article>
+            <footer>
+
+                        <a rel="external noopener noreferrer" href="https://play.google.com/store/apps/details?id=org.mozilla.firefox&amp;referrer=utm_source%3Dmozilla%26utm_medium%3DReferral%26utm_campaign%3Dmozilla-org" data-link-type="download" data-download-os="Android" data-mozillaonline-link="https://play.google.com/store/apps/details?id=ca.ualberta.huco.goqueer_android" data-download-location="other">
+                            <img class="" src="https://www.mozilla.org//media/img/l10n/en-US/firefox/android/btn-google-play.77bdbc935c58.png" srcset="https://www.mozilla.org//media/img/l10n/en-US/firefox/android/btn-google-play-high-res.87d9720bbc8b.png 1.5x" width="152" alt="Get it on Google Play" height="45">
+                        </a>
+
+
+                        <a href="https://itunes.apple.com/us/app/apple-store/id989804926?pt=373246&amp;mt=8&amp;ct=mozorg-scene_2-appstore-button" data-link-type="download" data-download-os="iOS" data-download-location="other">
+                            <img src="https://www.mozilla.org/media/img/l10n/en-US/firefox/ios/btn-app-store.1cfd5dba4a92.svg" alt="Download on the App Store" width="152" height="45">
+                        </a>
+
+            </footer>
+            </article>
+        </div>
+    </div>
+</section>
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">
