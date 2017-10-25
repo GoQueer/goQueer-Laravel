@@ -56,3 +56,4 @@ Route::get('/client/getGalleryById', array('uses' => 'PlayerController@getGaller
 Route::get('/client/setDiscoveryStatus', array('uses' => 'PlayerController@updateDiscoveryStatus'));
 Route::get('/client/getHint', array('uses' => 'PlayerController@getHint'));
 Route::get('/client/getSetStatusSummary', array('uses' => 'PlayerController@getSetStatusSummary'));
+Route::get('/client/getAllProfiles', array('uses' => 'ProfileController@getAll'));

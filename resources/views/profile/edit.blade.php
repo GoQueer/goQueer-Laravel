@@ -38,6 +38,20 @@
             </div>
         </div>
 
+        <div class="col-xs-2 col-sm-2 col-md-2">
+            <div class="form-group">
+                <strong>Lng:</strong>
+                {!! Form::text('lng', null, array('placeholder' => 'Longitude','class' => 'form-control')) !!}
+            </div>
+        </div>
+
+        <div class="col-xs-2 col-sm-2 col-md-2">
+            <div class="form-group">
+                <strong>Lat:</strong>
+                {!! Form::text('lat', null, array('placeholder' => 'Latitude','class' => 'form-control')) !!}
+            </div>
+        </div>
+
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div  class="form-group">
                 {!! Form::Label('show', 'Show all Locations:') !!}

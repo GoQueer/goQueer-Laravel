@@ -22,6 +22,13 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getAll(Request $request)
+    {
+
+        return $profiles = Profile::orderBy('id','DESC')->get();
+
+    }
+
     public function index(Request $request)
     {
         if (Auth::check()) {
