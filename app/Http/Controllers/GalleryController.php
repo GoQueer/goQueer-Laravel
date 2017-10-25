@@ -117,6 +117,7 @@ class GalleryController extends Controller
 
 
             }
+
           //  dd($all_medias);
             return view('gallery.show', compact('gallery','final_all_medias','assigned_medias','id','set_name'))->with('email',Auth::user()->email);
         } else

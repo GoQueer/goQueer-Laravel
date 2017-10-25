@@ -15,6 +15,7 @@ class GalleryTableSeeder extends Seeder
             'id'=> '1',
             'description' => 'Test Gallery',
             'name' => 'Test Gallery',
+            'set_id' => '1',
 
 
         ]);

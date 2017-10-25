@@ -16,13 +16,13 @@ class DatabaseSeeder extends Seeder
          $this->call(MediaTypeTableSeeder::class);
          $this->call(ProgressStatusTableSeeder::class);
          $this->call(CopyrightStatusTableSeeder::class);
+         $this->call(SetTableSeeder::class);
          $this->call(GalleryTableSeeder::class);
          $this->call(ProfileTableSeeder::class);
          $this->call(LocationTableSeeder::class);
          $this->call(MediaTableSeeder::class);
          $this->call(PlayerTableSeeder::class);
          $this->call(DiscoveryTableSeeder::class);
-         $this->call(SetTableSeeder::class);
          $this->call(HintTableSeeder::class);
     }
 }

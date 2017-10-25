@@ -62,7 +62,7 @@ class LocationController extends Controller
                 'coordinates' => 'required',
                 'address' => 'required',
                 'name' => 'required',
-                'id' => 'required',
+                'gallery_id' => 'required',
                 'profile_id' => 'required'
             ]);
 
@@ -73,7 +73,7 @@ class LocationController extends Controller
                     'name' => $request->name,
                     'description' => $request->description,
                     'user_id' => Auth::id(),
-                    'gallery_id' => $request->id,
+                    'gallery_id' => $request->gallery_id,
                     'created_at' => new \DateTime('now'),
                     'updated_at' => new \DateTime('now'),
                     'profile_id' => $request->profile_id
