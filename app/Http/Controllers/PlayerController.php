@@ -263,7 +263,7 @@ class PlayerController extends Controller
                     ->where('location.profile_id', '=', $profile->id)
                     ->select('location.*')
                     ->get();
-                dd($myLocations);
+
     //        var_dump($myLocations);
                 return $myLocations;
             }
