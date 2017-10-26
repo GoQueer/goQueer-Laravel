@@ -26,10 +26,10 @@ class LocationController extends Controller
     public function index(Request $request)
     {
         if (Auth::check()) {
-
-        $locations = Location::orderBy('id','DESC')->paginate(500);
-        return view('location.index',compact('locations'))
-            ->with('i', ($request->input('page', 1) - 1) * 500)->with('email',Auth::user()->email);
+            $locations = \DB::table('location')
+                ->join('profile', 'location.profile_id', '=', 'profile.id')
+                ->select('location.*', 'profile.name as profileName')->paginate(500);
+        return view('location.index',compact('locations'))->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
@@ -95,7 +95,6 @@ class LocationController extends Controller
     {
         if (Auth::check()) {
             $hints = Hint::orderBy('id','DESC')->where('location_id',$id)->get();
-//            $location = Location::find($id);
             $location =  \DB::table('location')
                 ->join('profile', 'profile.id', '=', 'location.profile_id')
                 ->select('location.*','profile.name AS profile_name')

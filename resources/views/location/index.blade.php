@@ -22,6 +22,7 @@
             <th>Title</th>
             <th>Description</th>
             <th>Coordinates</th>
+            <th>Profile</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($locations as $key => $location)
@@ -30,6 +31,7 @@
                 <td><div style="height:40px; overflow:hidden">{{ $location->name }}</div></td>
                 <td><div style="height:40px; overflow:hidden">{{ $location->description }}</div></td>
                 <td><div style="height:40px; overflow:hidden">{{ $location->coordinate }}</div></td>
+                <td><div style="height:40px; overflow:hidden">{{ $location->profileName }}</div></td>
 
                 <td>
                     <a class="btn btn-info" href="{{ route('location.show',$location->id) }}">Config</a>
