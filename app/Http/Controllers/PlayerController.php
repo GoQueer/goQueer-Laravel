@@ -31,11 +31,20 @@ class PlayerController extends Controller
 
         $player = DB::table('player')->where('device_id', '=', $request->device_id)->first();
         if ($player == null) {
+            $userId = \DB::table('user')->insert(
+                [
+                    'role_id' => '2',
+                    'password' => 'no password',
+                    'email' => $request->device_id,
 
+                ]
+            );
+            $user = DB::table('user')->where('email', '=', $request->device_id)->first();
 
             $id = \DB::table('player')->insert(
                 [
-                    'user_id' => '1',
+
+                    'user_id' => $user->id,
                     'device_id' => $request->device_id,
 
                 ]
@@ -105,18 +114,27 @@ class PlayerController extends Controller
         $player = DB::table('player')->where('device_id','=',$request->device_id)->first();
         $id = null;
         if ($player == null) {
+            $userId = \DB::table('user')->insert(
+                [
+                    'role_id' => '2',
+                    'password' => 'no password',
+                    'email' => $request->device_id,
+
+                ]
+            );
+            $user = DB::table('user')->where('email', '=', $request->device_id)->first();
+
             $id = \DB::table('player')->insert(
                 [
-                    'user_id' => '1',
+
+                    'user_id' => $user->id,
                     'device_id' => $request->device_id,
 
                 ]
             );
 
-        } else {
-            $id = $player->id;
         }
-
+        $player = DB::table('player')->where('device_id','=',$request->device_id)->first();
         $gallery = Gallery::find($request->gallery_id);
         $set = Set::find($gallery->set_id);
         $galleries =  DB::table('gallery')->where('gallery.set_id','=',$set->id)->get();
@@ -191,15 +209,27 @@ class PlayerController extends Controller
         $hints = [];
         $player = DB::table('player')->where('device_id', '=', $request->device_id)->first();
         if ($player == null) {
+            $userId = \DB::table('user')->insert(
+                [
+                    'role_id' => '2',
+                    'password' => 'no password',
+                    'email' => $request->device_id,
+
+                ]
+            );
+            $user = DB::table('user')->where('email', '=', $request->device_id)->first();
+
             $id = \DB::table('player')->insert(
                 [
-                    'user_id' => '1',
+
+                    'user_id' => $user->id,
                     'device_id' => $request->device_id,
 
                 ]
             );
 
         }
+
         $player = DB::table('player')->where('device_id', '=', $request->device_id)->first();
 
 
@@ -208,6 +238,7 @@ class PlayerController extends Controller
             return "There is no hint for not registered users";
         $myLocations = $this->getMyDiscoveredLocationsAsList($request->device_id,$request->profile_name);
         $allLocations = $this->getAllLocationsAsList($request->profile_name);
+
         $flag= false;
 
         foreach ($allLocations as $allLocation) {
