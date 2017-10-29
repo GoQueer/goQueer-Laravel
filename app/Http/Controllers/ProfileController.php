@@ -29,6 +29,14 @@ class ProfileController extends Controller
 
     }
 
+    public function getAllExceptDraft(Request $request)
+    {
+
+        //return $profiles = Profile::orderBy('id','DESC')->get();
+        return $profiles = \DB::table('profile')->where('name', '!=', 'Draft')->get();
+
+    }
+
     public function index(Request $request)
     {
         if (Auth::check()) {
