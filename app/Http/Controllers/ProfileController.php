@@ -34,7 +34,7 @@ class ProfileController extends Controller
         if (Auth::check()) {
         $profiles = Profile::orderBy('id','DESC')->paginate(5);
             return view('profile.index',compact('profiles'))
-                ->with('i', ($request->input('page', 1) - 1) * 5);
+                ->with('i', ($request->input('page', 1) - 1) * 500);
         } else
             return view('errors.permission');
     }
