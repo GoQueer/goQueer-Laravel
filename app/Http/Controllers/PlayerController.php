@@ -168,13 +168,14 @@ class PlayerController extends Controller
     public function updateDiscoveryStatus(Request $request)
     {
         $player = DB::table('player')->where('device_id','=',$request->device_id)->first();
+        $user = DB::table('user')->where('email', '=', $request->device_id)->first();
         var_dump($request->device_id);
         var_dump($player);
 
         $data = new Player;
         if ($player == null ) {
 
-            $data->user_id = 1;
+            $data->user_id = $user->id;
             $data->device_id = $request->device_id;
             $data->created_at = new \DateTime('now');
             $data->updated_at = new \DateTime('now');
