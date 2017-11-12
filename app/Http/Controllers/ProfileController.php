@@ -29,12 +29,20 @@ class ProfileController extends Controller
 
     }
 
+    public function getAllExceptDraft(Request $request)
+    {
+
+        //return $profiles = Profile::orderBy('id','DESC')->get();
+        return $profiles = \DB::table('profile')->where('name', '!=', 'Draft')->get();
+
+    }
+
     public function index(Request $request)
     {
         if (Auth::check()) {
         $profiles = Profile::orderBy('id','DESC')->paginate(5);
             return view('profile.index',compact('profiles'))
-                ->with('i', ($request->input('page', 1) - 1) * 5);
+                ->with('i', ($request->input('page', 1) - 1) * 500);
         } else
             return view('errors.permission');
     }

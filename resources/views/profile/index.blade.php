@@ -21,6 +21,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Shows Everything</th>
 
             <th width="150px">Action</th>
         </tr>
@@ -29,6 +30,7 @@
                 <td><div style="height:40px; overflow:hidden">{{ ++$i }}</div></td>
                 <td><div style="height:40px; overflow:hidden">{{ $profile->name }}</div></td>
                 <td><div style="height:40px;width:250px; overflow:hidden">{{ $profile->description }}</div></td>
+                <td><div style="height:40px;width:250px; overflow:hidden">{{ $profile->show }}</div></td>
 
 
                 <td><div style="width:200px">

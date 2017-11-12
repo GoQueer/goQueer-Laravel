@@ -12,7 +12,7 @@ use App\Models\CopyrightStatus;
 use App\Models\Location;
 use App\Models\Media;
 use App\Models\MediaType;
-use App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -105,7 +105,8 @@ class MediaController extends Controller
     {
         if (Auth::check()) {
             $media = Media::find($id);
-            $user = User::find($media->user_id);
+            $user = DB::table('user')->where('id', '=', $media->user_id)->first();
+            //$user = \User::find($media->user_id);
             $user_name = $user->name;
             $comments = DB::table('message')
                 ->join('user', 'user.id', '=', 'message.user_id')
@@ -129,7 +130,8 @@ class MediaController extends Controller
             $media = Media::find($id);
             $locations = Location::lists('name', 'id');
             $types = MediaType::lists('name', 'id');
-            $user = User::find($media->user_id);
+            $user = DB::table('user')->where('id', '=', $media->user_id)->first();
+            //$user = User::find($media->user_id);
             $user_name = $user->name;
             $statuses = CopyrightStatus::lists('status', 'id');
             return view('media.edit', compact('media','types','statuses','user_name'))->with('email',Auth::user()->email);
