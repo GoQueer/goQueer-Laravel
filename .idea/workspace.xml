@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="fixed location mistake">
+    <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="changed git ingnore">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/secondTry.iml" afterPath="$PROJECT_DIR$/.idea/secondTry.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="secondTry.iws" />
@@ -48,8 +49,8 @@
       <file leaf-file-name="MediaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MediaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2222">
-              <caret line="113" column="24" lean-forward="false" selection-start-line="109" selection-start-column="12" selection-end-line="113" selection-end-column="24" />
+            <state relative-caret-position="2310">
+              <caret line="114" column="24" lean-forward="false" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -89,8 +90,26 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="731">
-              <caret line="279" column="1" lean-forward="true" selection-start-line="279" selection-start-column="1" selection-end-line="279" selection-end-column="1" />
-              <folding />
+              <caret line="311" column="1" lean-forward="false" selection-start-line="311" selection-start-column="1" selection-end-line="311" selection-end-column="1" />
+              <folding>
+                <marker date="1510519518517" expanded="true" signature="345:10655" ph="{...}" />
+                <marker date="1510519518517" expanded="true" signature="7900:9608" ph="{...}" />
+                <marker date="1510519518517" expanded="true" signature="7973:8375" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="8052:8176" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="8111:8162" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="8203:8365" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="8411:9555" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="8921:9417" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="9617:9675" ph=" @param Request $request ..." />
+                <marker date="1510519518517" expanded="true" signature="9754:10568" ph="{...}" />
+                <marker date="1510519518517" expanded="true" signature="9914:10535" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="10033:10525" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="10157:10209" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="10238:10293" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="10323:10363" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="10394:10406" ph="..." />
+                <marker date="1510519518517" expanded="true" signature="10577:10648" ph=" @return \Illuminate\Database\Eloquent\Collection|static[] ..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,8 +117,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            <state relative-caret-position="242">
+              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -629,14 +648,7 @@
       <workItem from="1507745117476" duration="2047000" />
       <workItem from="1507768826771" duration="5194000" />
       <workItem from="1508890649444" duration="8424000" />
-      <workItem from="1510519358410" duration="92000" />
-    </task>
-    <task id="LOCAL-00043" summary="fixed ordering one more time">
-      <created>1483983857169</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1483983857169</updated>
+      <workItem from="1510519358410" duration="193000" />
     </task>
     <task id="LOCAL-00044" summary="a working draft to test">
       <created>1483984891276</created>
@@ -974,11 +986,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508984409134</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="changed git ingnore">
+      <created>1510519496634</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1510519496634</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297428000" />
+    <option name="totallyTimeSpent" value="297529000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1053,7 +1072,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added sets" />
     <MESSAGE value="wip on setController&#10;" />
     <MESSAGE value="a working set assignment&#10;" />
     <MESSAGE value="moved hint to locations successfully" />
@@ -1078,7 +1096,8 @@
     <MESSAGE value="add latlng to profile and its api" />
     <MESSAGE value="new column and sort for profile stuff" />
     <MESSAGE value="fixed location mistake" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed location mistake" />
+    <MESSAGE value="changed git ingnore" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed git ingnore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1399,8 +1418,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MediaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2222">
-          <caret line="113" column="24" lean-forward="false" selection-start-line="109" selection-start-column="12" selection-end-line="113" selection-end-column="24" />
+        <state relative-caret-position="2310">
+          <caret line="114" column="24" lean-forward="false" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1416,8 +1435,26 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
-          <caret line="279" column="1" lean-forward="true" selection-start-line="279" selection-start-column="1" selection-end-line="279" selection-end-column="1" />
-          <folding />
+          <caret line="311" column="1" lean-forward="false" selection-start-line="311" selection-start-column="1" selection-end-line="311" selection-end-column="1" />
+          <folding>
+            <marker date="1510519518517" expanded="true" signature="345:10655" ph="{...}" />
+            <marker date="1510519518517" expanded="true" signature="7900:9608" ph="{...}" />
+            <marker date="1510519518517" expanded="true" signature="7973:8375" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="8052:8176" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="8111:8162" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="8203:8365" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="8411:9555" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="8921:9417" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="9617:9675" ph=" @param Request $request ..." />
+            <marker date="1510519518517" expanded="true" signature="9754:10568" ph="{...}" />
+            <marker date="1510519518517" expanded="true" signature="9914:10535" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="10033:10525" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="10157:10209" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="10238:10293" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="10323:10363" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="10394:10406" ph="..." />
+            <marker date="1510519518517" expanded="true" signature="10577:10648" ph=" @return \Illuminate\Database\Eloquent\Collection|static[] ..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1447,8 +1484,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        <state relative-caret-position="242">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding />
         </state>
       </provider>
