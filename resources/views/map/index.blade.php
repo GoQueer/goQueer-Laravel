@@ -52,11 +52,19 @@
     <div class="row" style="display: none;">
         <table class="table table-bordered" id="coordinateTable">
             <tr>
-                <th>No</th>
+                <th>coordinates</th>
+                <th>id</th>
+                <th>title</th>
+                <th>address</th>
+
+
             </tr>
             @foreach ($locations as $key => $location)
                 <tr>
                     <td>{{ $location->coordinate }}</td>
+                    <td>{{ $location->id }}</td>
+                    <td>{{ $location->name }}</td>
+                    <td>{{ $location->address }}</td>
                 </tr>
             @endforeach
         </table>
@@ -83,7 +91,8 @@
             for (var i = 1, row; row = table.rows[i]; i++) {
 
                 var json = JSON.parse(row.cells[0].innerText);
-                L.geoJSON(json).addTo(map);
+                L.geoJSON(json).bindPopup("<b>Name: </b>" + row.cells[2].innerText + "</br><b>Address: </b>"+ row.cells[3].innerText +"</br><a href='./location/" + row.cells[1].innerText + "/edit'>Edit</a>").addTo(map);
+
 
             }
         }
