@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2017_12_13_184236_drop_all_foreign_keys.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/secondTry.iml" afterPath="$PROJECT_DIR$/.idea/secondTry.iml" />
+    <list default="true" id="0689e90d-4bdf-43af-bc69-768cc35b04a5" name="Default" comment="added migration for dropping foreign keys">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2017_12_13_204236_drop_more_foreign_keys.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
     </list>
     <ignored path="secondTry.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +34,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2017_12_13_184236_drop_all_foreign_keys.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2017_12_13_184236_drop_all_foreign_keys.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_13_184236_drop_all_foreign_keys.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="284">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2017_12_13_204236_drop_more_foreign_keys.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_13_204236_drop_more_foreign_keys.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="53">
+              <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+              <folding>
+                <marker date="1513222950480" expanded="true" signature="153:528" ph="{...}" />
+                <marker date="1513222950480" expanded="true" signature="194:273" ph=" The attributes that are mass assignable. ..." />
+                <marker date="1513222950480" expanded="true" signature="303:355" ph="..." />
+                <marker date="1513222950480" expanded="true" signature="366:453" ph=" The attributes that should be hidden for arrays. ..." />
+                <marker date="1513222950480" expanded="true" signature="481:524" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+              <folding>
+                <marker date="1513222956744" expanded="true" signature="262:1966" ph="{...}" />
+                <marker date="1513222956744" expanded="true" signature="271:706" ph="..." />
+                <marker date="1513222956744" expanded="true" signature="775:866" ph=" Where to redirect users after login / registration. ..." />
+                <marker date="1513222956744" expanded="true" signature="923:1012" ph=" Create a new authentication controller instance. ..." />
+                <marker date="1513222956744" expanded="true" signature="1048:1137" ph="{...}" />
+                <marker date="1513222956744" expanded="true" signature="1146:1306" ph=" Get a validator for an incoming registration request. ..." />
+                <marker date="1513222956744" expanded="true" signature="1354:1575" ph="{...}" />
+                <marker date="1513222956744" expanded="true" signature="1392:1567" ph="..." />
+                <marker date="1513222956744" expanded="true" signature="1400:1566" ph="..." />
+                <marker date="1513222956744" expanded="true" signature="1584:1707" ph=" Create a new user instance after a valid registration. ..." />
+                <marker date="1513222956744" expanded="true" signature="1752:1964" ph="{...}" />
+                <marker date="1513222956744" expanded="true" signature="1787:1956" ph="..." />
+                <marker date="1513222956744" expanded="true" signature="1788:1955" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/auth.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-882">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,10 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/gallery/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/Hint.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2017_08_14_234356_user_add_hint_request_column.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2017_08_12_210156_create_hint_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_08_20_212856_create_profile_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_03_21_234356_location_add_gallery_id_column.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_08_22_190056_location_add_profile_id_column.php" />
@@ -149,6 +203,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/resources/views/map/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_12_13_184236_drop_all_foreigh_keys.php" />
+        <option value="$PROJECT_DIR$/app/Models/User.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_12_13_184236_drop_all_foreign_keys.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_12_13_204236_drop_more_foreign_keys.php" />
       </list>
     </option>
   </component>
@@ -270,6 +328,43 @@
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="goQueer-Laravel" type="cbb8eebc:String" user="goQueer-Laravel" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="goQueer-Laravel" type="cbb8eebc:String" user="goQueer-Laravel" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="goQueer-Laravel" type="cbb8eebc:String" user="goQueer-Laravel" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="Http" type="cbb8eebc:String" user="Http" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="goQueer-Laravel" type="cbb8eebc:String" user="goQueer-Laravel" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="Http" type="cbb8eebc:String" user="Http" />
+              <item name="Controllers" type="cbb8eebc:String" user="Controllers" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="goQueer-Laravel" type="cbb8eebc:String" user="goQueer-Laravel" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="Http" type="cbb8eebc:String" user="Http" />
+              <item name="Controllers" type="cbb8eebc:String" user="Controllers" />
+              <item name="Auth" type="cbb8eebc:String" user="Auth" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="goQueer-Laravel" type="cbb8eebc:String" user="goQueer-Laravel" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="Models" type="cbb8eebc:String" user="Models" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="goQueer-Laravel" type="cbb8eebc:String" user="goQueer-Laravel" />
+              <item name="config" type="cbb8eebc:String" user="config" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -447,13 +542,6 @@
       <workItem from="1507768826771" duration="5194000" />
       <workItem from="1508890649444" duration="8424000" />
       <workItem from="1510519358410" duration="2623000" />
-    </task>
-    <task id="LOCAL-00045" summary="a working draft to test">
-      <created>1484965605755</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1484965605755</updated>
     </task>
     <task id="LOCAL-00046" summary="working on android apis">
       <created>1488936355641</created>
@@ -791,11 +879,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510519564627</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="added migration for dropping foreign keys">
+      <created>1513220970947</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1513220970948</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302595000" />
+    <option name="totallyTimeSpent" value="304374000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -878,7 +973,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wip on setController&#10;" />
     <MESSAGE value="a working set assignment&#10;" />
     <MESSAGE value="moved hint to locations successfully" />
     <MESSAGE value="a working hint engine" />
@@ -903,41 +997,14 @@
     <MESSAGE value="new column and sort for profile stuff" />
     <MESSAGE value="fixed location mistake" />
     <MESSAGE value="changed git ingnore" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed git ingnore" />
+    <MESSAGE value="added migration for dropping foreign keys" />
+    <option name="LAST_COMMIT_MESSAGE" value="added migration for dropping foreign keys" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/set/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Set.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Gallery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/gallery/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/profile/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="752">
@@ -1204,6 +1271,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2310">
           <caret line="114" column="24" lean-forward="false" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1261,6 +1329,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1320,10 +1389,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-882">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding>
+            <marker date="1513222950480" expanded="true" signature="153:528" ph="{...}" />
+            <marker date="1513222950480" expanded="true" signature="194:273" ph=" The attributes that are mass assignable. ..." />
+            <marker date="1513222950480" expanded="true" signature="303:355" ph="..." />
+            <marker date="1513222950480" expanded="true" signature="366:453" ph=" The attributes that should be hidden for arrays. ..." />
+            <marker date="1513222950480" expanded="true" signature="481:524" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding>
+            <marker date="1513222956744" expanded="true" signature="262:1966" ph="{...}" />
+            <marker date="1513222956744" expanded="true" signature="271:706" ph="..." />
+            <marker date="1513222956744" expanded="true" signature="775:866" ph=" Where to redirect users after login / registration. ..." />
+            <marker date="1513222956744" expanded="true" signature="923:1012" ph=" Create a new authentication controller instance. ..." />
+            <marker date="1513222956744" expanded="true" signature="1048:1137" ph="{...}" />
+            <marker date="1513222956744" expanded="true" signature="1146:1306" ph=" Get a validator for an incoming registration request. ..." />
+            <marker date="1513222956744" expanded="true" signature="1354:1575" ph="{...}" />
+            <marker date="1513222956744" expanded="true" signature="1392:1567" ph="..." />
+            <marker date="1513222956744" expanded="true" signature="1400:1566" ph="..." />
+            <marker date="1513222956744" expanded="true" signature="1584:1707" ph=" Create a new user instance after a valid registration. ..." />
+            <marker date="1513222956744" expanded="true" signature="1752:1964" ph="{...}" />
+            <marker date="1513222956744" expanded="true" signature="1787:1956" ph="..." />
+            <marker date="1513222956744" expanded="true" signature="1788:1955" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_13_184236_drop_all_foreign_keys.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="284">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_13_204236_drop_more_foreign_keys.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
           <folding />
         </state>
       </provider>
