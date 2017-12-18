@@ -4,8 +4,8 @@
 
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="text-center">
-                <h2>Gallery List</h2>
+            <div class="text-center" >
+                <h1>Gallery List</h1>
             </div>
         </div>
     </div>
@@ -51,4 +51,6 @@
     <div class="text-center">
         <a class="btn btn-success" href="{{ route('gallery.create') }}"> New Gallery</a>
     </div>
+
+
 @endsection

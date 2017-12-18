@@ -13,16 +13,29 @@
     <meta content="" name="author"/>
     <link rel="stylesheet" href="{{ asset("assets/stylesheets/styles.css") }}" />
     <link rel="stylesheet" href="{{ asset("css/leaflet.css") }}" />
-    {{--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />--}}
-    {{--<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>--}}
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <script type="text/javascript" src="{{ URL::asset('js/src/leaflet.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/src/leaflet.draw.js') }}"></script>
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.7/leaflet.draw-src.js"></script>--}}
+    <style>
+        html, body {
+            background-color: #fff;
+            color: #000001;
+            font-family: 'Archivo', cursive;
+            font-weight: 100;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
 
 </head>
 <body>
 @yield('body')
-
+<style type="text/css">
+    h3 p {
+        font-family: 'Abril Fatface', cursive;
+    }
+</style>
 <script src="{{ asset("assets/scripts/frontend.js") }}" type="text/javascript"></script>
 </body>
+>
 </html>

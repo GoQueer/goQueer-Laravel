@@ -36,7 +36,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> All Spots</h2>
+                <h1> All Spots</h1>
             </div>
 
         </div>

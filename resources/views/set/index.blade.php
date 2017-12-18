@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="text-center">
-                <h2>Set List</h2>
+                <h1>Set List</h1>
             </div>
         </div>
     </div>

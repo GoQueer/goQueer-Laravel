@@ -24,12 +24,13 @@ class MediaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private  $pageSize = 15;
     public function index(Request $request)
     {
         if (Auth::check()) {
-            $medias = Media::orderBy('id', 'DESC')->paginate(5);
+            $medias = Media::orderBy('id', 'DESC')->paginate($this->pageSize);
             return view('media.index', compact('medias'))
-                ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
+                ->with('i', ($request->input('page', 1) - 1) * $this->pageSize)->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }

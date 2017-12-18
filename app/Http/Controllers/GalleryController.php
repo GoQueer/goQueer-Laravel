@@ -22,6 +22,7 @@ class GalleryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private  $pageSize = 15;
     public function index(Request $request)
     {
         if (Auth::check()) {
@@ -30,10 +31,10 @@ class GalleryController extends Controller
                 ->join('sets', 'gallery.set_id', '=', 'sets.id')
                 ->select('gallery.*','sets.name AS set_name')
                 ->orderBy('gallery.id', 'desc')
-                ->paginate();
+                ->paginate($this->pageSize);
 
             return view('gallery.index')->with('galleries', $galleries)
-                ->with('i', ($request->input('page', 1) - 1) * 5)->with('email',Auth::user()->email);
+                ->with('i', ($request->input('page', 1) - 1) * $this->pageSize)->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }

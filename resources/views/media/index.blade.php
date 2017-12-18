@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="text-center">
-                <h2>Media List</h2>
+                <h1>Media List</h1>
             </div>
         </div>
     </div>
@@ -23,7 +23,6 @@
             <th>Source</th>
             <th>Publish Date</th>
             <th>Description</th>
-            <th>File Name</th>
             <th width="200px">Action</th>
         </tr>
         @foreach ($medias as $key => $media)
@@ -33,7 +32,6 @@
                 <td><div style="height:40px; overflow:hidden">{{ $media->source }}</div></td>
                 <td><div style="height:40px;width:80px; overflow:hidden">{{ $media->date }}</div></td>
                 <td><div style="height:40px;width:250px; overflow:hidden">{{ $media->description }}</div></td>
-                <td><div style="height:40px;width:60px; overflow:hidden">{{ $media->fileName }}</div></td>
 
                 <td>
                     <a class="btn btn-success" href="{{ route('media.show',$media->id) }}">Show</a>

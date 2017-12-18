@@ -23,13 +23,14 @@ class LocationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private  $pageSize = 15;
     public function index(Request $request)
     {
         if (Auth::check()) {
             $locations = \DB::table('location')
                 ->join('profile', 'location.profile_id', '=', 'profile.id')
-                ->select('location.*', 'profile.name as profileName')->paginate(500);
-        return view('location.index',compact('locations'))->with('email',Auth::user()->email);
+                ->select('location.*', 'profile.name as profileName')->paginate(15);
+        return view('location.index',compact('locations'))->with('i', ($request->input('page', 1) - 1) * $this->pageSize)->with('email',Auth::user()->email);
         } else
             return view('errors.permission');
     }
